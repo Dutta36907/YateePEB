@@ -221,13 +221,6 @@ export const MobileMenu: React.FC<MobileMenuProps> = ({ isOpen, onClose }) => {
             News & Updates
           </Link>
 
-          <Link
-            href="/careers"
-            onClick={onClose}
-            className="block px-4 py-3 text-base font-bold text-slate-800 hover:bg-blue-50 hover:text-[#1D3A74] rounded-xl transition-colors"
-          >
-            Careers
-          </Link>
 
           <Link
             href="/contact"

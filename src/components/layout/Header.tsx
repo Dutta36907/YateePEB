@@ -70,7 +70,6 @@ export const Header: React.FC = () => {
     { label: "Industries", href: "/industries", hasDropdown: "industries" },
     { label: "Projects", href: "/projects" },
     { label: "News", href: "/news" },
-    { label: "Careers", href: "/careers" },
     { label: "Contact", href: "/contact" },
   ];
 
