@@ -1,69 +1,79 @@
-import Image from "next/image";
+import React from "react";
+import { HeroSection } from "@/components/home/HeroSection";
+import { MetricsSection } from "@/components/home/MetricsSection";
+import { WhoWeAreSection } from "@/components/home/WhoWeAreSection";
+import { PebEstimatorSection } from "@/components/home/PebEstimatorSection";
+import { ProductsGridSection } from "@/components/home/ProductsGridSection";
+import { PebAnatomySection } from "@/components/home/PebAnatomySection";
+import { ComparisonSection } from "@/components/home/ComparisonSection";
+import { AdvantagesSection } from "@/components/home/AdvantagesSection";
+import { ServicesShowcaseSection } from "@/components/home/ServicesShowcaseSection";
+import { IndustriesGridSection } from "@/components/home/IndustriesGridSection";
+import { ManufacturingSection } from "@/components/home/ManufacturingSection";
+import { ProcessTimelineSection } from "@/components/home/ProcessTimelineSection";
+import { SelectedProjectsSection } from "@/components/home/SelectedProjectsSection";
+import { CinematicBannerSection } from "@/components/home/CinematicBannerSection";
+import { QualityCertSection } from "@/components/home/QualityCertSection";
+import { ClientsWallSection } from "@/components/home/ClientsWallSection";
+import { TestimonialSection } from "@/components/home/TestimonialSection";
+import { InsightsSection } from "@/components/home/InsightsSection";
 
-export default function Home() {
+export default function HomePage() {
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert h-5 w-[100px]"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the{" "}
-            <code className="rounded bg-black/[.06] px-1.5 py-0.5 font-mono text-[0.9em] dark:bg-white/[.08]">
-              page.tsx
-            </code>{" "}
-            file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert h-[14px] w-4"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={14}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
-      </main>
+    <div className="flex flex-col w-full">
+      {/* 1. Hero with Live Structural Ticker */}
+      <HeroSection />
+
+      {/* 2. Key Metrics & Trust */}
+      <MetricsSection />
+
+      {/* 3. Who We Are */}
+      <WhoWeAreSection />
+
+      {/* 4. Interactive Live PEB Structural Estimator Widget */}
+      <PebEstimatorSection />
+
+      {/* 5. Complete Steel Building Products */}
+      <ProductsGridSection />
+
+      {/* 6. Anatomy of a Yatee PEB (Interactive Subsystems) */}
+      <PebAnatomySection />
+
+      {/* 7. Engineering Benchmark: PEB vs Conventional Steel */}
+      <ComparisonSection />
+
+      {/* 8. Engineered Advantages */}
+      <AdvantagesSection />
+
+      {/* 9. End-to-End Turnkey Capabilities */}
+      <ServicesShowcaseSection />
+
+      {/* 10. Industry Solutions & Sectors */}
+      <IndustriesGridSection />
+
+      {/* 11. Manufacturing Excellence (25-Acre Chakan Plant) */}
+      <ManufacturingSection />
+
+      {/* 12. Integrated 8-Stage Process */}
+      <ProcessTimelineSection />
+
+      {/* 13. Selected Projects with Sector Filter */}
+      <SelectedProjectsSection />
+
+      {/* 14. Cinematic Architecture Banner */}
+      <CinematicBannerSection />
+
+      {/* 15. Quality & Certifications */}
+      <QualityCertSection />
+
+      {/* 16. Client Logos */}
+      <ClientsWallSection />
+
+      {/* 17. Executive Testimonial */}
+      <TestimonialSection />
+
+      {/* 18. Technical Insights & News */}
+      <InsightsSection />
     </div>
   );
 }

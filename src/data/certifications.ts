@@ -1,0 +1,110 @@
+import { Certification, ClientLogo, Testimonial } from "@/types";
+
+export const certificationsData: Certification[] = [
+  {
+    id: "iso-9001",
+    name: "ISO 9001:2015",
+    code: "ISO 9001:2015 Quality Management System",
+    issuer: "TUV NORD / Bureau Veritas",
+    scope: "Design, Fabrication, Manufacturing, and Erection of Pre-Engineered Steel Buildings and Heavy Structural Steel Components",
+    validUntil: "2027 (Audited Annually)",
+    iconName: "Award",
+    badge: "Quality Management",
+    description: "Ensures standardized design methodologies, calibrated CNC manufacturing tolerances, raw material traceability, and continuous quality audits.",
+  },
+  {
+    id: "iso-14001",
+    name: "ISO 14001:2015",
+    code: "ISO 14001:2015 Environmental Management",
+    issuer: "TUV NORD Certification",
+    scope: "Sustainable Steel Fabrication, Waste Minimization, Eco-Friendly Shot Blasting, and Energy-Efficient Manufacturing Protocols",
+    validUntil: "2027 (Audited Annually)",
+    iconName: "Leaf",
+    badge: "Environmental Standard",
+    description: "Validates our commitment to minimizing industrial emissions, 100% steel scrap recycling, and low VOC coating application standards.",
+  },
+  {
+    id: "iso-45001",
+    name: "ISO 45001:2018",
+    code: "ISO 45001:2018 Occupational Health & Safety",
+    issuer: "Bureau Veritas International",
+    scope: "Zero-Harm Health and Safety Management Across Factory Fabrication bays and Nationwide High-Elevation Erection Sites",
+    validUntil: "2027 (Audited Annually)",
+    iconName: "ShieldCheck",
+    badge: "Health & Safety",
+    description: "Guarantees comprehensive PPE enforcement, daily toolbox briefings, certified crane rigging protocols, and worker safety surveillance.",
+  },
+  {
+    id: "ce-certified",
+    name: "CE Conformity EN 1090-2",
+    code: "EN 1090-2 Execution of Steel Structures (EXC3)",
+    issuer: "European Conformity Assessment Body",
+    scope: "Factory Production Control (FPC) for High-Strength Load-Bearing Structural Steelwork for Global Export and Institutional Infrastructure",
+    validUntil: "Active Conformity",
+    iconName: "CheckCircle2",
+    badge: "European Conformity",
+    description: "Certifies our factory welding, non-destructive testing (NDT), and plate traceability to meet international structural steel execution standards.",
+  },
+  {
+    id: "igbc-membership",
+    name: "Indian Green Building Council (IGBC)",
+    code: "IGBC Founding Member & Green Building Partner",
+    issuer: "Confederation of Indian Industry (CII)",
+    scope: "Sustainable Pre-Engineered Steel Envelopes, High Thermal Resistance PUFF Panels, and Natural Daylighting Optimization",
+    validUntil: "Life Member",
+    iconName: "Sun",
+    badge: "Green Building",
+    description: "Empowers clients to achieve LEED Platinum / Gold and IGBC Green Factory certifications through optimized thermal envelopes and daylight integration.",
+  },
+];
+
+export const clientLogos: ClientLogo[] = [
+  { name: "Tata Steel Group", industry: "Steel & Infrastructure", location: "Mumbai / Jamshedpur", logoText: "TATA", highlight: "120,000 sq.ft. Rolling Mill Shed" },
+  { name: "Larsen & Toubro (L&T)", industry: "Heavy Engineering & EPC", location: "Hazira / Chennai", logoText: "L&T", highlight: "Modular Assembly Plant Bays" },
+  { name: "JSW Group", industry: "Heavy Manufacturing", location: "Vijayanagar / Dolvi", logoText: "JSW", highlight: "Raw Material Handling Facility" },
+  { name: "Adani Logistics & Ports", industry: "Logistics & Warehousing", location: "Mundra / Kattupalli", logoText: "ADANI", highlight: "350,000 sq.ft. Inland Container Depot" },
+  { name: "Mahindra & Mahindra", industry: "Automotive Manufacturing", location: "Chakan, Pune", logoText: "MAHINDRA", highlight: "High-Bay EV Stamping Plant" },
+  { name: "DHL Supply Chain", industry: "3PL & Global Logistics", location: "Bhiwandi / Bengaluru", logoText: "DHL", highlight: "400,000 sq.ft. Grade-A Fulfillment Center" },
+  { name: "Coca-Cola Bottling Partner", industry: "FMCG & Beverage", location: "Ahmedabad, Gujarat", logoText: "COCA-COLA", highlight: "High-Sanitation Bottling Complex" },
+  { name: "PepsiCo India", industry: "Food Processing & Snacks", location: "Mathura / Pune", logoText: "PEPSICO", highlight: "Snack Processing Facility" },
+  { name: "Reliance Retail", industry: "Retail Logistics Hubs", location: "Hyderabad / Nagpur", logoText: "RELIANCE", highlight: "Automated Multi-Tier Distribution Hub" },
+  { name: "ITC Limited", industry: "FMCG & Paperboards", location: "Kolkata / Coimbatore", logoText: "ITC", highlight: "Clean-Room Packaging Warehouse" },
+  { name: "Bharat Forge", industry: "Defence & Heavy Forgings", location: "Pune / Baramati", logoText: "BHARAT FORGE", highlight: "50-Tonne Crane Industrial Shed" },
+  { name: "Amazon Logistics", industry: "E-Commerce Fulfillment", location: "Gurugram / Pune", logoText: "AMAZON", highlight: "Clear-Span Sortation Facility" },
+];
+
+export const testimonialsData: Testimonial[] = [
+  {
+    id: "test-1",
+    quote:
+      "Yatee PEB executed our 320,000 sq. ft. heavy auto stamping plant in Chakan within a record 18 weeks. The precision of their Tekla connection engineering and automated fabrication meant zero on-site modifications. The 30-tonne crane girders aligned flawlessly on day one.",
+    author: "Rameshwar Patel",
+    designation: "VP – Projects & Plant Engineering",
+    company: "Apex Auto Infrastructure Ltd",
+    project: "Chakan Stamping Plant Phase II",
+    location: "Pune, Maharashtra",
+    rating: 5,
+  },
+  {
+    id: "test-2",
+    quote:
+      "For our temperature-sensitive pharmaceutical distribution center in Bengaluru, Yatee delivered a complete turnkey solution with 80mm continuous PUFF insulated envelope and 42-meter clear span framing. Their technical transparency, QA/QC documentation, and safety standards are unmatched.",
+    author: "Dr. Sandeep Rao",
+    designation: "Chief Infrastructure Officer",
+    company: "Zenith BioPharma Supply Chain",
+    project: "High-Bay Cold Logistics Center",
+    location: "Bengaluru, Karnataka",
+    rating: 5,
+  },
+  {
+    id: "test-3",
+    quote:
+      "We evaluated multiple national PEB manufacturers for our 450,000 sq. ft. Grade-A logistics hub. Yatee's value engineering optimized our structural steel consumption by 14% without compromising wind-load safety, delivering massive financial savings and superior construction speed.",
+    author: "Col. Sanjeev Nair (Retd.)",
+    designation: "Director – Projects & Construction",
+    company: "Continental Logistics Parks",
+    project: "Bhiwandi Mega Fulfillment Hub",
+    location: "Bhiwandi, Mumbai",
+    rating: 5,
+  },
+];
