@@ -9,7 +9,7 @@ export const productsData: Product[] = [
       "Fully customized, long-span structural steel buildings engineered for industrial factories, mega warehouses, distribution centers, and infrastructure facilities.",
     fullDescription:
       "Yatee Pre-Engineered Buildings (PEB) represent the pinnacle of modern structural steel technology. Designed through advanced 3D structural optimization and manufactured with automated CNC machinery, our PEB systems deliver unmatched strength, column-free clear spans of up to 90 meters, 40% faster erection, and long-term durability.",
-    featuredImage: "/images/products/peb-building.webp",
+    featuredImage: "/images/products/peb-buildings.jpg",
     galleryImages: [
       "/images/products/peb-1.webp",
       "/images/products/peb-2.webp",
@@ -79,7 +79,7 @@ export const productsData: Product[] = [
       "Cost-effective, rapid-deploy industrial sheds with integrated natural ventilation, daylighting panels, and heavy-duty crane runway supports.",
     fullDescription:
       "Yatee Industrial Sheds offer an engineered, high-performance structural solution for workshops, small-to-medium factories, agricultural storage, and processing yards. Engineered for rapid fabrication and assembly, these sheds maximize natural lighting and ventilation while providing long-term structural integrity.",
-    featuredImage: "/images/products/industrial-shed.webp",
+    featuredImage: "/images/products/industrial-sheds.jpg",
     galleryImages: [
       "/images/products/shed-1.webp",
       "/images/products/shed-2.webp",
@@ -144,7 +144,7 @@ export const productsData: Product[] = [
       "Precision roll-formed C and Z purlins manufactured from high-yield galvanized steel with pre-punched elongated holes for quick bolted assembly.",
     fullDescription:
       "Yatee C and Z Purlins are engineered secondary structural framing components used to support roof sheeting and wall cladding. Cold roll-formed from high-tensile galvanized steel (up to 450 MPa yield strength), our purlins provide an exceptional strength-to-weight ratio and superior corrosion resistance.",
-    featuredImage: "/images/products/c-z-purlins.webp",
+    featuredImage: "/images/products/cz-purlins.jpg",
     galleryImages: [
       "/images/products/purlin-1.webp",
       "/images/products/purlin-2.webp",
@@ -213,7 +213,7 @@ export const productsData: Product[] = [
       "Premium trapezoidal and tile-profile colour-coated Galvalume sheets engineered for maximum weather resistance, aesthetic appeal, and structural strength.",
     fullDescription:
       "Yatee Roofing Sheets are roll-formed from premium 55% Aluminum-Zinc alloy coated steel (Galvalume) and pre-painted with advanced multi-layer coating systems (SMP, RMP, and PVDF). Designed with high crest trapezoidal ribs, our roof and wall profiles deliver exceptional water discharge capacity, span capability, and long-term colour vibrancy.",
-    featuredImage: "/images/products/roofing-sheets.webp",
+    featuredImage: "/images/products/roofing-sheets.jpg",
     galleryImages: [
       "/images/products/roof-sheet-1.webp",
       "/images/products/roof-sheet-2.webp",
@@ -284,7 +284,7 @@ export const productsData: Product[] = [
       "High-efficiency continuous sandwich panels with rigid polyurethane/polyisocyanurate cores for cold rooms, cleanrooms, and climate-controlled industrial facilities.",
     fullDescription:
       "Yatee PUFF / PIR Sandwich Panels are manufactured on a high-speed continuous foaming press line. Featuring high-density rigid polyurethane foam (40 ± 2 kg/m³) firmly bonded between two prepainted steel facings, our panels deliver unmatched thermal insulation (U-values as low as 0.22 W/m²K), structural rigidity, acoustic dampening, and energy savings.",
-    featuredImage: "/images/products/puff-panels.webp",
+    featuredImage: "/images/products/puff-panels.jpg",
     galleryImages: [
       "/images/products/puff-1.webp",
       "/images/products/puff-2.webp",
@@ -354,7 +354,7 @@ export const productsData: Product[] = [
       "Zero-power wind-driven turbo ventilators, continuous ridge air monitors, heavy-duty storm-proof louvers, and natural daylighting integration.",
     fullDescription:
       "Effective thermal comfort and air exchange are vital for factory productivity and worker safety. Yatee designs and manufactures engineered natural and mechanical ventilation systems, including aerodynamic wind-driven rotary turbo ventilators, continuous ridge ventilators, and architectural aluminum storm louvers.",
-    featuredImage: "/images/products/ventilation-systems.webp",
+    featuredImage: "/images/products/ventilation.jpg",
     galleryImages: [
       "/images/products/vent-1.webp",
       "/images/products/vent-2.webp",
