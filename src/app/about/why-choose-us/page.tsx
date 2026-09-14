@@ -27,7 +27,7 @@ export default function WhyChooseUsPage() {
       <PageHero
         badge="ENGINEERED ADVANTAGES"
         title="Why Industry Leaders Choose Yatee"
-        subtitle="We combine advanced 3D structural engineering, 45,000 MT automated manufacturing capacity, and certified on-site rigging to deliver superior projects faster and more cost-effectively."
+        subtitle="We combine advanced 3D structural engineering, 22,000 MT automated manufacturing capacity, and certified on-site rigging to deliver superior projects faster and more cost-effectively."
         breadcrumbs={[
           { label: "About Us", href: "/about" },
           { label: "Why Choose Us" },

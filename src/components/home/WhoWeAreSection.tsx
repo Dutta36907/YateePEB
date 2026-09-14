@@ -6,7 +6,7 @@ import { ArrowRight, TrendingUp, Award, Globe2, Zap } from "lucide-react";
 const pillars = [
   {
     icon: TrendingUp,
-    label: "45,000 MT / Year",
+    label: "22,000 MT / Year",
     sub: "Fabrication Throughput",
   },
   {
@@ -72,8 +72,8 @@ export const WhoWeAreSection: React.FC = () => {
               <p className="text-[10px] uppercase font-bold tracking-widest text-blue-300 mb-0.5">
                 Manufacturing Base
               </p>
-              <p className="text-xl font-extrabold text-white">25-Acre Chakan Plant, Pune</p>
-              <p className="text-sm text-slate-300 font-medium mt-0.5">250,000+ Sq. Ft. Covered Bays</p>
+              <p className="text-xl font-extrabold text-white">6-Acre Plant, Nandasan, Gujarat</p>
+              <p className="text-sm text-slate-300 font-medium mt-0.5">Heavy Fabrication & Automated SAW Bays</p>
             </div>
 
             {/* Top-right certified chip */}

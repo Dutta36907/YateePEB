@@ -9,12 +9,12 @@ export const servicesData: Service[] = [
     shortDescription:
       "Advanced structural engineering utilizing STAAD.Pro, Tekla Structures, and MBS software to design optimized, code-compliant, long-span pre-engineered steel frames.",
     overview:
-      "Our in-house design and engineering bureau comprises over 40 structural engineers, Tekla detailers, and drafting specialists. We engineer custom PEB structures that strictly conform to IS 800:2007, AISC 360, MBMA, and IBC building codes, ensuring optimal strength-to-weight ratios, wind resistance, and seismic compliance.",
-    featuredImage: "/images/services/design-engineering.webp",
+      "Our in-house design and engineering team has more than 10 professionals from core engineering backgrounds to cater to the technical requirements of our clients, led by experienced leadership of more than 15 years in the pre-engineered building fraternity. We engineer custom PEB structures that strictly conform to IS 800:2007, AISC 360, MBMA, and IBC building codes, ensuring optimal strength-to-weight ratios, wind resistance, and seismic compliance.",
+    featuredImage: "/images/services/design-engineering.jpg",
     galleryImages: [
-      "/images/services/design-1.webp",
-      "/images/services/design-2.webp",
-      "/images/services/design-3.webp",
+      "/images/services/design-engineering.jpg",
+      "/images/services/erection-site.jpg",
+      "/images/services/turnkey-project.jpg",
     ],
     capabilities: [
       {
@@ -70,16 +70,16 @@ export const servicesData: Service[] = [
     slug: "fabrication-manufacturing",
     number: "02",
     title: "Fabrication & Manufacturing",
-    tagline: "45,000 MT Annual Capacity Across 250,000 Sq. Ft. Heavy Bays",
+    tagline: "22,000 MT Annual Capacity Across 6-Acre Heavy Fabrication Facility",
     shortDescription:
-      "Automated CNC plasma cutting, submerged arc welding (SAW), automated shot blasting to SA 2.5, and cold roll-forming in our 25-acre plant.",
+      "Automated CNC plasma cutting, automatic H-beam lines (PTW), submerged arc welding (SAW), and automated shot blasting to SA 2.5 in our 6-acre plant in Nandasan, Gujarat.",
     overview:
-      "Operating from our state-of-the-art 25-acre manufacturing complex in Chakan, Pune, Yatee utilizes automated CNC beam lines, multi-torch plasma cutting tables, dual-wire submerged arc welding systems, and continuous roll-forming mills to produce world-class structural steel components with micrometer precision.",
-    featuredImage: "/images/services/fabrication-plant.webp",
+      "Operating from our modern 6-acre manufacturing facility in Nandasan, Gujarat, Yatee utilizes automated CNC beam lines, multi-torch plasma cutting tables, automatic H-beam lines (PTW), submerged arc welding systems, and continuous roll-forming mills to produce world-class structural steel components with micrometer precision.",
+    featuredImage: "/images/services/fabrication-plant.jpg",
     galleryImages: [
-      "/images/services/fab-1.webp",
-      "/images/services/fab-2.webp",
-      "/images/services/fab-3.webp",
+      "/images/services/fabrication-plant.jpg",
+      "/images/services/design-engineering.jpg",
+      "/images/services/custom-structures.jpg",
     ],
     capabilities: [
       {
@@ -140,11 +140,11 @@ export const servicesData: Service[] = [
       "Certified rigging engineers, heavy hydraulic crane fleet, and ISO 45001 zero-harm protocols ensuring rapid on-site structural assembly.",
     overview:
       "Site execution is where engineering excellence meets operational safety. Yatee deploys experienced site project managers, certified crane operators, and skilled rigging gangs trained in high-elevation safety protocols to erect complex structural frameworks safely, accurately, and ahead of schedule.",
-    featuredImage: "/images/services/erection-site.webp",
+    featuredImage: "/images/services/erection-site.jpg",
     galleryImages: [
-      "/images/services/erection-1.webp",
-      "/images/services/erection-2.webp",
-      "/images/services/erection-3.webp",
+      "/images/services/erection-site.jpg",
+      "/images/services/turnkey-project.jpg",
+      "/images/services/roofing-cladding.jpg",
     ],
     capabilities: [
       {
@@ -205,11 +205,11 @@ export const servicesData: Service[] = [
       "Integrated EPC capability covering architectural design, civil foundation coordination, structural steel, roofing, insulation, and MEP integration.",
     overview:
       "For clients seeking a seamless, single-window delivery model, Yatee provides complete Design-Build Turnkey execution. We eliminate contractor handoff friction by managing structural engineering, civil interfaces, cladding, industrial flooring, ventilation, and statutory coordination under one unified contract.",
-    featuredImage: "/images/services/turnkey-project.webp",
+    featuredImage: "/images/services/turnkey-project.jpg",
     galleryImages: [
-      "/images/services/turnkey-1.webp",
-      "/images/services/turnkey-2.webp",
-      "/images/services/turnkey-3.webp",
+      "/images/services/turnkey-project.jpg",
+      "/images/services/erection-site.jpg",
+      "/images/services/fabrication-plant.jpg",
     ],
     capabilities: [
       {
@@ -270,11 +270,11 @@ export const servicesData: Service[] = [
       "Standing seam 360° seamed roofing, Galvalume trapezoidal sheets, PUFF sandwich insulated panels, and polycarbonate skylight strips.",
     overview:
       "A building is only as durable as its weather envelope. Yatee designs and installs high-performance industrial roofing and wall cladding solutions engineered for superior thermal insulation, zero water penetration, high corrosion resistance, and sleek modern architectural aesthetics.",
-    featuredImage: "/images/services/roofing-cladding.webp",
+    featuredImage: "/images/services/roofing-cladding.jpg",
     galleryImages: [
-      "/images/services/roof-1.webp",
-      "/images/services/roof-2.webp",
-      "/images/services/roof-3.webp",
+      "/images/services/roofing-cladding.jpg",
+      "/images/services/erection-site.jpg",
+      "/images/services/turnkey-project.jpg",
     ],
     capabilities: [
       {
@@ -335,11 +335,11 @@ export const servicesData: Service[] = [
       "Engineering complex high-tonnage structural steel, power plant frames, conveyor galleries, multi-storey steel buildings, and industrial towers.",
     overview:
       "Beyond standard pre-engineered buildings, Yatee specializes in complex, high-tonnage heavy structural steel projects. From heavy processing plants with multiple mezzanine decks to long-span conveyor trestles and architectural space frames, we deliver custom engineered solutions for demanding industrial challenges.",
-    featuredImage: "/images/services/custom-structures.webp",
+    featuredImage: "/images/services/custom-structures.jpg",
     galleryImages: [
-      "/images/services/custom-1.webp",
-      "/images/services/custom-2.webp",
-      "/images/services/custom-3.webp",
+      "/images/services/custom-structures.jpg",
+      "/images/services/fabrication-plant.jpg",
+      "/images/services/erection-site.jpg",
     ],
     capabilities: [
       {

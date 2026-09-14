@@ -2,7 +2,8 @@
 
 import React, { useState } from "react";
 import Link from "next/link";
-import { ArrowRight, CheckCircle2, ChevronRight } from "lucide-react";
+import Image from "next/image";
+import { ArrowRight, CheckCircle2, ChevronRight, Sparkles } from "lucide-react";
 import { SectionHeader } from "@/components/ui/SectionHeader";
 import { servicesData } from "@/data/services";
 import { cn } from "@/lib/utils";
@@ -63,58 +64,73 @@ export const ServicesShowcaseSection: React.FC = () => {
           </div>
 
           {/* Right Active Service Showcase Card (7 cols) */}
-          <div className="lg:col-span-7 bg-slate-900/90 rounded-2xl p-6 sm:p-8 lg:p-10 border border-slate-800 flex flex-col justify-between shadow-2xl relative overflow-hidden backdrop-blur-xs">
-            <div className="space-y-6">
-              <div className="flex items-center justify-between border-b border-slate-800 pb-4">
-                <span className="text-xs font-mono font-bold text-blue-400 tracking-wider uppercase">
+          <div className="lg:col-span-7 bg-slate-900/90 rounded-2xl border border-slate-800 flex flex-col justify-between shadow-2xl relative overflow-hidden backdrop-blur-xs">
+            {/* Visual Action Banner */}
+            <div className="relative h-60 sm:h-72 w-full overflow-hidden border-b border-slate-800 group">
+              <Image
+                key={activeService.slug}
+                src={activeService.featuredImage}
+                alt={`${activeService.title} - Yatee Team in Action`}
+                fill
+                sizes="(max-width: 1024px) 100vw, 60vw"
+                className="object-cover object-center transition-transform duration-700 group-hover:scale-105"
+                priority
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/40 to-transparent" />
+              <div className="absolute top-4 left-4 z-10 flex items-center gap-2">
+                <span className="text-xs font-mono font-bold bg-[#1D3A74]/90 backdrop-blur-md text-white px-3 py-1 rounded-full border border-blue-400/30 shadow-md">
                   Service Capability {activeService.number} of 06
                 </span>
-                <span className="text-xs text-slate-400">IS 800 & AISC 360 Certified</span>
               </div>
-
-              <div>
-                <h3 className="text-2xl sm:text-3xl font-extrabold text-white tracking-tight font-heading">
+              <div className="absolute bottom-4 left-6 right-6 z-10">
+                <h3 className="text-2xl sm:text-3xl font-extrabold text-white tracking-tight font-heading drop-shadow-md">
                   {activeService.title}
                 </h3>
-                <p className="text-blue-300 text-sm font-semibold mt-1">
+                <p className="text-blue-300 text-xs sm:text-sm font-semibold mt-0.5 drop-shadow">
                   {activeService.tagline}
                 </p>
-                <p className="text-slate-300 text-sm sm:text-base mt-4 leading-relaxed">
-                  {activeService.overview}
-                </p>
-              </div>
-
-              {/* Core Capabilities Grid */}
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
-                {activeService.capabilities.slice(0, 4).map((cap, i) => (
-                  <div key={i} className="bg-slate-950/60 p-4 rounded-xl border border-slate-800/80">
-                    <h4 className="text-sm font-bold text-white flex items-center gap-1.5">
-                      <CheckCircle2 className="w-4 h-4 text-blue-400 shrink-0" />
-                      <span>{cap.title}</span>
-                    </h4>
-                    <p className="text-xs text-slate-400 mt-1 leading-relaxed">
-                      {cap.description}
-                    </p>
-                  </div>
-                ))}
               </div>
             </div>
 
-            {/* Bottom Link */}
-            <div className="pt-8 mt-6 border-t border-slate-800 flex flex-wrap items-center justify-between gap-4">
-              <Link
-                href={`/services/${activeService.slug}`}
-                className="inline-flex items-center gap-2 text-sm font-extrabold text-white bg-[#1D3A74] hover:bg-[#162E60] px-6 py-3 rounded-xl transition-all shadow-md group border border-blue-500/30"
-              >
-                <span>Full Technical Details for {activeService.title}</span>
-                <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
-              </Link>
-              <Link
-                href="/services"
-                className="text-xs text-slate-400 hover:text-white transition-colors"
-              >
-                View all capabilities →
-              </Link>
+            {/* Card Content Area */}
+            <div className="p-6 sm:p-8 space-y-6 flex-1 flex flex-col justify-between">
+              <div className="space-y-5">
+                <p className="text-slate-300 text-sm sm:text-base leading-relaxed">
+                  {activeService.overview}
+                </p>
+
+                {/* Core Capabilities Grid */}
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5 pt-1">
+                  {activeService.capabilities.slice(0, 4).map((cap, i) => (
+                    <div key={i} className="bg-slate-950/60 p-3.5 rounded-xl border border-slate-800/80">
+                      <h4 className="text-sm font-bold text-white flex items-center gap-1.5">
+                        <CheckCircle2 className="w-4 h-4 text-blue-400 shrink-0" />
+                        <span>{cap.title}</span>
+                      </h4>
+                      <p className="text-xs text-slate-400 mt-1 leading-relaxed">
+                        {cap.description}
+                      </p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              {/* Bottom Link */}
+              <div className="pt-6 border-t border-slate-800 flex flex-wrap items-center justify-between gap-4">
+                <Link
+                  href={`/services/${activeService.slug}`}
+                  className="inline-flex items-center gap-2 text-sm font-extrabold text-white bg-[#1D3A74] hover:bg-[#162E60] px-6 py-3 rounded-xl transition-all shadow-md group border border-blue-500/30"
+                >
+                  <span>Full Technical Details for {activeService.title}</span>
+                  <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
+                </Link>
+                <Link
+                  href="/services"
+                  className="text-xs text-slate-400 hover:text-white transition-colors"
+                >
+                  View all capabilities →
+                </Link>
+              </div>
             </div>
           </div>
         </div>

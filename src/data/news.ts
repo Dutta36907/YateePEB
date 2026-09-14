@@ -39,8 +39,8 @@ export const newsArticles: NewsArticle[] = [
     ],
   },
   {
-    slug: "yatee-commissions-45000-mt-manufacturing-capacity",
-    title: "Yatee Expands Annual Fabrication Capacity to 45,000 MT with New Automated Heavy Bay",
+    slug: "yatee-commissions-22000-mt-manufacturing-capacity",
+    title: "Yatee Expands Annual Fabrication Capacity to 22,000 MT with New Automated Heavy Bay",
     category: "Company Milestone",
     publishDate: "December 05, 2025",
     readTime: "4 min read",
@@ -49,22 +49,22 @@ export const newsArticles: NewsArticle[] = [
       role: "VP – Plant Operations",
     },
     summary:
-      "Yatee Steel Structures commissions its fourth heavy fabrication bay in Chakan, Pune, featuring advanced submerged arc welding lines and high-definition CNC plasma cutting.",
+      "Yatee Steel Structures commissions its heavy fabrication bay in Nandasan, Gujarat, featuring advanced submerged arc welding lines and high-definition CNC plasma cutting.",
     featuredImage: "/images/news/news-facility.webp",
-    tags: ["Manufacturing", "Capacity Expansion", "Automated Welding", "Pune Facility"],
+    tags: ["Manufacturing", "Capacity Expansion", "Automated Welding", "Gujarat Facility"],
     content: [
       {
         heading: "Scaling for High-Value Mega Infrastructure",
         paragraphs: [
-          "To cater to the surging national demand for Grade-A logistics parks, high-bay e-commerce fulfillment hubs, and heavy industrial manufacturing facilities, Yatee Steel Structures has formally commissioned its expanded 25-acre Chakan manufacturing campus.",
-          "The newly inaugurated 75,000 sq. ft. heavy bay features dual automated 4-torch Submerged Arc Welding (SAW) lines, capable of assembling built-up I-girders and box columns up to 2,500 mm web depth and 50 mm plate thickness.",
+          "To cater to the surging national demand for Grade-A logistics parks, high-bay e-commerce fulfillment hubs, and heavy industrial manufacturing facilities, Yatee Steel Structures has formally commissioned its expanded 6-acre Nandasan manufacturing campus in Gujarat.",
+          "The newly inaugurated heavy bay features dual automated Submerged Arc Welding (SAW) lines and automatic H-beam lines (PTW), capable of assembling built-up I-girders and box columns with high precision.",
         ],
       },
       {
         heading: "Technology Highlights of the New Line",
         paragraphs: [
-          "The facility upgrade introduces high-definition 6-axis CNC plasma profile cutting tables, automated multi-spindle beam drilling lines, and an enclosed automated centrifugal shot blasting chamber that processes structural steel to SA 2.5 cleanliness standards at high speed.",
-          "With this expansion, Yatee's annualized fabrication capacity reaches 45,000 Metric Tonnes, solidifying our position among India's elite PEB and heavy structural steel manufacturers.",
+          "The facility upgrade introduces high-definition CNC plasma profile cutting tables, automated multi-spindle beam drilling lines, and an enclosed automated centrifugal shot blasting chamber that processes structural steel to SA 2.5 cleanliness standards at high speed.",
+          "With this expansion, Yatee's annualized fabrication capacity reaches 22,000 Metric Tonnes, solidifying our position among India's elite PEB and heavy structural steel manufacturers.",
         ],
       },
     ],

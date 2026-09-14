@@ -253,7 +253,7 @@ export const industriesData: Industry[] = [
     advantages: [
       "Strict compliance with IRC (Indian Roads Congress) and RDSO Railway specifications",
       "Full mill test certificate (MTC) traceability linked to barcode tags on every piece",
-      "Over 45,000 MT annual heavy fabrication throughput for fast project milestones",
+      "Over 22,000 MT annual heavy fabrication throughput for fast project milestones",
       "Experienced safety engineers holding NEBOSH / IOSH credentials managing site erection",
     ],
     typicalSpansAndSpecs: [

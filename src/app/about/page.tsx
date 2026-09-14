@@ -19,7 +19,7 @@ export default function AboutPage() {
     { title: "Company Overview", href: "/about/company-overview", desc: "Corporate history, 20+ years milestones and leadership." },
     { title: "Vision, Mission & Values", href: "/about/vision-mission-values", desc: "Engineering principles, ethical safety and green building commitment." },
     { title: "Why Choose Us", href: "/about/why-choose-us", desc: "6 engineered advantages, value engineering and cost optimization." },
-    { title: "Manufacturing & Infrastructure", href: "/about/manufacturing-infrastructure", desc: "25-acre Chakan plant, automated SAW lines and CNC machinery." },
+    { title: "Manufacturing & Infrastructure", href: "/about/manufacturing-infrastructure", desc: "6-acre Nandasan plant, automated SAW lines and CNC machinery." },
     { title: "Quality & Certifications", href: "/about/quality-certifications", desc: "ISO 9001, 14001, 45001, CE EN 1090-2 standards and testing protocols." },
   ];
 
@@ -31,10 +31,10 @@ export default function AboutPage() {
         subtitle="Two decades of pioneering structural steel fabrication, value engineering, and high-performance Pre-Engineered Buildings across India."
         breadcrumbs={[{ label: "About Us" }]}
         stats={[
-          { label: "Delivered Projects", value: "500+" },
-          { label: "Annual Capacity", value: "45,000 MT" },
-          { label: "Manufacturing Base", value: "25 Acres" },
-          { label: "Engineering Team", value: "300+" },
+          { label: "Delivered Projects", value: "100+" },
+          { label: "Annual Capacity", value: "22,000 MT" },
+          { label: "Manufacturing Base", value: "6 Acres" },
+          { label: "Engineering Team", value: "20+" },
         ]}
       />
 
@@ -87,10 +87,10 @@ export default function AboutPage() {
                 From a Specialized Fabrication Shop to a National PEB Powerhouse
               </h2>
               <p className="text-slate-600 text-base leading-relaxed">
-                Founded in 2004 in Pune, Maharashtra, Yatee Steel Structures was established with a singular mission: to bring precision structural engineering and off-site pre-engineering methods to India&apos;s rapidly growing industrial sector.
+                Headquartered in Indore, Madhya Pradesh, with branch offices in Siliguri (W.B.) and Patna (Bihar), Yatee Steel Structures provides integrated engineering and manufacturing solutions for India&apos;s rapidly growing industrial sector.
               </p>
               <p className="text-slate-600 text-base leading-relaxed">
-                Over the past 20+ years, we have expanded from an initial 3,000 MT workshop into a 45,000 MT automated manufacturing facility spanning 25 acres in Chakan. Today, Yatee partners with global Fortune 500 companies, Tier-1 EPC contractors, and top logistics developers to build monumental, code-compliant steel structures.
+                Over the past 20+ years, we have expanded into a 22,000 MT automated manufacturing facility spanning 6 acres in Nandasan, Gujarat. Today, Yatee partners with leading corporations, Tier-1 EPC contractors, and top logistics developers to build monumental, code-compliant steel structures.
               </p>
               <div className="pt-2">
                 <Button href="/about/company-overview" variant="primary" size="md" showArrow>
@@ -102,7 +102,7 @@ export default function AboutPage() {
             <div className="lg:col-span-6 relative">
               <div className="relative rounded-2xl overflow-hidden shadow-2xl border border-slate-200 aspect-16/10">
                 <Image
-                  src="/images/hero-building.jpg"
+                  src="/images/yatee-hero-building.jpg"
                   alt="Yatee Industrial Facility"
                   fill
                   sizes="(max-width: 1024px) 100vw, 50vw"

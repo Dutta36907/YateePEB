@@ -32,22 +32,22 @@ export const companyDetails = {
   },
   manufacturingFacility: {
     title: "Primary Manufacturing Facility & Heavy Fabrication Plant",
-    addressLine1: "Plot No. A-42/45, Phase II, Chakan Industrial Area",
-    addressLine2: "Taluka Khed",
-    city: "Pune",
-    state: "Maharashtra",
-    postalCode: "410501",
+    addressLine1: "Nandasan, Kadi",
+    addressLine2: "Near Ahmedabad Mehsana Highway",
+    city: "Kadi",
+    state: "Gujarat",
+    postalCode: "382705",
     country: "India",
-    landArea: "25+ Acres Dedicated Industrial Land",
-    coveredShopArea: "250,000+ Sq. Ft. Heavy Fabrication Bays",
+    landArea: "6+ Acres Dedicated Industrial Land",
+    coveredShopArea: "60,000+ Sq. Ft. Heavy Fabrication Bays",
   },
   stats: {
-    projectsCompleted: 500,
-    happyClients: 250,
+    projectsCompleted: 100,
+    happyClients: 100,
     yearsExperience: 20,
-    skilledProfessionals: 300,
-    annualCapacityMT: 45000,
-    manufacturingAreaSqFt: 250000,
+    skilledProfessionals: 20,
+    annualCapacityMT: 22000,
+    manufacturingAreaSqFt: 60000,
   } as CompanyStats,
 };
 
@@ -167,8 +167,8 @@ export const companyMilestones = [
   },
   {
     year: "2026",
-    title: "45,000 MT Annual Capacity Benchmark",
-    description: "Delivered 500+ landmark industrial projects across India with 250,000+ sq. ft. of manufacturing capability and 300+ professionals.",
+    title: "22,000 MT Annual Capacity Benchmark",
+    description: "Delivered 100+ landmark industrial projects across India with a 6-acre automated manufacturing facility in Nandasan, Gujarat.",
   },
 ];
 

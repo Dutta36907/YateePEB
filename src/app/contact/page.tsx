@@ -326,18 +326,20 @@ export default function ContactPage() {
                       Heavy Fabrication Campus
                     </span>
                     <h3 className="text-lg font-bold text-slate-900 font-heading">
-                      Chakan Plant (25 Acres)
+                      Nandasan Plant, Gujarat
                     </h3>
                   </div>
                 </div>
 
-                <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
-                  {companyDetails.manufacturingFacility.addressLine1}, {companyDetails.manufacturingFacility.addressLine2}, {companyDetails.manufacturingFacility.city}, {companyDetails.manufacturingFacility.state} - {companyDetails.manufacturingFacility.postalCode}
-                </p>
+                <div className="bg-slate-50 p-4 rounded-2xl border border-slate-200/80 space-y-1 text-xs sm:text-sm text-slate-700">
+                  <p className="font-semibold text-slate-900">{companyDetails.name}</p>
+                  <p>{companyDetails.manufacturingFacility.addressLine1}, {companyDetails.manufacturingFacility.addressLine2}</p>
+                  <p className="text-slate-500 font-medium">{companyDetails.manufacturingFacility.state} – {companyDetails.manufacturingFacility.postalCode}, {companyDetails.manufacturingFacility.country}</p>
+                </div>
 
                 <div className="pt-2 border-t border-slate-100 space-y-1 text-xs text-slate-500">
-                  <p><strong>Shop Floor:</strong> 250,000+ Sq. Ft. Covered Bays</p>
-                  <p><strong>Annual Capacity:</strong> 45,000 Metric Tonnes</p>
+                  <p><strong>Shop Floor:</strong> 60,000+ Sq. Ft. Heavy Fabrication Bays</p>
+                  <p><strong>Annual Capacity:</strong> 22,000 Metric Tonnes</p>
                 </div>
               </div>
 

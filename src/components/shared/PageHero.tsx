@@ -61,17 +61,37 @@ export const PageHero: React.FC<PageHeroProps> = ({
 
         {/* Optional Stats Banner */}
         {stats && stats.length > 0 && (
-          <div className="mt-12 pt-8 border-t border-blue-900/60 grid grid-cols-2 sm:grid-cols-4 gap-6">
-            {stats.map((stat, idx) => (
-              <div key={idx} className="bg-slate-900/40 p-4 rounded-xl border border-blue-900/40">
-                <span className="text-2xl sm:text-3xl font-black text-white block font-heading tracking-tight">
-                  {stat.value}
-                </span>
-                <span className="text-xs text-blue-200 mt-1 block uppercase tracking-wider font-semibold">
-                  {stat.label}
-                </span>
-              </div>
-            ))}
+          <div className="mt-12 pt-8 border-t border-blue-900/60 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5 items-stretch">
+            {stats.map((stat, idx) => {
+              const isVeryLong = stat.value.length > 24;
+              const isLong = stat.value.length > 16;
+              const isMedium = stat.value.length > 10;
+
+              return (
+                <div
+                  key={idx}
+                  className="bg-slate-900/60 backdrop-blur-xs p-5 rounded-2xl border border-blue-900/60 flex flex-col justify-between hover:border-blue-700/60 transition-colors shadow-lg min-h-[96px]"
+                >
+                  <span
+                    className={cn(
+                      "text-white font-heading tracking-tight block leading-tight",
+                      isVeryLong
+                        ? "text-xs sm:text-sm font-semibold break-all"
+                        : isLong
+                        ? "text-sm sm:text-base lg:text-lg font-bold truncate"
+                        : isMedium
+                        ? "text-base sm:text-lg lg:text-xl font-bold"
+                        : "text-2xl sm:text-3xl font-black"
+                    )}
+                  >
+                    {stat.value}
+                  </span>
+                  <span className="text-[11px] text-blue-300 mt-2 block uppercase tracking-wider font-semibold">
+                    {stat.label}
+                  </span>
+                </div>
+              );
+            })}
           </div>
         )}
       </div>

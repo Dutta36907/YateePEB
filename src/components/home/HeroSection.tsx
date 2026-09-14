@@ -7,31 +7,81 @@ import { ArrowRight, ShieldCheck, ChevronRight, Play, Calculator, Sparkles, Buil
 import { Button } from "@/components/ui/Button";
 
 export const HeroSection: React.FC = () => {
+  const [currentSlide, setCurrentSlide] = React.useState(0);
+
+  const heroImages = [
+    {
+      src: "/images/yatee-hero-slide-1.jpg",
+      alt: "Yatee Steel Structures - Modern Pre-Engineered Building Facility with Entrance Signage",
+    },
+    {
+      src: "/images/yatee-hero-slide-2.jpg",
+      alt: "Yatee Steel Structures - Large Scale Industrial Warehouse with Facade Signage & Logistics Park",
+    },
+  ];
+
+  React.useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentSlide((prev) => (prev + 1) % heroImages.length);
+    }, 6000);
+    return () => clearInterval(timer);
+  }, [heroImages.length]);
+
   const tickerItems = [
-    "500+ Landmark PEB & Steel Facilities Delivered Nationwide",
-    "45,000 MT Annual Fabrication Capacity",
+    "100+ Landmark PEB & Steel Facilities Delivered Nationwide",
+    "22,000 MT Annual Fabrication Capacity",
     "Up to 90m Column-Free Clear Spans",
-    "25-Acre Heavy Fabrication Complex in Chakan, Pune",
-    "Automated Submerged Arc Welding (SAW) Lines",
-    "ISO 9001:2015, ISO 14001:2015 & ISO 45001:2018 Certified",
+    "6-Acre Heavy Fabrication Complex in Nandasan, Gujarat",
+    "Automatic H-Beam Line (PTW) & Automated SAW Lines",
+    "CNC Plasma Cutting for Smooth & Precise Plate Fabrication",
+    "ISO 9001:2015 Quality Management Certified",
     "IS 800:2007 & AISC 360 Structural Engineering Compliance",
   ];
 
   return (
     <div className="flex flex-col w-full">
       <section className="relative min-h-[85vh] lg:min-h-[88vh] flex items-center bg-[#020F24] text-white overflow-hidden bg-blueprint-grid">
-        {/* Hero Background Image with Gradient Mask */}
-        <div className="absolute inset-0 z-0">
-          <Image
-            src="/images/hero-building.jpg"
-            alt="Modern Pre-Engineered Building Industrial Facility by Yatee"
-            fill
-            priority
-            sizes="100vw"
-            className="object-cover object-center opacity-35 lg:opacity-45"
-          />
-          <div className="absolute inset-0 bg-gradient-to-r from-[#020F24] via-[#020F24]/90 to-transparent lg:w-3/4" />
-          <div className="absolute inset-0 bg-gradient-to-t from-[#020F24] via-transparent to-[#020F24]/60" />
+        {/* Hero Background Slider with Smooth Crossfade */}
+        <div className="absolute inset-0 z-0 overflow-hidden">
+          {heroImages.map((img, idx) => (
+            <div
+              key={idx}
+              className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${
+                idx === currentSlide ? "opacity-100" : "opacity-0 pointer-events-none"
+              }`}
+            >
+              <Image
+                src={img.src}
+                alt={img.alt}
+                fill
+                priority={idx === 0}
+                sizes="100vw"
+                className={`object-cover object-center transition-transform duration-[7000ms] ease-out ${
+                  idx === currentSlide ? "scale-105 opacity-45 lg:opacity-55" : "scale-100 opacity-0"
+                }`}
+              />
+            </div>
+          ))}
+
+          {/* Contrast & Depth Gradients */}
+          <div className="absolute inset-0 bg-gradient-to-r from-[#020F24] via-[#020F24]/85 to-transparent lg:w-3/4 pointer-events-none" />
+          <div className="absolute inset-0 bg-gradient-to-t from-[#020F24] via-transparent to-[#020F24]/60 pointer-events-none" />
+
+          {/* Slide Indicator Controls */}
+          <div className="absolute bottom-6 right-8 z-20 hidden sm:flex items-center gap-2 bg-slate-950/60 backdrop-blur-md px-3.5 py-2 rounded-full border border-blue-900/50 shadow-lg">
+            {heroImages.map((_, idx) => (
+              <button
+                key={idx}
+                onClick={() => setCurrentSlide(idx)}
+                className={`h-2 rounded-full transition-all duration-300 ${
+                  idx === currentSlide
+                    ? "w-7 bg-blue-400 shadow-xs shadow-blue-400/50"
+                    : "w-2 bg-slate-600 hover:bg-slate-400"
+                }`}
+                aria-label={`Switch to hero background slide ${idx + 1}`}
+              />
+            ))}
+          </div>
         </div>
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 lg:py-24 relative z-10 w-full">
@@ -83,18 +133,18 @@ export const HeroSection: React.FC = () => {
             </div>
 
             {/* Quick Trust Highlights */}
-            <div className="pt-6 border-t border-slate-700/60 grid grid-cols-3 gap-4 max-w-xl text-xs sm:text-sm">
-              <div className="bg-slate-900/70 border border-blue-900/50 p-3.5 rounded-2xl backdrop-blur-xs">
-                <span className="block font-extrabold text-lg sm:text-xl text-white font-heading">45,000 MT</span>
-                <span className="text-blue-300 text-xs">Annual Fabrication</span>
+            <div className="pt-6 border-t border-slate-700/60 grid grid-cols-3 gap-2 sm:gap-4 max-w-xl text-xs sm:text-sm">
+              <div className="bg-slate-900/70 border border-blue-900/50 p-2.5 sm:p-3.5 rounded-xl sm:rounded-2xl backdrop-blur-xs">
+                <span className="block font-extrabold text-base sm:text-xl text-white font-heading">22,000 MT</span>
+                <span className="text-blue-300 text-[11px] sm:text-xs">Annual Fabrication</span>
               </div>
-              <div className="bg-slate-900/70 border border-blue-900/50 p-3.5 rounded-2xl backdrop-blur-xs">
-                <span className="block font-extrabold text-lg sm:text-xl text-white font-heading">90m+</span>
-                <span className="text-blue-300 text-xs">Clear Span Capability</span>
+              <div className="bg-slate-900/70 border border-blue-900/50 p-2.5 sm:p-3.5 rounded-xl sm:rounded-2xl backdrop-blur-xs">
+                <span className="block font-extrabold text-base sm:text-xl text-white font-heading">90m+</span>
+                <span className="text-blue-300 text-[11px] sm:text-xs">Clear Span</span>
               </div>
-              <div className="bg-slate-900/70 border border-blue-900/50 p-3.5 rounded-2xl backdrop-blur-xs">
-                <span className="block font-extrabold text-lg sm:text-xl text-white font-heading">ISO Certified</span>
-                <span className="text-blue-300 text-xs">9001 / 14001 / 45001</span>
+              <div className="bg-slate-900/70 border border-blue-900/50 p-2.5 sm:p-3.5 rounded-xl sm:rounded-2xl backdrop-blur-xs">
+                <span className="block font-extrabold text-base sm:text-xl text-white font-heading">ISO Certified</span>
+                <span className="text-blue-300 text-[11px] sm:text-xs">9001 / 45001</span>
               </div>
             </div>
           </div>

@@ -27,7 +27,7 @@ export const metadata: Metadata = {
     template: "%s | Yatee Steel Structures",
   },
   description:
-    "Yatee Steel Structures Pvt Ltd is a premier Pre-Engineered Building (PEB) and heavy structural steel manufacturer in India with 45,000 MT annual capacity. Turnkey industrial sheds, warehouses, and steel structures.",
+    "Yatee Steel Structures Pvt Ltd is a premier Pre-Engineered Building (PEB) and heavy structural steel manufacturer in India with 22,000 MT annual capacity. Turnkey industrial sheds, warehouses, and steel structures.",
   keywords: [
     "Pre-Engineered Buildings",
     "PEB Manufacturer",
@@ -55,10 +55,10 @@ export const metadata: Metadata = {
     siteName: "Yatee Steel Structures Pvt Ltd",
     title: "Yatee Steel Structures | Pre-Engineered Buildings (PEB) & Industrial Steel",
     description:
-      "Engineering spaces, building the future. 45,000 MT annual manufacturing capacity across 250,000 sq. ft. of heavy fabrication bays in Chakan, Pune.",
+      "Engineering spaces, building the future. 22,000 MT annual manufacturing capacity across a 6-acre heavy fabrication plant in Nandasan, Gujarat.",
     images: [
       {
-        url: "/images/hero-building.jpg",
+        url: "/images/yatee-hero-building.jpg",
         width: 1200,
         height: 630,
         alt: "Yatee Steel Structures PEB Facility",
@@ -70,7 +70,7 @@ export const metadata: Metadata = {
     title: "Yatee Steel Structures | PEB & Structural Steel",
     description:
       "Premier Pre-Engineered Building and heavy structural steel manufacturing enterprise in India.",
-    images: ["/images/hero-building.jpg"],
+    images: ["/images/yatee-hero-building.jpg"],
   },
   robots: {
     index: true,
@@ -96,7 +96,7 @@ export default function RootLayout({
     name: companyDetails.name,
     alternateName: companyDetails.brandName,
     url: "https://yateesteel.com",
-    logo: "https://yateesteel.com/images/hero-building.jpg",
+    logo: "https://yateesteel.com/images/yatee-hero-building.jpg",
     description:
       "Turnkey Pre-Engineered Steel Building (PEB) manufacturer, structural steel fabrication, industrial sheds, and roofing solutions.",
     address: {

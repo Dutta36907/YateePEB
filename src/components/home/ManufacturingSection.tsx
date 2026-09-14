@@ -14,7 +14,7 @@ export const ManufacturingSection: React.FC = () => {
             <div className="relative rounded-2xl overflow-hidden border border-blue-900/60 shadow-2xl aspect-16/10 group">
               <Image
                 src="/images/factory-plant.jpg"
-                alt="Yatee 25-Acre Heavy Fabrication Facility in Chakan, Pune"
+                alt="Yatee 6-Acre Heavy Fabrication Facility in Nandasan, Gujarat"
                 fill
                 sizes="(max-width: 1024px) 100vw, 50vw"
                 className="object-cover transition-transform duration-700 group-hover:scale-105"
@@ -25,16 +25,16 @@ export const ManufacturingSection: React.FC = () => {
             {/* Factual Plant Specs Grid */}
             <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
               <div className="p-4 rounded-xl bg-slate-900/80 border border-blue-900/40">
-                <span className="text-xl sm:text-2xl font-black text-white block font-heading">45,000 MT</span>
+                <span className="text-xl sm:text-2xl font-black text-white block font-heading">22,000 MT</span>
                 <span className="text-xs text-blue-300">Annual Fabrication</span>
               </div>
               <div className="p-4 rounded-xl bg-slate-900/80 border border-blue-900/40">
-                <span className="text-xl sm:text-2xl font-black text-white block font-heading">25 Acres</span>
-                <span className="text-xs text-blue-300">Industrial Land Base</span>
+                <span className="text-xl sm:text-2xl font-black text-white block font-heading">6 Acres</span>
+                <span className="text-xs text-blue-300">Industrial Campus</span>
               </div>
               <div className="p-4 rounded-xl bg-slate-900/80 border border-blue-900/40">
-                <span className="text-xl sm:text-2xl font-black text-white block font-heading">250,000+</span>
-                <span className="text-xs text-blue-300">Sq. Ft. Shop Area</span>
+                <span className="text-xl sm:text-2xl font-black text-white block font-heading">Nandasan</span>
+                <span className="text-xs text-blue-300">Gujarat Facility</span>
               </div>
             </div>
           </div>
@@ -53,7 +53,7 @@ export const ManufacturingSection: React.FC = () => {
             </h2>
 
             <p className="text-slate-300 text-base sm:text-lg leading-relaxed">
-              Our 25-acre manufacturing complex in Chakan, Pune is equipped with modern heavy fabrication technology. By eliminating subcontracting dependencies, we guarantee complete metallurgical traceability and strict dimensional control.
+              Our 6-acre manufacturing complex in Nandasan, Gujarat is equipped with modern heavy fabrication technology, including CNC plasma cutting, automatic H-beam lines (PTW), and multi-torch SAW welding. By eliminating subcontracting dependencies, we guarantee complete metallurgical traceability and strict dimensional control.
             </p>
 
             <div className="space-y-3.5 pt-2">

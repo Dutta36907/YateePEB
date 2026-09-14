@@ -9,6 +9,8 @@ import { Accordion } from "@/components/ui/Accordion";
 import { CheckCircle2, ArrowRight, ShieldCheck, Cpu, Layers, Wrench, FileText } from "lucide-react";
 import { Button } from "@/components/ui/Button";
 
+import Image from "next/image";
+
 interface ServiceDetailPageProps {
   params: Promise<{
     slug: string;
@@ -61,6 +63,27 @@ export default async function ServiceDetailPage({ params }: ServiceDetailPagePro
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
             {/* Left Content (8 cols) */}
             <div className="lg:col-span-8 space-y-12">
+              {/* Action Photography Banner */}
+              <div className="relative h-72 sm:h-96 w-full rounded-2xl overflow-hidden border border-slate-200 shadow-xl group">
+                <Image
+                  src={service.featuredImage}
+                  alt={`${service.title} - Yatee Workforce in Action`}
+                  fill
+                  sizes="(max-width: 1024px) 100vw, 66vw"
+                  className="object-cover transition-transform duration-700 group-hover:scale-105"
+                  priority
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent" />
+                <div className="absolute bottom-4 left-6 right-6 flex items-center justify-between">
+                  <span className="text-xs font-mono font-bold text-white bg-blue-900/80 backdrop-blur-md px-3.5 py-1.5 rounded-full border border-blue-400/40">
+                    Live Field & Factory Execution
+                  </span>
+                  <span className="text-xs font-semibold text-slate-200 drop-shadow">
+                    ISO 9001 & 45001 Certified
+                  </span>
+                </div>
+              </div>
+
               {/* Introduction */}
               <div>
                 <span className="text-xs font-bold uppercase tracking-[0.2em] bg-blue-50 text-[#1D3A74] px-3.5 py-1.5 rounded border border-blue-100 inline-block mb-3">

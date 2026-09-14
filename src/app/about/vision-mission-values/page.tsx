@@ -20,7 +20,7 @@ export default function VisionMissionValuesPage() {
     },
     {
       title: "Uncompromising Safety",
-      description: "ISO 45001 certified zero-harm culture across our 25-acre plant and high-elevation nationwide erection sites.",
+      description: "ISO 45001 certified zero-harm culture across our 6-acre manufacturing facility and high-elevation nationwide erection sites.",
       icon: <ShieldCheck className="w-6 h-6 text-blue-600" />,
     },
     {

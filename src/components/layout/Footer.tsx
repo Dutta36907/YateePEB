@@ -58,7 +58,7 @@ export const Footer: React.FC = () => {
             </Link>
 
             <p className="text-slate-400 text-sm leading-relaxed max-w-sm">
-              India&apos;s premier Pre-Engineered Building (PEB) and heavy structural steel manufacturing enterprise. Delivering precision-engineered turnkey facilities with 45,000 MT annual throughput.
+              India&apos;s premier Pre-Engineered Building (PEB) and heavy structural steel manufacturing enterprise. Delivering precision-engineered turnkey facilities with 22,000 MT annual throughput.
             </p>
 
             {/* Certifications Badge */}
@@ -221,7 +221,7 @@ export const Footer: React.FC = () => {
                   <span>Manufacturing Plant:</span>
                 </p>
                 <p className="text-slate-400 pl-4.5 leading-relaxed">
-                  {companyDetails.manufacturingFacility.addressLine1}, Chakan, Pune - {companyDetails.manufacturingFacility.postalCode}
+                  {companyDetails.manufacturingFacility.addressLine1}, {companyDetails.manufacturingFacility.addressLine2}, {companyDetails.manufacturingFacility.state} – {companyDetails.manufacturingFacility.postalCode}
                 </p>
               </div>
 
@@ -255,8 +255,8 @@ export const Footer: React.FC = () => {
 
         {/* Bottom Legal & Copyright */}
         <div className="mt-14 pt-8 border-t border-slate-800/80 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-500 gap-4">
-          <p>© {new Date().getFullYear()} {companyDetails.name}. All Rights Reserved.</p>
-          <div className="flex items-center space-x-6">
+          <p className="text-center sm:text-left">© {new Date().getFullYear()} {companyDetails.name}. All Rights Reserved.</p>
+          <div className="flex flex-wrap items-center justify-center sm:justify-end gap-x-4 sm:gap-x-6 gap-y-2 text-center sm:text-right">
             <span className="text-slate-600">CIN: {companyDetails.cin}</span>
             <span className="text-slate-600">GST: {companyDetails.gstin}</span>
             <Link href="/contact" className="hover:text-slate-400 transition-colors">

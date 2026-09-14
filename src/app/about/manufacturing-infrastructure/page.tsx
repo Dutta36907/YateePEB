@@ -10,45 +10,45 @@ import { Button } from "@/components/ui/Button";
 export const metadata: Metadata = {
   title: "Manufacturing & Infrastructure | Yatee Steel Structures",
   description:
-    "Explore Yatee's 25-acre heavy structural steel fabrication plant in Chakan, Pune, equipped with automated SAW beam lines, CNC plasma cutters, and shot blasting.",
+    "Explore Yatee's 6-acre heavy structural steel fabrication plant in Nandasan, Gujarat, equipped with automated SAW beam lines, CNC plasma cutting machines, and shot blasting.",
 };
 
 export default function ManufacturingInfrastructurePage() {
   const machinery = [
     {
       title: "Automated Submerged Arc Welding (SAW) Lines",
-      description: "Dual-torch and 4-head automatic SAW portal welding machines capable of deep-penetration continuous welding on I-beams up to 2500mm web depth.",
+      description: "Dual-torch and multi-head automatic SAW portal welding machines capable of deep-penetration continuous welding on I-beams and built-up sections.",
       spec: "Welding Speed: 1.2m/min | Deep Penetration",
       icon: <Flame className="w-6 h-6 text-amber-500" />,
     },
     {
-      title: "High-Definition 6-Axis CNC Plasma Cutting",
-      description: "Computer-controlled multi-torch plasma and oxy-fuel cutting tables handling steel plates up to 100mm thickness with tight angular bevels.",
-      spec: "Tolerances: ±0.5mm | Plate Width: Up to 3.5m",
+      title: "Automatic H-Beam Line (PTW) Machine",
+      description: "Automated structural beam assembly and welding line for high-precision manufacturing of tapered and parallel flange H-beams.",
+      spec: "Continuous Alignment | Heavy Duty",
       icon: <Cpu className="w-6 h-6 text-blue-500" />,
     },
     {
+      title: "CNC Plasma Cutting Machine",
+      description: "Computer-controlled high-definition CNC plasma cutting machine for smooth and precise plate cutting, profiling, and tight angular bevels.",
+      spec: "Smooth & Precise Plate Cutting | High Tolerance",
+      icon: <Sparkles className="w-6 h-6 text-amber-500" />,
+    },
+    {
       title: "Automatic Centrifugal Shot Blasting Machine",
-      description: "Through-feed 8-wheel centrifugal abrasive blasting chamber achieving SA 2.5 surface cleanliness standard for optimal paint adhesion.",
+      description: "Through-feed centrifugal abrasive blasting chamber achieving SA 2.5 surface cleanliness standard for optimal paint adhesion.",
       spec: "Standard: Swedish SA 2.5 | Profile: 40-75 Microns",
       icon: <Sparkles className="w-6 h-6 text-cyan-500" />,
     },
     {
       title: "Continuous High-Tensile Z & C Purlin Mill",
-      description: "18-station cold roll-forming line with online hydraulic punching and flying shear cut-off for galvanized steel purlins up to 350mm depth.",
-      spec: "Yield Strength: Up to 450 MPa | Lengths to 14m",
+      description: "Cold roll-forming line with online hydraulic punching and flying shear cut-off for high-strength galvanized steel purlins.",
+      spec: "Yield Strength: Up to 450 MPa | Custom Lengths",
       icon: <Cog className="w-6 h-6 text-indigo-500" />,
     },
     {
-      title: "Continuous PUFF / PIR Sandwich Panel Press",
-      description: "40-meter continuous heated double-belt laminator injecting high-density rigid polyurethane foam between prepainted steel facings.",
-      spec: "Capacity: 1,500 m²/day | Thickness: 30-150mm",
-      icon: <Factory className="w-6 h-6 text-emerald-500" />,
-    },
-    {
       title: "Heavy-Duty Overhead EOT Crane Fleet",
-      description: "Multiple 10-tonne to 35-tonne overhead traveling cranes spanning fabrication bays for safe material handling of massive built-up sections.",
-      spec: "Bay Spans: 28m | Total Lifting: 120+ Tonnes",
+      description: "Overhead traveling cranes spanning fabrication bays for safe material handling of massive built-up steel sections.",
+      spec: "Full Bay Coverage | Safe Material Handling",
       icon: <Truck className="w-6 h-6 text-blue-600" />,
     },
   ];
@@ -58,15 +58,15 @@ export default function ManufacturingInfrastructurePage() {
       <PageHero
         badge="MANUFACTURING POWERHOUSE"
         title="Manufacturing & Infrastructure"
-        subtitle="25 Acres Dedicated Industrial Land. 250,000+ Sq. Ft. of Heavy Fabrication Bays. 45,000 MT Annual Throughput in Chakan, Pune."
+        subtitle="6 Acres Dedicated Industrial Land. Heavy Fabrication Bays. 22,000 MT Annual Throughput in Nandasan, Gujarat."
         breadcrumbs={[
           { label: "About Us", href: "/about" },
           { label: "Manufacturing & Infrastructure" },
         ]}
         stats={[
-          { label: "Annual Capacity", value: "45,000 MT" },
-          { label: "Industrial Campus", value: "25 Acres" },
-          { label: "Covered Shop Area", value: "250,000 Sq.Ft." },
+          { label: "Annual Capacity", value: "22,000 MT" },
+          { label: "Industrial Campus", value: "6 Acres" },
+          { label: "Plant Location", value: "Nandasan, GJ" },
           { label: "Max Clear Span", value: "90m+" },
         ]}
       />
@@ -83,12 +83,13 @@ export default function ManufacturingInfrastructurePage() {
                 Engineered for High-Tonnage, Fast-Track Execution
               </h2>
               <p className="text-slate-600 text-base leading-relaxed">
-                Located in the prime industrial hub of Chakan, Pune, Yatee&apos;s heavy manufacturing campus is designed according to lean manufacturing principles. Raw materials enter through dedicated quality inspection bays and move seamlessly through automated CNC cutting, robotic beam welding, shot blasting, and painting without bottlenecking.
+                Located in the prime industrial belt of Nandasan, Kadi (Near Ahmedabad Mehsana Highway, Gujarat), Yatee&apos;s 6-acre heavy manufacturing campus is designed according to lean manufacturing principles. Raw materials enter through dedicated quality inspection bays and move seamlessly through automated CNC plasma cutting, automatic H-beam lines (PTW), submerged arc welding (SAW), shot blasting, and painting without bottlenecking.
               </p>
               <div className="space-y-3 pt-2">
                 {[
-                  "Direct digital integration between Tekla BIM detailing and shop floor CNC machines",
-                  "100% prime steel sourcing directly from primary producers (Tata Steel, JSW)",
+                  "Direct digital integration between Tekla BIM detailing and shop floor CNC plasma machines",
+                  "100% prime steel sourcing directly from primary producers (Tata Steel, JSW, SAIL)",
+                  "Automatic H-beam line (PTW) and multi-head SAW welding stations",
                   "Dedicated temperature-controlled paint application bays with dry film gauge verification",
                   "Barcode-tagged component dispatch aligned with on-site crane erection sequences",
                 ].map((item, idx) => (
@@ -104,7 +105,7 @@ export default function ManufacturingInfrastructurePage() {
               <div className="relative rounded-2xl overflow-hidden shadow-2xl border border-slate-200 aspect-16/10">
                 <Image
                   src="/images/factory-plant.jpg"
-                  alt="Yatee Chakan Manufacturing Campus"
+                  alt="Yatee Nandasan Manufacturing Campus, Gujarat"
                   fill
                   sizes="(max-width: 1024px) 100vw, 50vw"
                   className="object-cover"

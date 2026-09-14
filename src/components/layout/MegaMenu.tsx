@@ -59,9 +59,9 @@ export const AboutMegaMenu: React.FC<{ onClose: () => void }> = ({ onClose }) =>
     {
       title: "Manufacturing Infrastructure",
       href: "/about/manufacturing-infrastructure",
-      description: "25-acre heavy fabrication complex in Chakan, automated SAW lines, and CNC plasma cutters.",
+      description: "6-acre heavy fabrication complex in Nandasan, Gujarat, automated SAW lines, and CNC plasma cutters.",
       icon: <Factory className="w-5 h-5 text-white" />,
-      tag: "25-Acre Plant",
+      tag: "6-Acre Plant",
     },
     {
       title: "Quality & Certifications",
@@ -90,7 +90,7 @@ export const AboutMegaMenu: React.FC<{ onClose: () => void }> = ({ onClose }) =>
         <div className="flex items-center gap-4 text-xs font-bold text-slate-600">
           <span className="text-[#1D3A74]">ISO 9001:2015 & ISO 45001 Certified</span>
           <span className="text-slate-300">•</span>
-          <span className="text-emerald-700 font-semibold">45,000 MT Annual Capacity</span>
+          <span className="text-emerald-700 font-semibold">22,000 MT Annual Capacity</span>
         </div>
       </div>
 
@@ -146,11 +146,11 @@ export const AboutMegaMenu: React.FC<{ onClose: () => void }> = ({ onClose }) =>
             <div className="pt-3 border-t border-white/20 space-y-2 text-xs text-blue-100">
               <div className="flex items-center gap-2">
                 <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0" />
-                <span><strong className="text-white">500+ Landmark Projects</strong> Across India</span>
+                <span><strong className="text-white">100+ Landmark Projects</strong> Across India</span>
               </div>
               <div className="flex items-center gap-2">
                 <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0" />
-                <span><strong className="text-white">25-Acre Plant:</strong> 250,000 Sq.Ft. Shop Floor</span>
+                <span><strong className="text-white">6-Acre Plant:</strong> Nandasan, Gujarat</span>
               </div>
               <div className="flex items-center gap-2">
                 <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0" />

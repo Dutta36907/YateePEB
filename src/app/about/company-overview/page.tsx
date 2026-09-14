@@ -2,7 +2,7 @@ import React from "react";
 import type { Metadata } from "next";
 import { PageHero } from "@/components/shared/PageHero";
 import { SectionHeader } from "@/components/ui/SectionHeader";
-import { companyMilestones, leadershipTeam } from "@/data/company";
+import { companyDetails, companyMilestones, leadershipTeam } from "@/data/company";
 import { CheckCircle2, ShieldCheck, Building2, Calendar, Target, Trophy } from "lucide-react";
 import { Button } from "@/components/ui/Button";
 
@@ -25,9 +25,9 @@ export default function CompanyOverviewPage() {
         ]}
         stats={[
           { label: "Founded", value: "2004" },
-          { label: "Annual Output", value: "45,000 MT" },
-          { label: "Landmark Projects", value: "500+" },
-          { label: "Workforce", value: "300+" },
+          { label: "Annual Output", value: "22,000 MT" },
+          { label: "Landmark Projects", value: "100+" },
+          { label: "Workforce", value: "20+" },
         ]}
       />
 
@@ -43,16 +43,19 @@ export default function CompanyOverviewPage() {
                 A Unified Design-to-Erection Structural Steel Enterprise
               </h2>
               <p className="text-slate-600 text-base leading-relaxed">
-                Yatee Steel Structures Pvt Ltd (Yatee PEB) is an engineering and manufacturing organization headquartered in Pune, Maharashtra. We provide integrated Pre-Engineered Building (PEB) systems, heavy structural steel fabrication, industrial sheds, and multi-tier structural framing for industrial corporations, logistics developers, and EPC enterprises.
+                Yatee Steel Structures Pvt Ltd (Yatee PEB) is an engineering service provider and manufacturing organization headquartered in Indore, Madhya Pradesh, with branch offices in Siliguri (W.B.) and Patna (Bihar).
               </p>
               <p className="text-slate-600 text-base leading-relaxed">
-                Our in-house capabilities span 3D BIM structural modeling (STAAD.Pro and Tekla Structures), automated heavy plate cutting and Submerged Arc Welding (SAW), continuous PUFF insulated panel manufacturing, and certified high-elevation site erection under ISO 45001 safety management.
+                We provide integrated Pre-Engineered Building (PEB) systems, heavy structural steel fabrication, industrial sheds, and multi-tier structural framing and sheeting systems for industrial corporations, logistics developers, and EPC enterprises.
+              </p>
+              <p className="text-slate-600 text-base leading-relaxed">
+                Our in-house capabilities span 3D BIM structural modeling (STAAD.Pro and Tekla Structures), automated heavy plate cutting and Submerged Arc Welding (SAW), and an Automatic H-Beam line (PTW) machine in our manufacturing unit.
               </p>
 
               <div className="grid grid-cols-2 gap-4 pt-4">
                 <div className="p-4 rounded-xl bg-slate-50 border border-slate-200">
-                  <span className="text-2xl font-black text-[#1D3A74] block font-heading">25 Acres</span>
-                  <span className="text-xs text-slate-500 font-semibold">Manufacturing Campus in Chakan</span>
+                  <span className="text-2xl font-black text-[#1D3A74] block font-heading">6+ Acres</span>
+                  <span className="text-xs text-slate-500 font-semibold">Manufacturing Campus in Nandasan, Gujarat</span>
                 </div>
                 <div className="p-4 rounded-xl bg-slate-50 border border-slate-200">
                   <span className="text-2xl font-black text-[#1D3A74] block font-heading">100% In-House</span>
@@ -66,11 +69,11 @@ export default function CompanyOverviewPage() {
               <ul className="space-y-3.5 text-xs sm:text-sm text-slate-200">
                 <li className="flex items-start gap-2.5">
                   <CheckCircle2 className="w-4 h-4 text-blue-400 shrink-0 mt-0.5" />
-                  <span><strong>Headquarters:</strong> PRK Maple, Rau, Indore, Madhya Pradesh</span>
+                  <span><strong>Headquarters:</strong> {companyDetails.headquarters.addressLine1}, {companyDetails.headquarters.addressLine2}, {companyDetails.headquarters.city} ({companyDetails.headquarters.state}) - {companyDetails.headquarters.postalCode}</span>
                 </li>
                 <li className="flex items-start gap-2.5">
                   <CheckCircle2 className="w-4 h-4 text-blue-400 shrink-0 mt-0.5" />
-                  <span><strong>Primary Plant:</strong> Chakan Phase II Industrial Area, Pune</span>
+                  <span><strong>Primary Plant:</strong> {companyDetails.manufacturingFacility.addressLine1}, {companyDetails.manufacturingFacility.addressLine2}, {companyDetails.manufacturingFacility.state} – {companyDetails.manufacturingFacility.postalCode}</span>
                 </li>
                 <li className="flex items-start gap-2.5">
                   <CheckCircle2 className="w-4 h-4 text-blue-400 shrink-0 mt-0.5" />
@@ -101,7 +104,7 @@ export default function CompanyOverviewPage() {
           <SectionHeader
             eyebrow="OUR JOURNEY"
             title="Two Decades of Engineering Milestones"
-            subtitle="From our foundation in 2004 to becoming an industry benchmark with 45,000 MT annual throughput."
+            subtitle="From our foundation in 2004 to becoming an industry benchmark with 22,000 MT annual throughput."
           />
 
           <div className="relative border-l-2 border-blue-200 ml-4 md:ml-32 space-y-12 pl-6 md:pl-10">
