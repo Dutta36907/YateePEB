@@ -6,28 +6,54 @@ import { SectionHeader } from "@/components/ui/SectionHeader";
 import { servicesData } from "@/data/services";
 import { ArrowRight, CheckCircle2, ChevronRight } from "lucide-react";
 import { Button } from "@/components/ui/Button";
-
 import Image from "next/image";
+import { generateBreadcrumbSchema } from "@/lib/seo";
 
 export const metadata: Metadata = {
-  title: "End-to-End Services & Capabilities | Yatee Steel Structures",
+  title: "Turnkey PEB & Structural Steel Engineering Services | Yatee Steel",
   description:
-    "Explore Yatee's comprehensive turnkey structural steel services: 3D BIM design, automated fabrication, heavy crane erection, standing seam roofing, and turnkey EPC delivery.",
+    "Comprehensive turnkey structural steel engineering services in India: 3D BIM modeling (Tekla/STAAD), CNC automated fabrication, heavy crane erection, and EPC project management.",
+  keywords: [
+    "Turnkey PEB Services India",
+    "PEB Structural Design Tekla STAAD",
+    "Heavy Structural Steel Fabrication Gujarat",
+    "Industrial Shed Erection Contractor",
+    "EPC Project Management Steel Buildings",
+    "PEB Retrofitting and Shed Expansion",
+  ],
+  openGraph: {
+    title: "Turnkey PEB & Structural Steel Engineering Services | Yatee Steel",
+    description:
+      "From 3D BIM design and automated fabrication to precision heavy crane erection. Single-point accountability across India.",
+    url: "https://yateesteel.com/services",
+    images: ["/images/services/custom-steel.jpg"],
+  },
 };
 
 export default function ServicesPage() {
+  const breadcrumbSchema = generateBreadcrumbSchema([
+    { name: "Home", url: "/" },
+    { name: "Services", url: "/services" },
+  ]);
+
   return (
     <div className="flex flex-col w-full">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
+
       <PageHero
         badge="END-TO-END CAPABILITIES"
         title="Engineering to Execution. One Integrated Partner."
         subtitle="We deliver turnkey structural steel and pre-engineered building solutions with complete single-point accountability—eliminating contractor friction and ensuring predictable project handovers."
         breadcrumbs={[{ label: "Services" }]}
+        backgroundImage="/images/services/erection-site.jpg"
         stats={[
-          { label: "Design Team", value: "10+ Engineers" },
+          { label: "Engineering Team", value: "20+ Engineers" },
           { label: "Fabrication Output", value: "22,000 MT/Yr" },
-          { label: "Crane Fleet", value: "Up to 150T" },
-          { label: "Safe Man-Hours", value: "3M+ Hours" },
+          { label: "Manufacturing Base", value: "6 Acres" },
+          { label: "Delivered Projects", value: "100+" },
         ]}
       />
 
@@ -51,7 +77,7 @@ export default function ServicesPage() {
                   <div className="relative h-48 w-full overflow-hidden">
                     <Image
                       src={service.featuredImage}
-                      alt={`${service.title} - Yatee Team at Work`}
+                      alt={`${service.title} - Yatee Steel Structures Engineering`}
                       fill
                       sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                       className="object-cover transition-transform duration-700 group-hover:scale-105"

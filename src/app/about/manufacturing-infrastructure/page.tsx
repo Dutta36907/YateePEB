@@ -6,14 +6,35 @@ import { SectionHeader } from "@/components/ui/SectionHeader";
 import { companyDetails } from "@/data/company";
 import { Factory, Cpu, Flame, Sparkles, CheckCircle2, ShieldCheck, Truck, Cog } from "lucide-react";
 import { Button } from "@/components/ui/Button";
+import { generateBreadcrumbSchema } from "@/lib/seo";
 
 export const metadata: Metadata = {
-  title: "Manufacturing & Infrastructure | Yatee Steel Structures",
+  title: "6-Acre PEB Manufacturing Plant Gujarat | Yatee Steel Structures",
   description:
-    "Explore Yatee's 6-acre heavy structural steel fabrication plant in Nandasan, Gujarat, equipped with automated SAW beam lines, CNC plasma cutting machines, and shot blasting.",
+    "Tour Yatee's 6-acre heavy structural steel fabrication facility in Nandasan, Gujarat. Automatic H-beam line (PTW), CNC plasma cutting machines, and 22,000 MT annual capacity.",
+  keywords: [
+    "PEB Manufacturing Plant Gujarat",
+    "Heavy Structural Steel Fabrication Nandasan",
+    "Automatic H Beam Line PTW Machine",
+    "CNC Plasma Cutting Machine Plate Fabrication",
+    "Steel Fabrication Factory Ahmedabad Mehsana",
+  ],
+  openGraph: {
+    title: "6-Acre PEB Manufacturing Facility in Nandasan, Gujarat | Yatee Steel",
+    description:
+      "Automated heavy fabrication bays, CNC plasma cutting, automatic SAW lines, and 22,000 MT annual capacity.",
+    url: "https://yateesteel.com/about/manufacturing-infrastructure",
+    images: ["/images/factory-plant.jpg"],
+  },
 };
 
 export default function ManufacturingInfrastructurePage() {
+  const breadcrumbSchema = generateBreadcrumbSchema([
+    { name: "Home", url: "/" },
+    { name: "About Us", url: "/about" },
+    { name: "Manufacturing Infrastructure", url: "/about/manufacturing-infrastructure" },
+  ]);
+
   const machinery = [
     {
       title: "Automated Submerged Arc Welding (SAW) Lines",
@@ -55,6 +76,11 @@ export default function ManufacturingInfrastructurePage() {
 
   return (
     <div className="flex flex-col w-full">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
+
       <PageHero
         badge="MANUFACTURING POWERHOUSE"
         title="Manufacturing & Infrastructure"
@@ -63,6 +89,7 @@ export default function ManufacturingInfrastructurePage() {
           { label: "About Us", href: "/about" },
           { label: "Manufacturing & Infrastructure" },
         ]}
+        backgroundImage="/images/factory-plant.jpg"
         stats={[
           { label: "Annual Capacity", value: "22,000 MT" },
           { label: "Industrial Campus", value: "6 Acres" },
@@ -88,7 +115,7 @@ export default function ManufacturingInfrastructurePage() {
               <div className="space-y-3 pt-2">
                 {[
                   "Direct digital integration between Tekla BIM detailing and shop floor CNC plasma machines",
-                  "100% prime steel sourcing directly from primary producers (Tata Steel, JSW, SAIL)",
+                  "100% prime steel sourcing directly from primary producers (Tata Steel, JSW Steel, SAIL)",
                   "Automatic H-beam line (PTW) and multi-head SAW welding stations",
                   "Dedicated temperature-controlled paint application bays with dry film gauge verification",
                   "Barcode-tagged component dispatch aligned with on-site crane erection sequences",

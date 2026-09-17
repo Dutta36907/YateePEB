@@ -30,6 +30,7 @@ export default function ProjectsPage() {
         title="Structures Engineered for Real-World Performance"
         subtitle="Explore our nationwide track record of heavy industrial manufacturing plants, automated logistics fulfillment parks, and specialized structural steel projects."
         breadcrumbs={[{ label: "Projects" }]}
+        backgroundImage="/images/yatee-hero-slide-2.jpg"
         stats={[
           { label: "Delivered Facilities", value: "500+" },
           { label: "Built-Up Footprint", value: "15M+ Sq.Ft." },
@@ -42,44 +43,98 @@ export default function ProjectsPage() {
       <section className="py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Status and Industry Filter Bar */}
-          <div className="bg-[#F8FAFC] p-6 rounded-2xl border border-slate-200 mb-12 flex flex-col md:flex-row items-center justify-between gap-6">
-            {/* Status Tabs */}
-            <div className="flex items-center gap-2 bg-white p-1.5 rounded-xl border border-slate-200 w-full sm:w-auto">
-              {["All", "Completed", "Ongoing"].map((status) => (
-                <button
-                  key={status}
-                  onClick={() => setSelectedStatus(status)}
-                  className={cn(
-                    "px-4 py-2 text-xs font-bold rounded-lg transition-all flex-1 sm:flex-initial",
-                    selectedStatus === status
-                      ? "bg-[#1D3A74] text-white shadow-xs"
-                      : "text-slate-600 hover:text-slate-900 hover:bg-slate-50"
-                  )}
-                >
-                  {status} Projects
-                </button>
-              ))}
+          <div className="bg-[#F8FAFC] p-5 sm:p-6 rounded-2xl border border-slate-200 mb-12 space-y-4 shadow-2xs">
+            {/* Top Row: Primary Status Tabs & Counter */}
+            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-4 border-b border-slate-200/80">
+              {/* Segmented Status Tabs */}
+              <div className="inline-flex p-1 bg-slate-200/70 rounded-xl border border-slate-200 w-full sm:w-auto overflow-x-auto">
+                {[
+                  { key: "All", label: "All Projects", count: projectsData.length },
+                  { key: "Completed", label: "Completed", count: projectsData.filter((p) => p.status === "Completed").length },
+                  { key: "Ongoing", label: "Ongoing", count: projectsData.filter((p) => p.status === "Ongoing").length },
+                ].map((tab) => {
+                  const isActive = selectedStatus === tab.key;
+                  return (
+                    <button
+                      key={tab.key}
+                      onClick={() => setSelectedStatus(tab.key)}
+                      className={cn(
+                        "px-4 py-2 text-xs font-bold rounded-lg transition-all flex items-center justify-center gap-2 whitespace-nowrap flex-1 sm:flex-initial",
+                        isActive
+                          ? "bg-[#1D3A74] text-white shadow-xs"
+                          : "text-slate-600 hover:text-slate-900 hover:bg-white/60"
+                      )}
+                    >
+                      <span>{tab.label}</span>
+                      <span
+                        className={cn(
+                          "text-[10px] px-1.5 py-0.5 rounded-full font-semibold",
+                          isActive ? "bg-white/20 text-white" : "bg-slate-300/70 text-slate-700"
+                        )}
+                      >
+                        {tab.count}
+                      </span>
+                    </button>
+                  );
+                })}
+              </div>
+
+              {/* Showing count indicator & Reset */}
+              <div className="text-xs text-slate-500 font-medium flex items-center gap-2">
+                <span>
+                  Showing <strong className="text-slate-900 font-bold">{filteredProjects.length}</strong> of <strong className="text-slate-900 font-bold">{projectsData.length}</strong> projects
+                </span>
+                {(selectedStatus !== "All" || selectedIndustry !== "All") && (
+                  <button
+                    onClick={() => {
+                      setSelectedStatus("All");
+                      setSelectedIndustry("All");
+                    }}
+                    className="ml-2 text-xs font-bold text-blue-600 hover:text-[#1D3A74] underline"
+                  >
+                    Reset Filters
+                  </button>
+                )}
+              </div>
             </div>
 
-            {/* Industry Pill Filter */}
-            <div className="flex items-center gap-2 flex-wrap w-full md:w-auto">
-              <span className="text-xs font-bold text-slate-500 uppercase tracking-wider hidden lg:inline">
-                Industry:
+            {/* Bottom Row: Industry Filter Pills */}
+            <div className="flex items-center gap-2 flex-wrap pt-0.5">
+              <span className="text-xs font-bold text-slate-500 uppercase tracking-wider flex items-center gap-1.5 mr-1">
+                <Filter className="w-3.5 h-3.5 text-[#1D3A74]" />
+                <span>Industry:</span>
               </span>
-              {industries.map((ind) => (
-                <button
-                  key={ind}
-                  onClick={() => setSelectedIndustry(ind)}
-                  className={cn(
-                    "px-3 py-1.5 text-xs font-semibold rounded-lg border transition-all",
-                    selectedIndustry === ind
-                      ? "bg-blue-600 text-white border-blue-600 shadow-xs"
-                      : "bg-white text-slate-700 border-slate-200 hover:border-blue-300"
-                  )}
-                >
-                  {ind}
-                </button>
-              ))}
+              {industries.map((ind) => {
+                const isActive = selectedIndustry === ind;
+                const matchCount = ind === "All"
+                  ? (selectedStatus === "All" ? projectsData.length : projectsData.filter((p) => p.status === selectedStatus).length)
+                  : projectsData.filter((p) => p.industry === ind && (selectedStatus === "All" || p.status === selectedStatus)).length;
+
+                return (
+                  <button
+                    key={ind}
+                    onClick={() => setSelectedIndustry(ind)}
+                    className={cn(
+                      "px-3.5 py-1.5 text-xs font-semibold rounded-lg border transition-all flex items-center gap-1.5",
+                      isActive
+                        ? "bg-[#1D3A74] text-white border-[#1D3A74] shadow-xs"
+                        : "bg-white text-slate-700 border-slate-200 hover:border-slate-300 hover:bg-slate-50"
+                    )}
+                  >
+                    <span>{ind}</span>
+                    {ind !== "All" && (
+                      <span
+                        className={cn(
+                          "text-[10px] px-1 rounded-full",
+                          isActive ? "bg-white/20 text-white" : "bg-slate-100 text-slate-500"
+                        )}
+                      >
+                        {matchCount}
+                      </span>
+                    )}
+                  </button>
+                );
+              })}
             </div>
           </div>
 

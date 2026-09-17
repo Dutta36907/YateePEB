@@ -6,6 +6,7 @@ import { PageHero } from "@/components/shared/PageHero";
 import { newsArticles } from "@/data/news";
 import { Calendar, Clock, User, ArrowRight, Share2, ArrowLeft } from "lucide-react";
 import { Button } from "@/components/ui/Button";
+import { generateBreadcrumbSchema, generateArticleSchema, SITE_URL } from "@/lib/seo";
 
 interface NewsDetailPageProps {
   params: Promise<{
@@ -27,9 +28,30 @@ export async function generateMetadata({ params }: NewsDetailPageProps): Promise
     return { title: "Article Not Found" };
   }
 
+  const title = `${article.title} | Yatee Steel Insights`;
+  const description = article.summary;
+
   return {
-    title: `${article.title} | Yatee Steel Insights`,
-    description: article.summary,
+    title,
+    description,
+    keywords: [
+      ...article.tags,
+      "PEB Engineering Whitepaper",
+      "Structural Steel Insights",
+      "Yatee Steel Structures",
+    ],
+    openGraph: {
+      title,
+      description,
+      url: `${SITE_URL}/news/${article.slug}`,
+      images: [article.featuredImage || "/images/yatee-hero-building.jpg"],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title,
+      description,
+      images: [article.featuredImage || "/images/yatee-hero-building.jpg"],
+    },
   };
 }
 
@@ -43,8 +65,28 @@ export default async function NewsDetailPage({ params }: NewsDetailPageProps) {
 
   const otherArticles = newsArticles.filter((a) => a.slug !== article.slug);
 
+  const breadcrumbSchema = generateBreadcrumbSchema([
+    { name: "Home", url: "/" },
+    { name: "News & Insights", url: "/news" },
+    { name: article.title, url: `/news/${article.slug}` },
+  ]);
+
+  const articleSchema = generateArticleSchema({
+    title: article.title,
+    description: article.summary,
+    slug: article.slug,
+    publishDate: article.publishDate,
+    image: article.featuredImage,
+    authorName: article.author.name,
+  });
+
   return (
     <div className="flex flex-col w-full">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify([breadcrumbSchema, articleSchema]) }}
+      />
+
       <PageHero
         badge={article.category.toUpperCase()}
         title={article.title}
@@ -53,6 +95,7 @@ export default async function NewsDetailPage({ params }: NewsDetailPageProps) {
           { label: "News & Insights", href: "/news" },
           { label: article.title },
         ]}
+        backgroundImage="/images/services/design-engineering.jpg"
       />
 
       {/* Article Body */}

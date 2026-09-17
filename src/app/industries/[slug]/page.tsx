@@ -8,6 +8,7 @@ import { industriesData } from "@/data/industries";
 import { projectsData } from "@/data/projects";
 import { CheckCircle2, ArrowRight, AlertTriangle, ShieldCheck, Layers, Cpu } from "lucide-react";
 import { Button } from "@/components/ui/Button";
+import { generateBreadcrumbSchema, SITE_URL } from "@/lib/seo";
 
 interface IndustryDetailPageProps {
   params: Promise<{
@@ -29,9 +30,31 @@ export async function generateMetadata({ params }: IndustryDetailPageProps): Pro
     return { title: "Industry Not Found" };
   }
 
+  const title = `${industry.title} Steel Buildings & PEB Construction | Yatee Steel`;
+  const description = `${industry.shortDescription} High clear spans, heavy crane integration, and IS 800:2007 compliant structural design by Yatee Steel Structures.`;
+
   return {
-    title: `${industry.title} Building Solutions | Yatee Steel Structures`,
-    description: industry.shortDescription,
+    title,
+    description,
+    keywords: [
+      `${industry.title} Steel Buildings`,
+      `${industry.title} PEB Construction India`,
+      "Industrial Shed Construction",
+      "Structural Steel Engineering",
+      "Yatee Steel Structures",
+    ],
+    openGraph: {
+      title,
+      description,
+      url: `${SITE_URL}/industries/${industry.slug}`,
+      images: [industry.featuredImage || "/images/yatee-hero-building.jpg"],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title,
+      description,
+      images: [industry.featuredImage || "/images/yatee-hero-building.jpg"],
+    },
   };
 }
 
@@ -48,8 +71,19 @@ export default async function IndustryDetailPage({ params }: IndustryDetailPageP
     industry.caseStudySlugs.includes(p.slug)
   );
 
+  const breadcrumbSchema = generateBreadcrumbSchema([
+    { name: "Home", url: "/" },
+    { name: "Industries", url: "/industries" },
+    { name: industry.title, url: `/industries/${industry.slug}` },
+  ]);
+
   return (
     <div className="flex flex-col w-full">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
+
       <PageHero
         badge="INDUSTRY APPLICATION"
         title={industry.title}
@@ -58,6 +92,7 @@ export default async function IndustryDetailPage({ params }: IndustryDetailPageP
           { label: "Industries", href: "/industries" },
           { label: industry.title },
         ]}
+        backgroundImage="/images/warehouse-interior.jpg"
       />
 
       {/* Main Content */}

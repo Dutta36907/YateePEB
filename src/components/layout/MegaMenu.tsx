@@ -352,10 +352,10 @@ export const ProductsMegaMenu: React.FC<{ onClose: () => void }> = ({ onClose })
       spec: "Standing Seam 360° Leak-Proof",
       icon: <Boxes className="w-5 h-5 text-white" />,
     },
-    "puff-panels": {
-      tag: "PIR / PUF Core",
-      spec: "High Thermal R-Value Insulated",
-      icon: <Flame className="w-5 h-5 text-white" />,
+    "lgs-structures": {
+      tag: "550 MPa Steel",
+      spec: "Light Gauge Steel (LGS) Framing",
+      icon: <Building2 className="w-5 h-5 text-white" />,
     },
     "ventilation-systems": {
       tag: "Zero-Power",

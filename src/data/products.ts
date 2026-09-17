@@ -8,7 +8,7 @@ export const productsData: Product[] = [
     shortDescription:
       "Fully customized, long-span structural steel buildings engineered for industrial factories, mega warehouses, distribution centers, and infrastructure facilities.",
     fullDescription:
-      "Yatee Pre-Engineered Buildings (PEB) represent the pinnacle of modern structural steel technology. Designed through advanced 3D structural optimization and manufactured with automated CNC machinery, our PEB systems deliver unmatched strength, column-free clear spans of up to 90 meters, 40% faster erection, and long-term durability.",
+      "Yatee Pre-Engineered Buildings (PEB) represent the pinnacle of modern structural steel engineering. Designed through advanced 3D structural optimization in STAAD.Pro and Tekla Structures, and manufactured with automated CNC machinery, our PEB systems deliver unmatched strength, column-free clear spans of up to 90 meters, 40% faster erection, and long-term durability conforming to IS 800:2007 and AISC standards.",
     featuredImage: "/images/products/peb-buildings.jpg",
     galleryImages: [
       "/images/products/peb-1.webp",
@@ -16,8 +16,8 @@ export const productsData: Product[] = [
       "/images/products/peb-3.webp",
     ],
     features: [
-      { title: "Column-Free Clear Spans", description: "Clear spans up to 90m (300 ft) allowing total floor layout freedom for racking and machinery." },
-      { title: "Optimized Tapered Framing", description: "I-section members tailored to moment diagrams, reducing overall steel tonnage and foundation load." },
+      { title: "Column-Free Clear Spans", description: "Clear spans up to 90m (300 ft) allowing total floor layout freedom for racking, conveyors, and machinery." },
+      { title: "Optimized Tapered Framing", description: "Tapered I-section members tailored to moment diagrams, reducing overall steel dead weight and foundation load." },
       { title: "Integrated Crane Systems", description: "Engineered to support 5T to 100T overhead EOT cranes with heavy crane runway brackets." },
       { title: "Modular Future Expandability", description: "End-wall framing designed for seamless longitudinal extension without interrupting plant operations." },
     ],
@@ -53,23 +53,24 @@ export const productsData: Product[] = [
       "Heavy-Duty Polyamine Cured Epoxy for Chemical Environments",
     ],
     manufacturingProcess: [
-      { step: "01", title: "CNC Plasma Plate Cutting", description: "Automated high-definition plate nesting and cutting from mill-certified steel plates." },
-      { step: "02", title: "Automatic SAW Beam Line", description: "Submerged Arc Welding creating deep penetration, continuous fillet welds on built-up I-sections." },
-      { step: "03", title: "Shot Blasting to SA 2.5", description: "Centrifugal abrasive shot blasting to eliminate rust and optimize primer adhesion." },
-      { step: "04", title: "Airless Primer Coating & Barcoding", description: "High-spec corrosion-resistant primer application and unique piece-mark barcoding for erection." },
+      { step: "01", title: "CNC Plasma Plate Cutting", description: "High-definition plate nesting and cutting for smooth, precise plate edges from mill-certified steel." },
+      { step: "02", title: "Automatic H-Beam Line (PTW)", description: "Continuous Submerged Arc Welding (SAW) creating deep penetration fillet welds on built-up I-sections." },
+      { step: "03", title: "Automatic Shot Blasting to SA 2.5", description: "Centrifugal abrasive shot blasting to eliminate mill scale, rust, and optimize primer adhesion." },
+      { step: "04", title: "Airless Primer Coating & Barcoding", description: "Corrosion-resistant epoxy primer application and individual component barcoding for sequenced erection." },
     ],
     qualityAssurance: [
-      "100% Weld Visual Inspection per AWS D1.1",
+      "100% Weld Visual Inspection per AWS D1.1 & ISO 9001:2015",
       "Ultrasonic Testing (UT) of Full Penetration Butt Welds",
       "Magnetic Particle Testing (MPI) on Critical Flange-to-Web Fillet Welds",
       "Dry Film Thickness (DFT) Digital Gauge Paint Measurement",
     ],
     faqs: [
-      { question: "What is the expected lifespan of a Yatee Pre-Engineered Building?", answer: "When properly maintained, Yatee PEBs have a design service life exceeding 50 years, with structural warranties and high-grade corrosion protection coatings." },
+      { question: "What is the expected lifespan of a Yatee Pre-Engineered Building?", answer: "When properly maintained, Yatee PEBs have a design service life exceeding 50 years, backed by high-tensile mill-certified steel and anti-corrosive industrial coatings." },
       { question: "Can mezzanine office floors be incorporated within the PEB frame?", answer: "Yes, we integrate heavy-duty mezzanine floors with composite metal decking designed for office spaces, electrical rooms, or high-density material storage." },
+      { question: "What structural codes does Yatee follow for PEB design?", answer: "Our structural engineering conforms strictly to IS 800:2007 (General Construction In Steel), IS 875 (Design Loads for Buildings), IS 1893 (Criteria for Earthquake Resistant Design), and AISC/MBMA international guidelines." },
     ],
     relatedProjectSlugs: ["pune-mega-logistics-park", "ahmedabad-heavy-auto-manufacturing-plant"],
-    relatedProductSlugs: ["c-z-purlins", "roofing-sheets", "puff-panels"],
+    relatedProductSlugs: ["c-z-purlins", "roofing-sheets", "lgs-structures"],
   },
   {
     slug: "industrial-sheds",
@@ -78,7 +79,7 @@ export const productsData: Product[] = [
     shortDescription:
       "Cost-effective, rapid-deploy industrial sheds with integrated natural ventilation, daylighting panels, and heavy-duty crane runway supports.",
     fullDescription:
-      "Yatee Industrial Sheds offer an engineered, high-performance structural solution for workshops, small-to-medium factories, agricultural storage, and processing yards. Engineered for rapid fabrication and assembly, these sheds maximize natural lighting and ventilation while providing long-term structural integrity.",
+      "Yatee Industrial Sheds offer an engineered, high-performance structural steel solution for workshops, factories, agricultural storage, and processing yards. Engineered for rapid fabrication and assembly, these sheds maximize natural lighting and ventilation while providing long-term structural integrity and compliance with IS 800 standards.",
     featuredImage: "/images/products/industrial-sheds.jpg",
     galleryImages: [
       "/images/products/shed-1.webp",
@@ -87,7 +88,7 @@ export const productsData: Product[] = [
     ],
     features: [
       { title: "Daylight & Ventilation Integration", description: "Pre-designed with ridge ventilators, turbo fans, and UV-stabilized polycarbonate skylights." },
-      { title: "Heavy EOT Crane Runway Ready", description: "Built-in stepped columns and crane bracket brackets for smooth material handling." },
+      { title: "Heavy EOT Crane Runway Ready", description: "Built-in stepped columns and crane bracket provisions for smooth material handling." },
       { title: "Quick-Lock Secondary Framing", description: "Pre-punched Z/C purlins for rapid erection with minimal site welding required." },
       { title: "Weatherproof Enclosure", description: "Corrosion-resistant color-coated sheet cladding with deep trapezoidal crests." },
     ],
@@ -120,14 +121,14 @@ export const productsData: Product[] = [
       "Bare Galvalume Natural Metallic",
     ],
     manufacturingProcess: [
-      { step: "01", title: "Section Cutting & Bevelling", description: "Precision sawing and plasma cutting of structural steel tubes, angles, and built-up plates." },
+      { step: "01", title: "CNC Plasma Cutting", description: "Precision plate cutting ensuring clean edges for truss gusset plates and base connections." },
       { step: "02", title: "Jig-Assisted Welding", description: "Fabricated using specialized fixtures to maintain strict straightness and squareness." },
-      { step: "03", title: "Shot Blasting & Painting", description: "Thorough surface prep followed by anti-corrosive primer and topcoat." },
+      { step: "03", title: "Shot Blasting & Painting", description: "Thorough surface prep to SA 2.5 followed by anti-corrosive primer and topcoat." },
     ],
     qualityAssurance: [
       "Dimensional Check on Pin-to-Pin Distances",
       "Weld Throat & Penetration Gauge Check",
-      "Coating Thickness DFT Verification",
+      "Coating Thickness DFT Verification per ISO 9001:2015",
     ],
     faqs: [
       { question: "How quickly can a 20,000 sq. ft. industrial shed be installed?", answer: "Following foundation curing, the steel superstructure and roofing sheets can be fully installed in approximately 4 to 6 weeks." },
@@ -143,7 +144,7 @@ export const productsData: Product[] = [
     shortDescription:
       "Precision roll-formed C and Z purlins manufactured from high-yield galvanized steel with pre-punched elongated holes for quick bolted assembly.",
     fullDescription:
-      "Yatee C and Z Purlins are engineered secondary structural framing components used to support roof sheeting and wall cladding. Cold roll-formed from high-tensile galvanized steel (up to 450 MPa yield strength), our purlins provide an exceptional strength-to-weight ratio and superior corrosion resistance.",
+      "Yatee C and Z Purlins are engineered secondary structural framing components used to support roof sheeting and wall cladding. Cold roll-formed from high-tensile galvanized steel (up to 450 MPa yield strength), our purlins provide an exceptional strength-to-weight ratio, zero on-site welding, and superior corrosion resistance.",
     featuredImage: "/images/products/cz-purlins.jpg",
     galleryImages: [
       "/images/products/purlin-1.webp",
@@ -165,7 +166,7 @@ export const productsData: Product[] = [
       "PEB Roof Secondary Framing & Purlins",
       "Wall Cladding Girts & Header Beams",
       "Solar Panel Mounting Module Structures",
-      "Lightweight Steel Framing (LGSF) & Mezzanines",
+      "Light Gauge Steel Framing (LGS) & Mezzanines",
     ],
     specifications: [
       { parameter: "Raw Material Grade", value: "High-Tensile Galvanized Steel (Yield Strength: 345 MPa to 450 MPa)", standard: "IS 277 / ASTM A653" },
@@ -210,7 +211,7 @@ export const productsData: Product[] = [
     title: "Colour-Coated Roofing Sheets",
     subtitle: "High-Tensile Galvalume & Pre-Painted Steel Cladding Profiles",
     shortDescription:
-      "Premium trapezoidal and tile-profile colour-coated Galvalume sheets engineered for maximum weather resistance, aesthetic appeal, and structural strength.",
+      "Premium trapezoidal and standing-seam colour-coated Galvalume sheets engineered for maximum weather resistance, aesthetic appeal, and structural strength.",
     fullDescription:
       "Yatee Roofing Sheets are roll-formed from premium 55% Aluminum-Zinc alloy coated steel (Galvalume) and pre-painted with advanced multi-layer coating systems (SMP, RMP, and PVDF). Designed with high crest trapezoidal ribs, our roof and wall profiles deliver exceptional water discharge capacity, span capability, and long-term colour vibrancy.",
     featuredImage: "/images/products/roofing-sheets.jpg",
@@ -274,16 +275,16 @@ export const productsData: Product[] = [
       { question: "Can Yatee supply curved roof sheets?", answer: "Yes, we produce crimp-curved roofing sheets for eaves, bullnoses, and curved barrel arch roofs with specified radii." },
     ],
     relatedProjectSlugs: ["bengaluru-pharma-cold-storage-hub", "hyderabad-fmcg-distribution-center"],
-    relatedProductSlugs: ["c-z-purlins", "puff-panels", "ventilation-systems"],
+    relatedProductSlugs: ["c-z-purlins", "lgs-structures", "ventilation-systems"],
   },
   {
-    slug: "puff-panels",
-    title: "Wall & Roof PUFF Panels",
-    subtitle: "Polyurethane Foam (PUF/PIR) Insulated Sandwich Panels",
+    slug: "lgs-structures",
+    title: "Light Gauge Steel (LGS) Structures",
+    subtitle: "Precision Cold-Formed Steel Framing for Commercial & Modular Buildings",
     shortDescription:
-      "High-efficiency continuous sandwich panels with rigid polyurethane/polyisocyanurate cores for cold rooms, cleanrooms, and climate-controlled industrial facilities.",
+      "High-speed, lightweight cold-formed steel framing systems designed for multi-storey residential, commercial offices, site offices, and institutional structures.",
     fullDescription:
-      "Yatee PUFF / PIR Sandwich Panels are manufactured on a high-speed continuous foaming press line. Featuring high-density rigid polyurethane foam (40 ± 2 kg/m³) firmly bonded between two prepainted steel facings, our panels deliver unmatched thermal insulation (U-values as low as 0.22 W/m²K), structural rigidity, acoustic dampening, and energy savings.",
+      "Yatee Light Gauge Steel (LGS) Framing Structures offer a revolutionary, lightweight alternative to conventional RCC and heavy steel framing. Engineered with precision CNC roll-forming technology from high-tensile galvanized steel (550 MPa), LGS frames provide extreme dimensional accuracy, rapid dry construction, superior earthquake resistance, and termite/corrosion immunity.",
     featuredImage: "/images/products/puff-panels.jpg",
     galleryImages: [
       "/images/products/puff-1.webp",
@@ -291,60 +292,57 @@ export const productsData: Product[] = [
       "/images/products/puff-3.webp",
     ],
     features: [
-      { title: "Exceptional Thermal Insulation", description: "Low thermal conductivity (k = 0.022 W/mK) cutting HVAC power consumption by up to 40%." },
-      { title: "Tongue & Groove Cam-Lock Joint", description: "Precision engineered interlocking joint profile eliminating thermal bridging and condensation." },
-      { title: "Fire-Resistant PIR Formulations", description: "PIR core self-extinguishing technology meeting BS 476 Part 7 Class 1 fire spread standards." },
-      { title: "Hygienic Cleanroom Surface", description: "Food-grade antimicrobial, anti-fungal paint coatings suitable for FDA-compliant clean facilities." },
+      { title: "High-Speed Dry Construction", description: "100% factory pre-assembled wall panels and roof trusses enable up to 60% faster project completion." },
+      { title: "High Strength-to-Weight Ratio", description: "7x lighter than concrete framing, drastically reducing foundation costs and seismic inertia." },
+      { title: "CNC Precision Pre-Punching", description: "Pre-punched service holes for electrical conduits and plumbing lines with zero on-site drilling." },
+      { title: "Termite & Moisture Immune", description: "Galvanized zinc coating (Z275 GSM) prevents corrosion, warping, cracking, and rot." },
     ],
     benefits: [
-      { title: "Substantial Energy Savings", description: "Maintains required internal temperatures from -40°C (blast freezer) to +25°C with minimal energy load." },
-      { title: "Quick Modular Installation", description: "Large panel widths (1000mm) enable rapid vertical and horizontal installation with hidden fasteners." },
-      { title: "High Structural Rigidity", description: "Composite sandwich action allows wider girt spacing up to 3 to 4 meters without intermediate purlins." },
+      { title: "Significant Foundation Savings", description: "Lighter superstructure reduces pile and footing concrete volume by 30% to 40%." },
+      { title: "Green & Sustainable", description: "100% recyclable steel, zero on-site water consumption, and minimal environmental impact." },
+      { title: "Design Flexibility", description: "Accommodates diverse architectural claddings including fiber cement boards, ACP, and glass facades." },
     ],
     applications: [
-      "Pharma Cold Chain & Cleanroom Enclosures",
-      "Food Processing, Dairy & Meat Storage Facilities",
-      "Air-Conditioned Manufacturing Assembly Plants",
-      "Controlled Atmosphere Fruit & Vegetable Cold Rooms",
+      "Commercial & Site Administrative Offices",
+      "Multi-Storey Modular Buildings & Rooftop Extensions",
+      "Healthcare Clinics & Institutional Facilities",
+      "Industrial Security & Control Rooms",
     ],
     specifications: [
-      { parameter: "Core Insulation Material", value: "Rigid Polyurethane Foam (PUF) / Polyisocyanurate (PIR)", standard: "ASTM C591" },
-      { parameter: "Core Density", value: "40 ± 2 kg/m³ (CFC/HCFC Free, Zero ODP)", standard: "IS 11239" },
-      { parameter: "Thermal Conductivity (k-value)", value: "0.020 – 0.023 W/m·K at 10°C Mean Temp", standard: "ASTM C518" },
-      { parameter: "Facing Steel Thickness", value: "0.50mm / 0.60mm PPGI / PPGL / Stainless Steel 304", standard: "IS 14246" },
-      { parameter: "Available Thicknesses", value: "30mm, 40mm, 50mm, 60mm, 80mm, 100mm, 120mm, 150mm", standard: "Standard" },
-      { parameter: "Panel Effective Width", value: "1000mm (Roof Profile with 3-Crest / Wall Flat or Micro-Ribbed)", standard: "Standard" },
-      { parameter: "Fire Rating", value: "PIR Class B-s1,d0 (EN 13501-1) / Self-Extinguishing", standard: "EN / BS" },
+      { parameter: "Steel Grade & Yield Strength", value: "High-Tensile Cold-Formed Steel (Yield: 550 MPa)", standard: "ASTM A653 / IS 277" },
+      { parameter: "Zinc Coating Mass", value: "Z275 gsm (Hot-Dip Galvanized Coating)", standard: "IS 277" },
+      { parameter: "Profile Depths (C-Studs & Tracks)", value: "89mm / 140mm Web Depth, 41mm Flange", standard: "Standard LGSF" },
+      { parameter: "Steel Sheet Thickness", value: "0.75mm to 1.50mm BMT", standard: "Precision Gauge" },
+      { parameter: "Connection Fasteners", value: "Class 3 / Class 4 Self-Drilling Hex Head Screws", standard: "AS 3566" },
+      { parameter: "Fire & Acoustic Rating", value: "Up to 2-Hour Fire Rating with Gypsum/Fibre Cement Boards", standard: "IS 3809 / BS 476" },
     ],
     dimensions: [
-      { parameter: "Thickness Options", range: "30 mm to 150 mm" },
-      { parameter: "Cover Width", range: "1000 mm" },
-      { parameter: "Panel Length", range: "2.0 m to 14.0 m" },
-      { parameter: "Facing Sheet Gauge", range: "0.45 mm – 0.60 mm" },
+      { parameter: "Stud Depths", range: "89 mm, 140 mm, 200 mm" },
+      { parameter: "Gauge Thickness", range: "0.75 mm – 1.50 mm" },
+      { parameter: "Wall Height Capability", range: "Up to 4.5m per storey" },
+      { parameter: "Maximum Building Storeys", range: "G + 3 Floors (Self-Supporting LGSF)" },
     ],
     availableCoatingsOrColors: [
-      "Off-White (RAL 9002) - Standard Hygienic",
-      "Pure White (RAL 9010)",
-      "Stainless Steel 304 2B Finish (Food Grade Cleanrooms)",
-      "Corporate Blue / Grey Exterior Facade Tones",
+      "Hot-Dip Galvanized Z275 Finish",
+      "Compatible with Fibre Cement, Gypsum, ACP, or Tile Cladding Facades",
     ],
     manufacturingProcess: [
-      { step: "01", title: "Steel Uncoiling & Corona Treatment", description: "High-voltage corona surface treatment ensuring permanent chemical bond with polyurethane foam." },
-      { step: "02", title: "Continuous High-Pressure Foaming", description: "Precision robotic mixing and injection of polyol and isocyanate under controlled 40-meter double-belt laminator." },
-      { step: "03", title: "Online Curing & Flying Saw Cutting", description: "Continuous heated curing chamber and synchronized disc flying saw for chip-free panel cuts." },
-      { step: "04", title: "Automated Cooling & Stacking", description: "Paternoster cooling wheel allowing complete foam stabilization before vacuum stacking and shrink wrapping." },
+      { step: "01", title: "CAD/BIM to CNC Direct Interface", description: "Direct machine output from Tekla / Vertex BD design models with zero manual programming error." },
+      { step: "02", title: "CNC Multi-Tool Punching", description: "Automated lip cuts, swage dimples, service holes, and chamfered truss connections." },
+      { step: "03", title: "Continuous High-Yield Roll Forming", description: "Precision roll-forming of high-tensile galvanized coils into C-studs, tracks, and nogging." },
+      { step: "04", title: "Jigged Panel Assembly & Tagging", description: "Factory pre-assembly into framed wall cassettes with individual QR tracking codes." },
     ],
     qualityAssurance: [
-      "Compressive Strength Testing (ASTM D1621 > 150 kPa)",
-      "Adhesion & Tensile Bond Strength per ISO 527",
-      "Continuous Density Profile Gauge Monitoring",
+      "Dimensional Tolerance Check (< 1mm per cassette)",
+      "Zinc Coating Verification per IS 6745",
+      "Screw Pull-Out & Shear Strength Tests",
     ],
     faqs: [
-      { question: "What thickness of PUFF panel is recommended for cold storage vs industrial sheds?", answer: "For air-conditioned factory sheds, 40mm to 50mm is typical. For chill rooms (0°C to +4°C), 80mm to 100mm is recommended, and for deep freeze (-25°C to -40°C), 120mm to 150mm panels are utilized." },
-      { question: "Are Yatee PUFF panels environmentally safe?", answer: "Yes, our foam formulation is 100% CFC and HCFC-free with zero Ozone Depletion Potential (ODP) and ultra-low Global Warming Potential (GWP)." },
+      { question: "What is Light Gauge Steel (LGS) Framing?", answer: "LGS framing is a modern construction technology utilizing precision cold-formed galvanized steel studs and tracks to build structural walls, floors, and roof trusses up to G+3 storeys." },
+      { question: "How does LGS construction compare with conventional brick and concrete?", answer: "LGS construction is 3x faster, 7x lighter, produces zero site wet-waste, and provides superior seismic and termite resistance." },
     ],
     relatedProjectSlugs: ["bengaluru-pharma-cold-storage-hub", "hyderabad-fmcg-distribution-center"],
-    relatedProductSlugs: ["pre-engineered-buildings", "roofing-sheets", "ventilation-systems"],
+    relatedProductSlugs: ["pre-engineered-buildings", "roofing-sheets", "c-z-purlins"],
   },
   {
     slug: "ventilation-systems",
@@ -353,7 +351,7 @@ export const productsData: Product[] = [
     shortDescription:
       "Zero-power wind-driven turbo ventilators, continuous ridge air monitors, heavy-duty storm-proof louvers, and natural daylighting integration.",
     fullDescription:
-      "Effective thermal comfort and air exchange are vital for factory productivity and worker safety. Yatee designs and manufactures engineered natural and mechanical ventilation systems, including aerodynamic wind-driven rotary turbo ventilators, continuous ridge ventilators, and architectural aluminum storm louvers.",
+      "Effective thermal comfort and air exchange are vital for industrial factory productivity and worker safety. Yatee designs and manufactures engineered natural and mechanical ventilation systems, including aerodynamic wind-driven rotary turbo ventilators, continuous ridge ventilators, and architectural aluminum storm louvers.",
     featuredImage: "/images/products/ventilation.jpg",
     galleryImages: [
       "/images/products/vent-1.webp",
@@ -403,7 +401,7 @@ export const productsData: Product[] = [
     qualityAssurance: [
       "Dynamic Balance Vibration Test (< 0.5 mm/s)",
       "Simulated High-Speed Wind Tunnel Rotation Check",
-      "Salt Fog Exposure Corrosion Test",
+      "Salt Fog Exposure Corrosion Test per ISO 9001:2015",
     ],
     faqs: [
       { question: "How many turbo ventilators are required for a standard 20,000 sq. ft. factory?", answer: "Depending on internal heat load and required air changes (typically 10-12 ACH), a 20,000 sq. ft. plant with 8m height requires approximately 16 to 22 units of 24\" diameter ventilators." },

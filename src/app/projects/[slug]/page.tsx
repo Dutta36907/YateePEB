@@ -6,6 +6,7 @@ import { PageHero } from "@/components/shared/PageHero";
 import { projectsData } from "@/data/projects";
 import { MapPin, Calendar, Building, Layers, CheckCircle2, AlertTriangle, ArrowRight, Quote, ShieldCheck } from "lucide-react";
 import { Button } from "@/components/ui/Button";
+import { generateBreadcrumbSchema, SITE_URL } from "@/lib/seo";
 
 interface ProjectDetailPageProps {
   params: Promise<{
@@ -27,9 +28,31 @@ export async function generateMetadata({ params }: ProjectDetailPageProps): Prom
     return { title: "Project Not Found" };
   }
 
+  const title = `${project.title} | PEB Case Study | Yatee Steel Structures`;
+  const description = `${project.overview} Location: ${project.location}. Steel tonnage: ${project.steelTonnageMT} MT. Built-up area: ${new Intl.NumberFormat("en-IN").format(project.builtUpAreaSqFt)} Sq. Ft.`;
+
   return {
-    title: `${project.title} Case Study | Yatee Steel Structures`,
-    description: project.overview,
+    title,
+    description,
+    keywords: [
+      `${project.title} Case Study`,
+      `PEB Project in ${project.location}`,
+      `${project.industry} Steel Building India`,
+      "Pre-Engineered Building Case Study",
+      "Yatee Steel Structures",
+    ],
+    openGraph: {
+      title,
+      description,
+      url: `${SITE_URL}/projects/${project.slug}`,
+      images: [project.featuredImage || "/images/yatee-hero-building.jpg"],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title,
+      description,
+      images: [project.featuredImage || "/images/yatee-hero-building.jpg"],
+    },
   };
 }
 
@@ -43,8 +66,19 @@ export default async function ProjectDetailPage({ params }: ProjectDetailPagePro
 
   const otherProjects = projectsData.filter((p) => p.slug !== project.slug).slice(0, 2);
 
+  const breadcrumbSchema = generateBreadcrumbSchema([
+    { name: "Home", url: "/" },
+    { name: "Projects", url: "/projects" },
+    { name: project.title, url: `/projects/${project.slug}` },
+  ]);
+
   return (
     <div className="flex flex-col w-full">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
+
       <PageHero
         badge={`CASE STUDY | ${project.status.toUpperCase()}`}
         title={project.title}
@@ -53,6 +87,7 @@ export default async function ProjectDetailPage({ params }: ProjectDetailPagePro
           { label: "Projects", href: "/projects" },
           { label: project.title },
         ]}
+        backgroundImage="/images/yatee-hero-slide-2.jpg"
         stats={[
           { label: "Built-up Area", value: `${new Intl.NumberFormat("en-IN").format(project.builtUpAreaSqFt)} Sq.Ft.` },
           { label: "Structural Steel", value: `${project.steelTonnageMT} MT` },

@@ -5,6 +5,7 @@ import { PageHero } from "@/components/shared/PageHero";
 import { companyDetails } from "@/data/company";
 import { Phone, Mail, MapPin, Clock, MessageSquare, Send, CheckCircle2, ShieldCheck, Building2, Factory } from "lucide-react";
 import { Button } from "@/components/ui/Button";
+import { generateBreadcrumbSchema } from "@/lib/seo";
 
 export default function ContactPage() {
   const [submitted, setSubmitted] = useState(false);
@@ -25,13 +26,24 @@ export default function ContactPage() {
     setSubmitted(true);
   };
 
+  const breadcrumbSchema = generateBreadcrumbSchema([
+    { name: "Home", url: "/" },
+    { name: "Contact Us", url: "/contact" },
+  ]);
+
   return (
     <div className="flex flex-col w-full">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
+
       <PageHero
         badge="GET IN TOUCH"
         title="Let's Build Something Exceptional"
         subtitle="Connect directly with our senior structural engineering consultants, proposal estimation bureau, and manufacturing facility directors."
         breadcrumbs={[{ label: "Contact Us" }]}
+        backgroundImage="/images/yatee-hero-slide-1.jpg"
         stats={[
           { label: "Phone Hotline", value: "+91 90390 52643" },
           { label: "Engineering Desk", value: "info@yateesteel.com" },
@@ -143,7 +155,7 @@ export default function ContactPage() {
                         <option value="Pre-Engineered Building">Pre-Engineered Building (PEB)</option>
                         <option value="Industrial Factory Shed">Industrial Factory Shed</option>
                         <option value="High-Bay Warehouse">High-Bay Warehouse</option>
-                        <option value="Cold Storage PUFF Facility">Cold Storage PUFF Facility</option>
+                        <option value="Light Gauge Steel (LGS) Structure">Light Gauge Steel (LGS) Structure</option>
                         <option value="Multi-Storey Steel Complex">Multi-Storey Steel Complex</option>
                         <option value="C & Z Purlins / Sheeting">C & Z Purlins / Sheeting Supply</option>
                       </select>
@@ -228,7 +240,7 @@ export default function ContactPage() {
                   </div>
                   <div>
                     <span className="text-[10px] font-bold uppercase tracking-wider text-blue-600 block">
-                      Corporate & Registered Office
+                      Corporate Headquarters
                     </span>
                     <h3 className="text-lg font-bold text-slate-900 font-heading">
                       Indore Headquarters
@@ -242,76 +254,42 @@ export default function ContactPage() {
                   <p className="text-slate-500 font-medium">PIN Code: {companyDetails.headquarters.postalCode}, {companyDetails.headquarters.country}</p>
                 </div>
 
-                {/* Direct Phone Hotlines */}
+                {/* Direct Phone & Email */}
                 <div className="pt-2 border-t border-slate-100 space-y-2.5 text-xs sm:text-sm">
                   <p className="text-[11px] font-bold uppercase tracking-wider text-slate-400">Direct Telephones</p>
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
                     <a
-                      href={`tel:${companyDetails.contact.phone.replace(/\s+/g, "")}`}
+                      href="tel:+919039052643"
                       className="flex items-center gap-2 p-2.5 bg-blue-50/60 hover:bg-blue-100/60 border border-blue-100 rounded-xl text-[#1D3A74] font-bold transition-colors"
                     >
                       <Phone className="w-4 h-4 text-blue-600 shrink-0" />
                       <div>
                         <span className="block text-[10px] uppercase font-semibold text-blue-600">Primary Hotline</span>
-                        <span>{companyDetails.contact.phone}</span>
+                        <span>+91 90390 52643</span>
                       </div>
                     </a>
                     <a
-                      href={`tel:${companyDetails.contact.altPhone.replace(/\s+/g, "")}`}
+                      href="tel:+919039052644"
                       className="flex items-center gap-2 p-2.5 bg-slate-50 hover:bg-slate-100 border border-slate-200 rounded-xl text-slate-800 font-bold transition-colors"
                     >
                       <Phone className="w-4 h-4 text-slate-600 shrink-0" />
                       <div>
                         <span className="block text-[10px] uppercase font-semibold text-slate-500">Alternate Desk</span>
-                        <span>{companyDetails.contact.altPhone}</span>
+                        <span>+91 90390 52644</span>
                       </div>
                     </a>
                   </div>
-                </div>
 
-                {/* Email Channels */}
-                <div className="pt-2 border-t border-slate-100 space-y-2.5 text-xs sm:text-sm">
-                  <p className="text-[11px] font-bold uppercase tracking-wider text-slate-400">Official Email Inboxes</p>
-                  
-                  {/* Primary General Email */}
                   <a
                     href={`mailto:${companyDetails.contact.email}`}
-                    className="flex items-center justify-between p-2.5 bg-emerald-50/50 hover:bg-emerald-100/60 border border-emerald-200/70 rounded-xl text-slate-800 transition-colors"
+                    className="flex items-center gap-3 p-3 bg-emerald-50/50 hover:bg-emerald-100/60 border border-emerald-200/70 rounded-xl text-slate-800 transition-colors"
                   >
-                    <div className="flex items-center gap-2">
-                      <Mail className="w-4 h-4 text-emerald-600 shrink-0" />
-                      <div>
-                        <span className="block text-[10px] uppercase font-bold text-emerald-700">General Inquiries & Proposals (Main)</span>
-                        <span className="font-semibold text-slate-900">{companyDetails.contact.email}</span>
-                      </div>
+                    <Mail className="w-4 h-4 text-emerald-600 shrink-0" />
+                    <div>
+                      <span className="block text-[10px] uppercase font-bold text-emerald-700">Official Inquiries & Proposals</span>
+                      <span className="font-semibold text-slate-900 text-sm">{companyDetails.contact.email}</span>
                     </div>
-                    <span className="text-[10px] bg-emerald-200 text-emerald-800 font-bold px-2 py-0.5 rounded">PRIMARY</span>
                   </a>
-
-                  {/* Direct Leadership Contacts */}
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 pt-1">
-                    <a
-                      href="mailto:pradeep@yateesteel.com"
-                      className="flex items-center gap-2 p-2.5 bg-slate-50 hover:bg-blue-50 border border-slate-200 hover:border-blue-200 rounded-xl text-slate-700 transition-colors"
-                    >
-                      <Mail className="w-3.5 h-3.5 text-blue-600 shrink-0" />
-                      <div className="truncate">
-                        <span className="block text-[10px] uppercase font-bold text-slate-500">Pradeep</span>
-                        <span className="font-medium text-xs text-slate-900 truncate">pradeep@yateesteel.com</span>
-                      </div>
-                    </a>
-
-                    <a
-                      href="mailto:pankaj@yateesteel.com"
-                      className="flex items-center gap-2 p-2.5 bg-slate-50 hover:bg-blue-50 border border-slate-200 hover:border-blue-200 rounded-xl text-slate-700 transition-colors"
-                    >
-                      <Mail className="w-3.5 h-3.5 text-blue-600 shrink-0" />
-                      <div className="truncate">
-                        <span className="block text-[10px] uppercase font-bold text-slate-500">Pankaj</span>
-                        <span className="font-medium text-xs text-slate-900 truncate">pankaj@yateesteel.com</span>
-                      </div>
-                    </a>
-                  </div>
                 </div>
               </div>
 
@@ -323,7 +301,7 @@ export default function ContactPage() {
                   </div>
                   <div>
                     <span className="text-[10px] font-bold uppercase tracking-wider text-amber-600 block">
-                      Heavy Fabrication Campus
+                      Heavy Fabrication Facility (6 Acres)
                     </span>
                     <h3 className="text-lg font-bold text-slate-900 font-heading">
                       Nandasan Plant, Gujarat
@@ -334,30 +312,107 @@ export default function ContactPage() {
                 <div className="bg-slate-50 p-4 rounded-2xl border border-slate-200/80 space-y-1 text-xs sm:text-sm text-slate-700">
                   <p className="font-semibold text-slate-900">{companyDetails.name}</p>
                   <p>{companyDetails.manufacturingFacility.addressLine1}, {companyDetails.manufacturingFacility.addressLine2}</p>
-                  <p className="text-slate-500 font-medium">{companyDetails.manufacturingFacility.state} – {companyDetails.manufacturingFacility.postalCode}, {companyDetails.manufacturingFacility.country}</p>
+                  <p className="text-slate-500 font-medium">{companyDetails.manufacturingFacility.city}, {companyDetails.manufacturingFacility.state} – {companyDetails.manufacturingFacility.postalCode}</p>
                 </div>
 
                 <div className="pt-2 border-t border-slate-100 space-y-1 text-xs text-slate-500">
-                  <p><strong>Shop Floor:</strong> 60,000+ Sq. Ft. Heavy Fabrication Bays</p>
-                  <p><strong>Annual Capacity:</strong> 22,000 Metric Tonnes</p>
+                  <p><strong>Capacity:</strong> 22,000 MT / Annum</p>
+                  <p><strong>Campus:</strong> 6 Acres Heavy Fabrication Bays</p>
                 </div>
               </div>
+            </div>
+          </div>
+        </div>
+      </section>
 
-              {/* Working Hours & Direct WhatsApp Banner */}
-              <div className="bg-[#041638] text-white p-6 rounded-3xl border border-blue-900 space-y-3 bg-blueprint-grid">
-                <div className="flex items-center gap-2 text-xs text-blue-300 font-bold">
+      {/* Regional Branch Offices & Instant Quotation Section */}
+      <section className="py-16 sm:py-20 bg-slate-50 border-t border-slate-200/80">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
+            {/* Regional Branch Offices (7 cols) */}
+            <div className="lg:col-span-7 bg-white border border-slate-200 rounded-3xl p-8 sm:p-10 shadow-xs flex flex-col justify-between">
+              <div>
+                <div className="flex items-center gap-2 mb-3">
+                  <span className="text-xs font-bold uppercase tracking-wider text-blue-600 bg-blue-50 px-2.5 py-1 rounded">
+                    Regional Network
+                  </span>
+                </div>
+                <h3 className="text-2xl font-extrabold text-slate-900 font-heading">
+                  Regional Branch Offices
+                </h3>
+                <p className="text-sm text-slate-500 mt-1 mb-6">
+                  Direct commercial and project liaison offices supporting client operations across East and North-Eastern industrial corridors.
+                </p>
+
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  {companyDetails.branches.map((b, idx) => (
+                    <div
+                      key={idx}
+                      className="p-5 rounded-2xl bg-slate-50/80 border border-slate-200/80 hover:border-blue-300 hover:bg-blue-50/30 transition-colors flex flex-col justify-between"
+                    >
+                      <div>
+                        <div className="flex items-center justify-between mb-2">
+                          <span className="text-xs font-bold text-slate-900 uppercase tracking-wide">
+                            {b.city} Branch
+                          </span>
+                          <span className="text-[10px] font-semibold bg-white border border-slate-200 px-2 py-0.5 rounded text-slate-600">
+                            {b.state}
+                          </span>
+                        </div>
+                        <p className="text-slate-500 text-xs leading-relaxed mb-4">
+                          {b.region}
+                        </p>
+                      </div>
+
+                      <div className="pt-3 border-t border-slate-200/60 space-y-1.5 text-xs">
+                        <a
+                          href={`tel:${b.phone.replace(/[^+\d]/g, "")}`}
+                          className="flex items-center gap-2 font-semibold text-slate-700 hover:text-blue-600 transition-colors"
+                        >
+                          <Phone className="w-3.5 h-3.5 text-blue-600" />
+                          <span>{b.phone}</span>
+                        </a>
+                        <a
+                          href={`mailto:${b.email}`}
+                          className="flex items-center gap-2 font-semibold text-blue-600 hover:underline transition-colors"
+                        >
+                          <Mail className="w-3.5 h-3.5 text-blue-600" />
+                          <span>{b.email}</span>
+                        </a>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+
+            {/* Instant Quotation & Working Hours Banner (5 cols) */}
+            <div className="lg:col-span-5 bg-[#041638] text-white p-8 sm:p-10 rounded-3xl border border-blue-900 shadow-sm flex flex-col justify-between bg-blueprint-grid relative overflow-hidden">
+              <div className="space-y-4">
+                <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-blue-500/10 border border-blue-400/20 text-xs text-blue-300 font-semibold">
                   <Clock className="w-4 h-4 text-blue-400" />
                   <span>{companyDetails.contact.workingHours}</span>
                 </div>
-                <h4 className="text-base font-bold font-heading">Need an Instant Quotation?</h4>
-                <p className="text-xs text-slate-300 leading-relaxed">
+
+                <h3 className="text-2xl font-extrabold font-heading text-white tracking-tight">
+                  Need an Instant Quotation?
+                </h3>
+
+                <p className="text-sm text-slate-300 leading-relaxed">
                   Use our interactive 5-stage B2B project calculator to estimate steel tonnage, clear spans, and budget in minutes.
                 </p>
-                <div className="pt-2">
-                  <Button href="/get-a-quote" variant="secondary" size="sm" className="w-full" showArrow>
-                    Launch Interactive Quote Engine
-                  </Button>
-                </div>
+              </div>
+
+              <div className="pt-6 mt-6 border-t border-blue-800/60">
+                <Button
+                  href="/get-a-quote"
+                  variant="secondary"
+                  size="lg"
+                  className="w-full justify-center shadow-lg font-bold"
+                  showArrow
+                >
+                  Launch Interactive Quote Engine
+                </Button>
               </div>
             </div>
           </div>

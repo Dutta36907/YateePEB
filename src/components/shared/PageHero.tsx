@@ -1,4 +1,5 @@
 import React from "react";
+import Image from "next/image";
 import { Breadcrumbs, BreadcrumbItem } from "@/components/layout/Breadcrumbs";
 import { cn } from "@/lib/utils";
 
@@ -20,7 +21,7 @@ export const PageHero: React.FC<PageHeroProps> = ({
   breadcrumbs,
   stats,
   children,
-  backgroundImage,
+  backgroundImage = "/images/yatee-hero-slide-1.jpg",
   className,
 }) => {
   return (
@@ -30,8 +31,22 @@ export const PageHero: React.FC<PageHeroProps> = ({
         className
       )}
     >
+      {/* Background Image */}
+      {backgroundImage && (
+        <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
+          <Image
+            src={backgroundImage}
+            alt=""
+            fill
+            priority
+            className="object-cover object-center opacity-35 mix-blend-luminosity scale-105"
+            sizes="100vw"
+          />
+        </div>
+      )}
+
       {/* Background Lighting Scrim */}
-      <div className="absolute inset-0 bg-gradient-to-r from-[#020F24] via-[#0B1B3D]/95 to-[#1D3A74]/80 pointer-events-none" />
+      <div className="absolute inset-0 bg-gradient-to-r from-[#020F24]/95 via-[#0B1B3D]/85 to-[#1D3A74]/70 pointer-events-none" />
       <div className="absolute inset-0 radial-navy-glow pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">

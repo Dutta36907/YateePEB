@@ -7,29 +7,55 @@ import { PageHero } from "@/components/shared/PageHero";
 import { SectionHeader } from "@/components/ui/SectionHeader";
 import { companyDetails, companyMilestones, leadershipTeam } from "@/data/company";
 import { Button } from "@/components/ui/Button";
+import { generateBreadcrumbSchema } from "@/lib/seo";
 
 export const metadata: Metadata = {
-  title: "About Us | Yatee Steel Structures",
+  title: "About Us | Leading PEB & Structural Steel Manufacturer in India",
   description:
-    "Learn about Yatee Steel Structures Pvt Ltd, India's leading Pre-Engineered Building and heavy structural steel manufacturer since 2004.",
+    "Learn about Yatee Steel Structures Pvt Ltd. 20+ years of engineering leadership, 22,000 MT annual fabrication capacity, 6-acre Gujarat plant, and 100+ delivered industrial projects.",
+  keywords: [
+    "About Yatee Steel Structures",
+    "PEB Manufacturer India",
+    "Pre-Engineered Building Company Gujarat",
+    "Structural Steel Fabricators Indore",
+    "Industrial Shed Manufacturer India",
+  ],
+  openGraph: {
+    title: "About Yatee Steel Structures | PEB & Structural Steel Manufacturer",
+    description:
+      "Pioneering Pre-Engineered Buildings, heavy steel fabrication, and turnkey industrial construction across India with 22,000 MT annual capacity.",
+    url: "https://yateesteel.com/about",
+    images: ["/images/yatee-hero-building.jpg"],
+  },
 };
 
 export default function AboutPage() {
+  const breadcrumbSchema = generateBreadcrumbSchema([
+    { name: "Home", url: "/" },
+    { name: "About Us", url: "/about" },
+  ]);
+
   const subNav = [
     { title: "Company Overview", href: "/about/company-overview", desc: "Corporate history, 20+ years milestones and leadership." },
     { title: "Vision, Mission & Values", href: "/about/vision-mission-values", desc: "Engineering principles, ethical safety and green building commitment." },
     { title: "Why Choose Us", href: "/about/why-choose-us", desc: "6 engineered advantages, value engineering and cost optimization." },
     { title: "Manufacturing & Infrastructure", href: "/about/manufacturing-infrastructure", desc: "6-acre Nandasan plant, automated SAW lines and CNC machinery." },
-    { title: "Quality & Certifications", href: "/about/quality-certifications", desc: "ISO 9001, 14001, 45001, CE EN 1090-2 standards and testing protocols." },
+    { title: "Quality & Certifications", href: "/about/quality-certifications", desc: "ISO 9001:2015 standards, EN 1090-2, and testing protocols." },
   ];
 
   return (
     <div className="flex flex-col w-full">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
+
       <PageHero
         badge="ABOUT YATEE"
         title="Building Expertise. Engineering Trust."
         subtitle="Two decades of pioneering structural steel fabrication, value engineering, and high-performance Pre-Engineered Buildings across India."
         breadcrumbs={[{ label: "About Us" }]}
+        backgroundImage="/images/factory-plant.jpg"
         stats={[
           { label: "Delivered Projects", value: "100+" },
           { label: "Annual Capacity", value: "22,000 MT" },
@@ -87,7 +113,7 @@ export default function AboutPage() {
                 From a Specialized Fabrication Shop to a National PEB Powerhouse
               </h2>
               <p className="text-slate-600 text-base leading-relaxed">
-                Headquartered in Indore, Madhya Pradesh, with branch offices in Siliguri (W.B.) and Patna (Bihar), Yatee Steel Structures provides integrated engineering and manufacturing solutions for India&apos;s rapidly growing industrial sector.
+                Headquartered in Indore, Madhya Pradesh, with regional branches in Siliguri (West Bengal) and Patna (Bihar), Yatee Steel Structures provides integrated engineering, fabrication, and turnkey construction solutions for India&apos;s rapidly growing industrial sector.
               </p>
               <p className="text-slate-600 text-base leading-relaxed">
                 Over the past 20+ years, we have expanded into a 22,000 MT automated manufacturing facility spanning 6 acres in Nandasan, Gujarat. Today, Yatee partners with leading corporations, Tier-1 EPC contractors, and top logistics developers to build monumental, code-compliant steel structures.
@@ -103,7 +129,7 @@ export default function AboutPage() {
               <div className="relative rounded-2xl overflow-hidden shadow-2xl border border-slate-200 aspect-16/10">
                 <Image
                   src="/images/yatee-hero-building.jpg"
-                  alt="Yatee Industrial Facility"
+                  alt="Yatee Industrial Facility - 6-Acre Plant in Nandasan, Gujarat"
                   fill
                   sizes="(max-width: 1024px) 100vw, 50vw"
                   className="object-cover"
@@ -119,17 +145,16 @@ export default function AboutPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <SectionHeader
             eyebrow="GOVERNANCE & LEADERSHIP"
-            title="Executive Leadership Team"
-            subtitle="Led by veteran structural engineers, project managers, and operations specialists with over a century of combined steel construction experience."
+            title="Technical & Operational Leadership"
+            subtitle="Led by veteran structural engineers, project managers, and operations specialists with over 15+ years of leadership in the Pre-Engineered Building fraternity."
           />
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {leadershipTeam.map((member, idx) => (
               <div key={idx} className="bg-white p-6 rounded-2xl border border-slate-200 shadow-xs flex flex-col justify-between">
                 <div>
                   <div className="w-14 h-14 rounded-full bg-[#1D3A74] text-white font-extrabold text-xl flex items-center justify-center mb-4 font-heading">
-                    {member.name.split(" ")[0][0]}
-                    {member.name.split(" ")[1]?.[0] || ""}
+                    0{idx + 1}
                   </div>
                   <h3 className="text-lg font-bold text-slate-900 leading-snug">{member.name}</h3>
                   <p className="text-xs font-bold text-blue-600 mt-1">{member.role}</p>

@@ -5,20 +5,41 @@ import { SectionHeader } from "@/components/ui/SectionHeader";
 import { certificationsData } from "@/data/certifications";
 import { Award, ShieldCheck, FileCheck, CheckCircle2, CheckSquare, Search, Download } from "lucide-react";
 import { Button } from "@/components/ui/Button";
+import { generateBreadcrumbSchema } from "@/lib/seo";
 
 export const metadata: Metadata = {
-  title: "Quality & Certifications | Yatee Steel Structures",
+  title: "ISO 9001:2015 Quality & Certifications | Yatee Steel Structures",
   description:
-    "Review Yatee's ISO 9001:2015, ISO 14001:2015, ISO 45001:2018, and CE EN 1090-2 quality standards, NDT testing workflows, and safety governance.",
+    "Review Yatee's ISO 9001:2015, ISO 14001:2015, ISO 45001:2018, and CE EN 1090-2 structural steel quality standards, NDT testing workflows, and safety governance.",
+  keywords: [
+    "ISO 9001:2015 PEB Manufacturer",
+    "Structural Steel Quality Testing India",
+    "Ultrasonic Testing Weld Inspection AWS D1.1",
+    "EN 1090-2 Structural Steel Standards",
+    "IS 800:2007 Compliant Steel Fabrication",
+  ],
+  openGraph: {
+    title: "Quality Management & ISO 9001:2015 Certifications | Yatee Steel",
+    description:
+      "Certified ISO 9001:2015 quality control, non-destructive weld testing, and IS 800:2007 code compliance across all structural fabrication.",
+    url: "https://yateesteel.com/about/quality-certifications",
+    images: ["/images/yatee-hero-building.jpg"],
+  },
 };
 
 export default function QualityCertificationsPage() {
+  const breadcrumbSchema = generateBreadcrumbSchema([
+    { name: "Home", url: "/" },
+    { name: "About Us", url: "/about" },
+    { name: "Quality & Certifications", url: "/about/quality-certifications" },
+  ]);
+
   const qaWorkflow = [
     {
       phase: "01",
       title: "Incoming Raw Material Inspection",
       points: [
-        "100% verification of Mill Test Certificates (MTC) from primary producers (Tata/JSW)",
+        "100% verification of Mill Test Certificates (MTC) from primary producers (Tata Steel / JSW / SAIL)",
         "Spectrometric chemical composition testing (Carbon, Manganese, Silicon limits)",
         "Ultrasonic lamination flaw checks on plates exceeding 25mm thickness",
         "Visual inspection for surface pitting, lamination, and dimensional gauge tolerances",
@@ -58,6 +79,11 @@ export default function QualityCertificationsPage() {
 
   return (
     <div className="flex flex-col w-full">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
+
       <PageHero
         badge="CERTIFIED EXCELLENCE"
         title="Quality & Certifications"
@@ -66,6 +92,7 @@ export default function QualityCertificationsPage() {
           { label: "About Us", href: "/about" },
           { label: "Quality & Certifications" },
         ]}
+        backgroundImage="/images/services/custom-structures.jpg"
         stats={[
           { label: "Quality System", value: "ISO 9001:2015" },
           { label: "Safety Standard", value: "ISO 45001:2018" },

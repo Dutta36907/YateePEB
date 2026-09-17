@@ -3,19 +3,48 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { PageHero } from "@/components/shared/PageHero";
 import { projectsData } from "@/data/projects";
-import { ArrowRight, MapPin, Calendar, Clock } from "lucide-react";
+import { ArrowRight, MapPin, Clock } from "lucide-react";
+import { generateBreadcrumbSchema } from "@/lib/seo";
 
 export const metadata: Metadata = {
-  title: "Ongoing Fast-Track Projects | Yatee Steel Structures",
+  title: "Ongoing Fast-Track PEB Projects | Yatee Steel Structures",
   description:
-    "Review our active ongoing structural steel installations and mega PEB construction sites nationwide.",
+    "Review our active ongoing structural steel installations and mega PEB construction sites nationwide, executed under strict ISO 45001 safety governance.",
+  keywords: [
+    "Ongoing PEB Projects India",
+    "Active Steel Construction Sites",
+    "Fast Track Steel Erection",
+    "Industrial Building Sites Gujarat Indore",
+    "Yatee Steel Live Projects",
+  ],
+  alternates: {
+    canonical: "https://yateesteel.com/projects/ongoing",
+  },
+  openGraph: {
+    title: "Ongoing Fast-Track PEB Projects | Yatee Steel Structures",
+    description:
+      "Review active structural steel erection and industrial warehouse construction sites across India.",
+    url: "https://yateesteel.com/projects/ongoing",
+    images: ["/images/yatee-hero-building.jpg"],
+  },
 };
 
 export default function OngoingProjectsPage() {
   const ongoing = projectsData.filter((p) => p.status === "Ongoing");
 
+  const breadcrumbSchema = generateBreadcrumbSchema([
+    { name: "Home", url: "/" },
+    { name: "Projects", url: "/projects" },
+    { name: "Ongoing Projects", url: "/projects/ongoing" },
+  ]);
+
   return (
     <div className="flex flex-col w-full">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
+
       <PageHero
         badge="ACTIVE SITES"
         title="Ongoing Fast-Track Installations"
@@ -24,6 +53,7 @@ export default function OngoingProjectsPage() {
           { label: "Projects", href: "/projects" },
           { label: "Ongoing Projects" },
         ]}
+        backgroundImage="/images/services/erection-site.jpg"
       />
 
       <section className="py-20 bg-white">

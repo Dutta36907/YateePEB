@@ -9,6 +9,7 @@ import { SpecTable } from "@/components/ui/SpecTable";
 import { Accordion } from "@/components/ui/Accordion";
 import { CheckCircle2, ArrowRight, ShieldCheck, Download, Layers, Sparkles, HelpCircle } from "lucide-react";
 import { Button } from "@/components/ui/Button";
+import { generateBreadcrumbSchema, generateProductSchema, generateFaqSchema, SITE_URL } from "@/lib/seo";
 
 interface ProductDetailPageProps {
   params: Promise<{
@@ -30,9 +31,32 @@ export async function generateMetadata({ params }: ProductDetailPageProps): Prom
     return { title: "Product Not Found" };
   }
 
+  const title = `${product.title} Manufacturer | Yatee Steel Structures`;
+  const description = `${product.shortDescription} High-yield steel fabrication, ISO 9001:2015 certified, IS 800:2007 compliant. Request quotation now.`;
+
   return {
-    title: `${product.title} | Yatee Steel Structures`,
-    description: product.shortDescription,
+    title,
+    description,
+    keywords: [
+      `${product.title} Manufacturer`,
+      `${product.title} India`,
+      `${product.title} Gujarat`,
+      "Pre-Engineered Buildings",
+      "Structural Steel Fabrication",
+      "Yatee Steel Structures",
+    ],
+    openGraph: {
+      title,
+      description,
+      url: `${SITE_URL}/products/${product.slug}`,
+      images: [product.featuredImage || "/images/yatee-hero-building.jpg"],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title,
+      description,
+      images: [product.featuredImage || "/images/yatee-hero-building.jpg"],
+    },
   };
 }
 
@@ -44,8 +68,31 @@ export default async function ProductDetailPage({ params }: ProductDetailPagePro
     notFound();
   }
 
+  const breadcrumbSchema = generateBreadcrumbSchema([
+    { name: "Home", url: "/" },
+    { name: "Products", url: "/products" },
+    { name: product.title, url: `/products/${product.slug}` },
+  ]);
+
+  const productSchema = generateProductSchema({
+    name: product.title,
+    description: product.fullDescription,
+    image: product.featuredImage,
+    slug: product.slug,
+    category: "Pre-Engineered Building Systems",
+  });
+
+  const faqSchema = generateFaqSchema(product.faqs || []);
+
+  const structuredDataList = [breadcrumbSchema, productSchema, ...(faqSchema ? [faqSchema] : [])];
+
   return (
     <div className="flex flex-col w-full">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredDataList) }}
+      />
+
       <PageHero
         badge="PRODUCT SPECIFICATION"
         title={product.title}
@@ -54,6 +101,7 @@ export default async function ProductDetailPage({ params }: ProductDetailPagePro
           { label: "Products", href: "/products" },
           { label: product.title },
         ]}
+        backgroundImage={product.featuredImage}
       />
 
       {/* Main Content & Specs */}

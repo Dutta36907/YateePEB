@@ -89,6 +89,7 @@ export default function GetAQuotePage() {
         breadcrumbs={[
           { label: "Get a Quote" },
         ]}
+        backgroundImage="/images/services/turnkey-project.jpg"
         stats={[
           { label: "Average Estimation Turnaround", value: "4 Hours" },
           { label: "BIM 3D Detailing", value: "Included Free" },
@@ -212,7 +213,7 @@ export default function GetAQuotePage() {
                           <input
                             type="tel"
                             required
-                            placeholder="+91 90390 52643"
+                            placeholder="+91 90390 52643 / Mobile"
                             value={formData.phone}
                             onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
                             className="w-full px-4 py-3 text-sm bg-white border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-600"
@@ -303,7 +304,7 @@ export default function GetAQuotePage() {
                           <input
                             type="text"
                             required
-                            placeholder="e.g. Chakan, Pune / Sanand, Ahmedabad"
+                            placeholder="e.g. Sanand, Ahmedabad / Pithampur, Indore"
                             value={formData.projectCity}
                             onChange={(e) => setFormData({ ...formData, projectCity: e.target.value })}
                             className="w-full px-4 py-3 text-sm bg-white border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-600"

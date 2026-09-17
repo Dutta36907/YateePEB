@@ -17,10 +17,43 @@ import { QualityCertSection } from "@/components/home/QualityCertSection";
 import { ClientsWallSection } from "@/components/home/ClientsWallSection";
 import { TestimonialSection } from "@/components/home/TestimonialSection";
 import { InsightsSection } from "@/components/home/InsightsSection";
+import { generateFaqSchema } from "@/lib/seo";
 
 export default function HomePage() {
+  const homepageFaqs = [
+    {
+      question: "What is a Pre-Engineered Building (PEB) and why is it superior to conventional steel construction?",
+      answer: "A Pre-Engineered Building (PEB) is a custom structural steel building designed with tapered built-up I-sections engineered precisely to match load moments. PEBs are fabricated entirely off-site in automated factories and bolted on-site, offering up to 30% steel weight savings, 40-50% faster construction, column-free clear spans up to 90 meters, and strict compliance with IS 800:2007.",
+    },
+    {
+      question: "What is the manufacturing capacity and location of Yatee Steel Structures?",
+      answer: "Yatee Steel Structures operates a state-of-the-art 6-acre heavy fabrication complex in Nandasan, Kadi (near Ahmedabad Mehsana Highway), Gujarat, with an annual manufacturing capacity of 22,000 MT. We are headquartered in Indore, Madhya Pradesh, with regional branches in Siliguri (West Bengal) and Patna (Bihar).",
+    },
+    {
+      question: "What structural design codes and software does Yatee utilize?",
+      answer: "Our in-house team of 20+ engineering specialists designs structures in full compliance with IS 800:2007 (Limit State Design), IS 875 (Part 1-5 for Wind & Imposed Loads), IS 1893 (Earthquake Resistance), and international MBMA/AISC standards using STAAD.Pro and Tekla Structures 3D BIM modeling.",
+    },
+    {
+      question: "How does Yatee ensure structural quality and welding integrity?",
+      answer: "We are an ISO 9001:2015 certified manufacturer. Our 6-acre facility utilizes high-definition CNC plasma cutters, automatic H-beam lines (PTW), and Submerged Arc Welding (SAW). All structural welds undergo 100% visual inspection and non-destructive Ultrasonic Testing (UT) per AWS D1.1 standards.",
+    },
+    {
+      question: "How can I get a quotation for an industrial shed or PEB project?",
+      answer: "You can request a comprehensive technical and cost estimate by submitting your building length, width, eave height, crane load requirements, and location through our online PEB Estimator or contact our engineering team directly at info@yateesteel.com or call +91 90390 52643 / +91 90390 52644.",
+    },
+  ];
+
+  const faqSchema = generateFaqSchema(homepageFaqs);
+
   return (
     <div className="flex flex-col w-full">
+      {faqSchema && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+        />
+      )}
+
       {/* 1. Hero with Live Structural Ticker */}
       <HeroSection />
 
@@ -51,7 +84,7 @@ export default function HomePage() {
       {/* 10. Industry Solutions & Sectors */}
       <IndustriesGridSection />
 
-      {/* 11. Manufacturing Excellence (25-Acre Chakan Plant) */}
+      {/* 11. Manufacturing Excellence (6-Acre Nandasan Gujarat Plant) */}
       <ManufacturingSection />
 
       {/* 12. Integrated 8-Stage Process */}

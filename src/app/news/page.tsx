@@ -5,21 +5,47 @@ import { PageHero } from "@/components/shared/PageHero";
 import { SectionHeader } from "@/components/ui/SectionHeader";
 import { newsArticles } from "@/data/news";
 import { ArrowRight, Clock, Calendar, BookOpen, Tag } from "lucide-react";
+import { generateBreadcrumbSchema } from "@/lib/seo";
 
 export const metadata: Metadata = {
-  title: "News, Updates & Technical Whitepapers | Yatee Steel Structures",
+  title: "PEB Technical Insights & News | Yatee Steel Structures",
   description:
-    "Read the latest engineering whitepapers, company milestones, PEB design optimizations, and structural steel insights from Yatee.",
+    "Explore engineering whitepapers, PEB structural optimization guides, factory milestones, and steel construction insights from Yatee Steel Structures.",
+  keywords: [
+    "PEB Technical Insights",
+    "Pre-Engineered Building Design Guide",
+    "Tekla 3D Detailing Whitepaper",
+    "Structural Steel News India",
+    "Yatee Steel Updates",
+  ],
+  openGraph: {
+    title: "Technical Insights & News | Yatee Steel Structures",
+    description:
+      "Engineering insights, 3D BIM structural optimization whitepapers, and PEB industry analyses.",
+    url: "https://yateesteel.com/news",
+    images: ["/images/yatee-hero-building.jpg"],
+  },
 };
 
 export default function NewsPage() {
+  const breadcrumbSchema = generateBreadcrumbSchema([
+    { name: "Home", url: "/" },
+    { name: "News & Insights", url: "/news" },
+  ]);
+
   return (
     <div className="flex flex-col w-full">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
+
       <PageHero
         badge="ENGINEERING KNOWLEDGE HUB"
         title="Technical Insights & Company Updates"
         subtitle="Thought leadership articles, 3D BIM structural optimization whitepapers, factory capacity milestones, and PEB industry analyses."
         breadcrumbs={[{ label: "News & Updates" }]}
+        backgroundImage="/images/services/design-engineering.jpg"
       />
 
       <section className="py-20 bg-white">

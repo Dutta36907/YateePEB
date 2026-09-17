@@ -117,7 +117,7 @@ export const WhoWeAreSection: React.FC = () => {
             <div className="bg-[#1D3A74] rounded-2xl p-7 flex items-center justify-between gap-4">
               <div>
                 <p className="text-white font-extrabold text-base leading-snug">
-                  500+ Projects.<br />18+ Years. Across India.
+                  100+ Landmark Projects.<br />20+ Years. Across India.
                 </p>
                 <p className="text-blue-300 text-xs mt-1 font-medium">
                   Trusted by India's largest industrial groups.

@@ -5,14 +5,35 @@ import { SectionHeader } from "@/components/ui/SectionHeader";
 import { advantagesList } from "@/data/company";
 import { Clock, TrendingDown, ShieldCheck, Maximize, Leaf, Award, CheckCircle2, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/Button";
+import { generateBreadcrumbSchema } from "@/lib/seo";
 
 export const metadata: Metadata = {
-  title: "Why Choose Yatee | Engineered Advantages & Value Engineering",
+  title: "Why Choose Yatee | Engineered Advantages in PEB Construction",
   description:
-    "Discover the key advantages of partnering with Yatee Steel Structures for Pre-Engineered Buildings, including 40% faster schedules, 3D BIM optimization, and turnkey safety.",
+    "Discover why leading industrial corporations choose Yatee: In-house Tekla 3D engineering, 22,000 MT fabrication throughput, 40% faster schedules, and up to 30% capital savings.",
+  keywords: [
+    "Why Choose Yatee PEB",
+    "PEB Advantages India",
+    "Turnkey PEB Contractor Benefits",
+    "Pre-Engineered vs Conventional Steel",
+    "Cost Optimized Steel Construction",
+  ],
+  openGraph: {
+    title: "Why Choose Yatee Steel Structures | Engineered Advantages",
+    description:
+      "40-50% faster construction, 30% steel weight savings, column-free clear spans up to 90m, and ISO 9001:2015 certified fabrication.",
+    url: "https://yateesteel.com/about/why-choose-us",
+    images: ["/images/yatee-hero-building.jpg"],
+  },
 };
 
 export default function WhyChooseUsPage() {
+  const breadcrumbSchema = generateBreadcrumbSchema([
+    { name: "Home", url: "/" },
+    { name: "About Us", url: "/about" },
+    { name: "Why Choose Us", url: "/about/why-choose-us" },
+  ]);
+
   const iconMap: Record<string, React.ReactNode> = {
     Clock: <Clock className="w-8 h-8 text-blue-600" />,
     TrendingDown: <TrendingDown className="w-8 h-8 text-blue-600" />,
@@ -24,6 +45,11 @@ export default function WhyChooseUsPage() {
 
   return (
     <div className="flex flex-col w-full">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
+
       <PageHero
         badge="ENGINEERED ADVANTAGES"
         title="Why Industry Leaders Choose Yatee"
@@ -32,6 +58,7 @@ export default function WhyChooseUsPage() {
           { label: "About Us", href: "/about" },
           { label: "Why Choose Us" },
         ]}
+        backgroundImage="/images/yatee-hero-slide-1.jpg"
       />
 
       {/* 6 Core Advantages Detailed */}

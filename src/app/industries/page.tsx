@@ -6,14 +6,35 @@ import { SectionHeader } from "@/components/ui/SectionHeader";
 import { industriesData } from "@/data/industries";
 import { ArrowRight, Factory, Warehouse, Building2, Landmark, Snowflake, Network, CheckCircle2 } from "lucide-react";
 import { Button } from "@/components/ui/Button";
+import { generateBreadcrumbSchema } from "@/lib/seo";
 
 export const metadata: Metadata = {
-  title: "Industries & Sectors Served | Yatee Steel Structures",
+  title: "Industries & Industrial Sectors Served | Yatee Steel Structures",
   description:
-    "Discover Yatee's specialized structural steel and PEB solutions for Industrial Manufacturing, Warehousing & Logistics, Commercial, Institutional, Cold Storage, and Public Infrastructure.",
+    "Tailored Pre-Engineered Building (PEB) and heavy structural steel solutions for Logistics & Warehousing, Heavy Manufacturing, Cold Storage, Aviation Hangars, and Infrastructure.",
+  keywords: [
+    "PEB Warehousing Solutions India",
+    "Industrial Factory Shed Construction",
+    "Cold Storage PEB Structures",
+    "Aviation Hangar Steel Buildings",
+    "Commercial Steel Complex Framing",
+    "Infrastructure Steel Fabricators",
+  ],
+  openGraph: {
+    title: "Industries & Sectors Served | Yatee Steel Structures",
+    description:
+      "Sector-specific structural steel engineering for heavy manufacturing, automated warehouses, cleanrooms, and clear-span hangars.",
+    url: "https://yateesteel.com/industries",
+    images: ["/images/yatee-hero-building.jpg"],
+  },
 };
 
 export default function IndustriesPage() {
+  const breadcrumbSchema = generateBreadcrumbSchema([
+    { name: "Home", url: "/" },
+    { name: "Industries", url: "/industries" },
+  ]);
+
   const iconMap: Record<string, React.ReactNode> = {
     "industrial-manufacturing": <Factory className="w-8 h-8 text-blue-600" />,
     "warehousing-logistics": <Warehouse className="w-8 h-8 text-blue-600" />,
@@ -25,11 +46,17 @@ export default function IndustriesPage() {
 
   return (
     <div className="flex flex-col w-full">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
+
       <PageHero
         badge="TAILORED INDUSTRY SOLUTIONS"
         title="Engineered for Diverse Sectors"
         subtitle="Sector-specific structural steel engineering tailored for heavy machinery vibrations, high-density logistics racking, cleanroom climate control, and monumental clear spans."
         breadcrumbs={[{ label: "Industries" }]}
+        backgroundImage="/images/warehouse-interior.jpg"
         stats={[
           { label: "Sectors Covered", value: "6 Major Verticals" },
           { label: "Max Clear Span", value: "90m+ Column-Free" },

@@ -8,8 +8,8 @@ import { servicesData } from "@/data/services";
 import { Accordion } from "@/components/ui/Accordion";
 import { CheckCircle2, ArrowRight, ShieldCheck, Cpu, Layers, Wrench, FileText } from "lucide-react";
 import { Button } from "@/components/ui/Button";
-
 import Image from "next/image";
+import { generateBreadcrumbSchema, generateServiceSchema, generateFaqSchema, SITE_URL } from "@/lib/seo";
 
 interface ServiceDetailPageProps {
   params: Promise<{
@@ -31,9 +31,31 @@ export async function generateMetadata({ params }: ServiceDetailPageProps): Prom
     return { title: "Service Not Found" };
   }
 
+  const title = `${service.title} Services | Yatee Steel Structures`;
+  const description = `${service.shortDescription} Turnkey PEB execution, 3D BIM design, certified welding, and single-source project accountability across India.`;
+
   return {
-    title: `${service.title} | Yatee Steel Structures`,
-    description: service.shortDescription,
+    title,
+    description,
+    keywords: [
+      `${service.title} India`,
+      `${service.title} Services`,
+      "PEB Engineering Services",
+      "Structural Steel Contractor",
+      "Yatee Steel Structures",
+    ],
+    openGraph: {
+      title,
+      description,
+      url: `${SITE_URL}/services/${service.slug}`,
+      images: [service.featuredImage || "/images/yatee-hero-building.jpg"],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title,
+      description,
+      images: [service.featuredImage || "/images/yatee-hero-building.jpg"],
+    },
   };
 }
 
@@ -45,8 +67,30 @@ export default async function ServiceDetailPage({ params }: ServiceDetailPagePro
     notFound();
   }
 
+  const breadcrumbSchema = generateBreadcrumbSchema([
+    { name: "Home", url: "/" },
+    { name: "Services", url: "/services" },
+    { name: service.title, url: `/services/${service.slug}` },
+  ]);
+
+  const serviceSchema = generateServiceSchema({
+    name: service.title,
+    description: service.overview,
+    slug: service.slug,
+    image: service.featuredImage,
+  });
+
+  const faqSchema = generateFaqSchema(service.faqs || []);
+
+  const structuredDataList = [breadcrumbSchema, serviceSchema, ...(faqSchema ? [faqSchema] : [])];
+
   return (
     <div className="flex flex-col w-full">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredDataList) }}
+      />
+
       <PageHero
         badge={`SERVICE ${service.number}`}
         title={service.title}
@@ -55,6 +99,7 @@ export default async function ServiceDetailPage({ params }: ServiceDetailPagePro
           { label: "Services", href: "/services" },
           { label: service.title },
         ]}
+        backgroundImage={service.featuredImage}
       />
 
       {/* Service Overview & Capabilities */}
@@ -79,7 +124,7 @@ export default async function ServiceDetailPage({ params }: ServiceDetailPagePro
                     Live Field & Factory Execution
                   </span>
                   <span className="text-xs font-semibold text-slate-200 drop-shadow">
-                    ISO 9001 & 45001 Certified
+                    ISO 9001:2015 Certified
                   </span>
                 </div>
               </div>

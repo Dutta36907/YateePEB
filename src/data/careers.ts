@@ -8,7 +8,7 @@ export const careerBenefits = [
   },
   {
     title: "Continuous Learning & Tech Stack",
-    description: "Hands-on exposure to advanced structural design tools (Tekla 2024, STAAD.Pro, MBS), automated CNC robotics, and ISO 45001 safety systems.",
+    description: "Hands-on exposure to advanced structural design tools (Tekla Structures, STAAD.Pro), automated CNC robotics, and ISO 45001 safety systems.",
     icon: "GraduationCap",
   },
   {
@@ -28,14 +28,14 @@ export const jobOpeningsData: JobOpening[] = [
     slug: "senior-structural-design-engineer-peb",
     title: "Senior Structural Design Engineer (PEB & Heavy Steel)",
     department: "Design & Structural Engineering",
-    location: "Corporate Office, Pune (Hybrid)",
+    location: "Corporate Office, Indore (Hybrid)",
     experienceRequired: "5–9 Years",
     employmentType: "Full-Time",
     openingsCount: 3,
     summary:
       "We are seeking an experienced Senior Structural Design Engineer to lead structural analysis, connection design, and value engineering for complex long-span PEB and multi-storey structural steel projects.",
     responsibilities: [
-      "Perform complete 3D structural analysis and design of PEB frames using STAAD.Pro and MBS per IS 800:2007, AISC 360, and MBMA guidelines.",
+      "Perform complete 3D structural analysis and design of PEB frames using STAAD.Pro per IS 800:2007, AISC 360, and MBMA guidelines.",
       "Design primary frames, stepped crane columns, continuous crane girders, portal bracing, and composite mezzanine floor systems.",
       "Collaborate with Tekla detailing teams to review 3D BIM connection details, anchor bolt layouts, and fabrication drawings.",
       "Conduct structural value engineering to optimize steel weight while maintaining structural safety and code compliance.",
@@ -44,16 +44,16 @@ export const jobOpeningsData: JobOpening[] = [
     requirements: [
       "M.Tech / B.Tech in Structural / Civil Engineering from a recognized institution.",
       "Minimum 5 years of dedicated design experience in Pre-Engineered Buildings (PEB) or Heavy Structural Steel.",
-      "High proficiency in STAAD.Pro, MBS (Metal Building Software), and AutoCAD. Familiarity with Tekla Structures is a strong plus.",
+      "High proficiency in STAAD.Pro and AutoCAD. Familiarity with Tekla Structures is a strong plus.",
       "In-depth knowledge of IS 800, IS 875 (Parts 1-5), IS 1893, and AISC 360 codes.",
     ],
-    skills: ["STAAD.Pro", "MBS", "IS 800:2007", "AISC 360", "Tekla Review", "Value Engineering"],
+    skills: ["STAAD.Pro", "IS 800:2007", "AISC 360", "Tekla Review", "Value Engineering"],
   },
   {
     slug: "lead-tekla-structural-detailer",
     title: "Lead Tekla Structural Detailer / Checker",
     department: "Design & Structural Engineering",
-    location: "Corporate Office, Pune",
+    location: "Corporate Office, Indore",
     experienceRequired: "4–8 Years",
     employmentType: "Full-Time",
     openingsCount: 4,
@@ -76,12 +76,12 @@ export const jobOpeningsData: JobOpening[] = [
     slug: "manager-plant-quality-assurance-qc",
     title: "Manager – Plant Quality Assurance & QC (Welding & NDT)",
     department: "Fabrication & Quality",
-    location: "Chakan Plant, Pune",
+    location: "Nandasan Plant, Gujarat",
     experienceRequired: "7–12 Years",
     employmentType: "Full-Time",
     openingsCount: 2,
     summary:
-      "Lead the QA/QC department at our 25-acre fabrication plant, overseeing incoming raw material inspection, automated welding quality, NDT testing, and ISO / CE compliance.",
+      "Lead the QA/QC department at our 6-acre fabrication plant in Nandasan, Gujarat, overseeing incoming raw material inspection, automated welding quality, NDT testing, and ISO compliance.",
     responsibilities: [
       "Manage incoming steel plate and coil inspection, verifying mill test certificates (MTC), chemical spectrometry, and thickness tolerances.",
       "Supervise automated SAW beam welding and manual welding processes in compliance with AWS D1.1 and EN 1090-2 standards.",
@@ -108,7 +108,7 @@ export const jobOpeningsData: JobOpening[] = [
     summary:
       "Manage turnkey on-site structural steel erection, heavy crane rigging, contractor coordination, and strict zero-harm safety enforcement for large-scale industrial projects.",
     responsibilities: [
-      "Lead on-site structural erection of columns, rafters, crane girders, purlins, and standing seam roofing systems.",
+      "Lead on-site structural erection of columns, rafters, crane girders, purlins, and roofing systems.",
       "Develop and enforce engineered heavy crane lifting plans and rigging procedures using 50T to 150T mobile cranes.",
       "Enforce ISO 45001 safety standards, daily safety toolbox talks, life-line netting, and fall-protection harnesses.",
       "Coordinate with client project managers, civil contractors, and statutory safety inspectors for timely milestone sign-offs.",
@@ -126,7 +126,7 @@ export const jobOpeningsData: JobOpening[] = [
     slug: "manager-b2b-sales-estimation",
     title: "Manager – B2B Business Development & PEB Estimation",
     department: "B2B Sales & Estimation",
-    location: "Corporate Office, Pune / Mumbai",
+    location: "Indore HQ / Regional Branches",
     experienceRequired: "6–10 Years",
     employmentType: "Full-Time",
     openingsCount: 2,

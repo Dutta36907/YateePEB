@@ -7,26 +7,54 @@ import { SectionHeader } from "@/components/ui/SectionHeader";
 import { productsData } from "@/data/products";
 import { ArrowRight, CheckCircle2, Download } from "lucide-react";
 import { Button } from "@/components/ui/Button";
+import { generateBreadcrumbSchema } from "@/lib/seo";
 
 export const metadata: Metadata = {
-  title: "Products & Steel Building Systems | Yatee Steel Structures",
+  title: "Steel Building Products & PEB Systems | Yatee Steel Structures",
   description:
-    "Explore Yatee's engineered product range: Pre-Engineered Buildings, Industrial Factory Sheds, Cold-Formed C & Z Purlins, Colour-Coated Roofing Sheets, PUFF Sandwich Panels, and Turbo Ventilators.",
+    "Explore Yatee's complete structural steel product range: Pre-Engineered Buildings (PEB), Industrial Factory Sheds, Cold-Formed C & Z Purlins, Roofing Sheets, LGS Framing, and Ventilation Systems.",
+  keywords: [
+    "Pre-Engineered Buildings India",
+    "PEB Products Manufacturer",
+    "Industrial Sheds Construction",
+    "Cold Formed C Z Purlins",
+    "PPGL Metal Roofing Sheets",
+    "Light Gauge Steel LGS Framing",
+    "Industrial Roof Turbo Ventilators",
+  ],
+  openGraph: {
+    title: "Structural Steel Building Products & PEB Systems | Yatee Steel",
+    description:
+      "High-tensile E350 steel frames, galvanized purlins, standing-seam roofing, and light gauge steel structures manufactured in Gujarat.",
+    url: "https://yateesteel.com/products",
+    images: ["/images/products/peb-buildings.jpg"],
+  },
 };
 
 export default function ProductsPage() {
+  const breadcrumbSchema = generateBreadcrumbSchema([
+    { name: "Home", url: "/" },
+    { name: "Products", url: "/products" },
+  ]);
+
   return (
     <div className="flex flex-col w-full">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
+
       <PageHero
         badge="ENGINEERED PRODUCT SYSTEMS"
         title="Complete Pre-Engineered Steel Systems"
-        subtitle="Manufactured using high-yield E350 grade structural steel, hot-dip galvanized cold-rolled purlins, and premium insulated sandwich panels."
+        subtitle="Manufactured using high-yield E350 grade structural steel, hot-dip galvanized cold-rolled purlins, and precision Light Gauge Steel (LGS) framing."
         breadcrumbs={[{ label: "Products" }]}
+        backgroundImage="/images/products/peb-buildings.jpg"
         stats={[
           { label: "Product Lines", value: "6 Core Systems" },
           { label: "Steel Yield", value: "350–550 MPa" },
           { label: "Zinc Coating", value: "Up to 275 GSM" },
-          { label: "Thermal Rating", value: "U < 0.22 W/m²K" },
+          { label: "Manufacturing", value: "22,000 MT/Yr" },
         ]}
       />
 
@@ -49,7 +77,7 @@ export default function ProductsPage() {
                 <div className="relative w-full h-52 overflow-hidden bg-slate-200">
                   <Image
                     src={product.featuredImage}
-                    alt={product.title}
+                    alt={`${product.title} - Yatee Steel Structures`}
                     fill
                     className="object-cover transition-transform duration-500 group-hover:scale-105"
                     sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
@@ -58,12 +86,12 @@ export default function ProductsPage() {
                   <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent" />
                   {/* Badges */}
                   <div className="absolute top-4 left-4">
-                    <span className="text-xs font-mono font-bold text-white bg-[#1D3A74]/90 backdrop-blur-sm px-3 py-1 rounded">
+                    <span className="text-xs font-mono font-bold text-white bg-[#1D3A74]/90 backdrop-blur-xs px-3 py-1 rounded">
                       Product 0{idx + 1}
                     </span>
                   </div>
                   <div className="absolute top-4 right-4">
-                    <span className="text-xs font-semibold text-white bg-black/40 backdrop-blur-sm px-2 py-1 rounded">
+                    <span className="text-xs font-semibold text-white bg-black/40 backdrop-blur-xs px-2 py-1 rounded">
                       IS / ASTM
                     </span>
                   </div>

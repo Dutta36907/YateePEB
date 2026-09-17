@@ -13,7 +13,7 @@ export const ProductsGridSection: React.FC = () => {
     "industrial-sheds": "Factory Ready",
     "c-z-purlins": "Z275 Galvanized",
     "roofing-sheets": "AZ150 Galvalume",
-    "puff-panels": "PIR / PUF Core",
+    "lgs-structures": "Light Gauge Steel (LGS)",
     "ventilation-systems": "Zero-Power Turbo",
   };
 

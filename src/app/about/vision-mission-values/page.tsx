@@ -4,14 +4,35 @@ import { PageHero } from "@/components/shared/PageHero";
 import { SectionHeader } from "@/components/ui/SectionHeader";
 import { Target, Compass, HeartHandshake, ShieldCheck, Leaf, Award, Lightbulb, Users } from "lucide-react";
 import { Button } from "@/components/ui/Button";
+import { generateBreadcrumbSchema } from "@/lib/seo";
 
 export const metadata: Metadata = {
   title: "Vision, Mission & Core Values | Yatee Steel Structures",
   description:
-    "Discover the engineering vision, corporate mission, safety ethics, and sustainability principles guiding Yatee Steel Structures.",
+    "Discover the engineering vision, corporate mission, safety ethics, and sustainability principles guiding Yatee Steel Structures Pvt Ltd.",
+  keywords: [
+    "Yatee Vision and Mission",
+    "PEB Engineering Principles",
+    "Structural Steel Safety Ethics",
+    "Sustainable Steel Construction India",
+    "ISO 45001 Safety Culture",
+  ],
+  openGraph: {
+    title: "Vision, Mission & Values | Yatee Steel Structures",
+    description:
+      "Engineering precision, zero-harm safety culture, and sustainable steel building innovation across India.",
+    url: "https://yateesteel.com/about/vision-mission-values",
+    images: ["/images/yatee-hero-building.jpg"],
+  },
 };
 
 export default function VisionMissionValuesPage() {
+  const breadcrumbSchema = generateBreadcrumbSchema([
+    { name: "Home", url: "/" },
+    { name: "About Us", url: "/about" },
+    { name: "Vision, Mission & Values", url: "/about/vision-mission-values" },
+  ]);
+
   const coreValues = [
     {
       title: "Engineering Precision",
@@ -47,6 +68,11 @@ export default function VisionMissionValuesPage() {
 
   return (
     <div className="flex flex-col w-full">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
+
       <PageHero
         badge="GUIDING PRINCIPLES"
         title="Vision, Mission & Values"
@@ -55,6 +81,7 @@ export default function VisionMissionValuesPage() {
           { label: "About Us", href: "/about" },
           { label: "Vision, Mission & Values" },
         ]}
+        backgroundImage="/images/yatee-hero-slide-1.jpg"
       />
 
       {/* Vision & Mission Cards */}

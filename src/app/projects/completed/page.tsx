@@ -3,19 +3,48 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { PageHero } from "@/components/shared/PageHero";
 import { projectsData } from "@/data/projects";
-import { ArrowRight, MapPin, Calendar } from "lucide-react";
+import { ArrowRight, MapPin } from "lucide-react";
+import { generateBreadcrumbSchema } from "@/lib/seo";
 
 export const metadata: Metadata = {
-  title: "Completed Projects | Yatee Steel Structures",
+  title: "Completed PEB & Steel Structure Projects | Yatee Steel",
   description:
-    "Explore our completed landmark industrial projects, manufacturing plants, and high-bay logistics warehouses across India.",
+    "Explore our portfolio of 100+ successfully completed industrial facilities, logistics warehouses, and heavy structural steel installations across India.",
+  keywords: [
+    "Completed PEB Projects India",
+    "Industrial Steel Buildings Portfolio",
+    "Turnkey Warehouse Projects",
+    "Structural Steel Case Studies",
+    "Yatee Steel Delivered Projects",
+  ],
+  alternates: {
+    canonical: "https://yateesteel.com/projects/completed",
+  },
+  openGraph: {
+    title: "Completed PEB & Steel Structure Projects | Yatee Steel Structures",
+    description:
+      "Explore 100+ executed landmark industrial facilities, logistics parks, and high-bay warehouses delivered on time across India.",
+    url: "https://yateesteel.com/projects/completed",
+    images: ["/images/yatee-hero-building.jpg"],
+  },
 };
 
 export default function CompletedProjectsPage() {
   const completed = projectsData.filter((p) => p.status === "Completed");
 
+  const breadcrumbSchema = generateBreadcrumbSchema([
+    { name: "Home", url: "/" },
+    { name: "Projects", url: "/projects" },
+    { name: "Completed Projects", url: "/projects/completed" },
+  ]);
+
   return (
     <div className="flex flex-col w-full">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
+
       <PageHero
         badge="PORTFOLIO"
         title="Completed Landmark Projects"
@@ -24,6 +53,7 @@ export default function CompletedProjectsPage() {
           { label: "Projects", href: "/projects" },
           { label: "Completed Projects" },
         ]}
+        backgroundImage="/images/yatee-hero-slide-2.jpg"
       />
 
       <section className="py-20 bg-white">
