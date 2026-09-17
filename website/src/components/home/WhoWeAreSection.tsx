@@ -120,7 +120,7 @@ export const WhoWeAreSection: React.FC = () => {
                   100+ Landmark Projects.<br />20+ Years. Across India.
                 </p>
                 <p className="text-blue-300 text-xs mt-1 font-medium">
-                  Trusted by India's largest industrial groups.
+                  Trusted by India&apos;s largest industrial groups.
                 </p>
               </div>
               <Link
