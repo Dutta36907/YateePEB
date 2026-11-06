@@ -5,11 +5,16 @@ import { PageHero } from "@/components/shared/PageHero";
 import { CheckCircle2, ArrowRight, ArrowLeft, UploadCloud, Calculator, ShieldCheck, Check, Building2, Truck, Layers, FileText } from "lucide-react";
 import { Button } from "@/components/ui/Button";
 import { cn } from "@/lib/utils";
+import { submitForm } from "@/lib/submitForm";
 
 export default function GetAQuotePage() {
   const [currentStep, setCurrentStep] = useState(1);
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [inquiryReference, setInquiryReference] = useState("");
+  const [sending, setSending] = useState(false);
+  const [error, setError] = useState("");
+  const [hp, setHp] = useState("");
+  const [file, setFile] = useState<File | null>(null);
 
   // Form State
   const [formData, setFormData] = useState({
@@ -64,13 +69,23 @@ export default function GetAQuotePage() {
 
   const totalSteps = 5;
 
-  const handleNext = (e: React.FormEvent) => {
+  const handleNext = async (e: React.FormEvent) => {
     e.preventDefault();
     if (currentStep < totalSteps) {
       setCurrentStep(currentStep + 1);
-    } else {
-      setInquiryReference(`YTE-${Math.floor(100000 + Math.random() * 900000)}`);
+      return;
+    }
+    setSending(true);
+    setError("");
+    try {
+      const { uploadedFileName, ...fields } = formData;
+      const { ref } = await submitForm("quote", { ...fields, builtUpAreaSqFt: String(calculatedAreaSqFt), approxSteelTonnageMT: String(approxSteelTonnage), attachment: uploadedFileName }, file, hp);
+      setInquiryReference(ref ?? "");
       setIsSubmitted(true);
+    } catch (err) {
+      setError(err instanceof Error ? err.message : "Something went wrong. Please try again.");
+    } finally {
+      setSending(false);
     }
   };
 
@@ -586,7 +601,7 @@ export default function GetAQuotePage() {
                             {formData.uploadedFileName ? formData.uploadedFileName : "Drag and drop your CAD / PDF drawings here"}
                           </p>
                           <span className="text-[10px] text-slate-400 block mt-1">
-                            Accepts .dwg, .pdf, .docx, .zip (Max file size: 50MB)
+                            Accepts .dwg, .pdf, .docx, .zip (Max file size: 4MB)
                           </span>
                           <input
                             type="file"
@@ -594,6 +609,7 @@ export default function GetAQuotePage() {
                             onChange={(e) => {
                               if (e.target.files && e.target.files[0]) {
                                 setFormData({ ...formData, uploadedFileName: e.target.files[0].name });
+                                setFile(e.target.files[0]);
                               }
                             }}
                             className="hidden"
@@ -623,6 +639,9 @@ export default function GetAQuotePage() {
                     </div>
                   )}
 
+                  <input type="text" name="website" tabIndex={-1} autoComplete="off" aria-hidden="true" value={hp} onChange={(e) => setHp(e.target.value)} className="hidden" />
+                  {error && <p role="alert" className="text-sm text-red-600 font-medium">{error}</p>}
+
                   {/* Navigation Buttons */}
                   <div className="pt-6 border-t border-slate-200 flex items-center justify-between gap-4">
                     {currentStep > 1 ? (
@@ -638,9 +657,10 @@ export default function GetAQuotePage() {
 
                     <button
                       type="submit"
-                      className="px-8 py-3.5 bg-[#1D3A74] hover:bg-[#162E60] text-white font-bold rounded-xl shadow-md transition-all flex items-center gap-2 text-sm ml-auto"
+                      disabled={sending}
+                      className="px-8 py-3.5 bg-[#1D3A74] hover:bg-[#162E60] disabled:opacity-60 text-white font-bold rounded-xl shadow-md transition-all flex items-center gap-2 text-sm ml-auto"
                     >
-                      <span>{currentStep === totalSteps ? "SUBMIT ESTIMATE REQUEST" : "Continue to Next Step"}</span>
+                      <span>{sending ? "SENDING..." : currentStep === totalSteps ? "SUBMIT ESTIMATE REQUEST" : "Continue to Next Step"}</span>
                       <ArrowRight className="w-4 h-4" />
                     </button>
                   </div>

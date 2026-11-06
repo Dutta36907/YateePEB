@@ -3,6 +3,7 @@
 import React, { useState } from "react";
 import { UploadCloud, Send, Check } from "lucide-react";
 import { JobOpening } from "@/types";
+import { submitForm } from "@/lib/submitForm";
 
 interface JobApplicationFormProps {
   job: JobOpening;
@@ -10,6 +11,10 @@ interface JobApplicationFormProps {
 
 export function JobApplicationForm({ job }: JobApplicationFormProps) {
   const [submitted, setSubmitted] = useState(false);
+  const [sending, setSending] = useState(false);
+  const [error, setError] = useState("");
+  const [hp, setHp] = useState("");
+  const [file, setFile] = useState<File | null>(null);
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -20,9 +25,20 @@ export function JobApplicationForm({ job }: JobApplicationFormProps) {
     message: "",
   });
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setSubmitted(true);
+    setSending(true);
+    setError("");
+    try {
+      const { resumeFileName, ...fields } = formData;
+      void resumeFileName;
+      await submitForm("career", { ...fields, position: job.title, positionSlug: job.slug }, file, hp);
+      setSubmitted(true);
+    } catch (err) {
+      setError(err instanceof Error ? err.message : "Something went wrong. Please try again.");
+    } finally {
+      setSending(false);
+    }
   };
 
   return (
@@ -130,6 +146,7 @@ export function JobApplicationForm({ job }: JobApplicationFormProps) {
                 onChange={(e) => {
                   if (e.target.files && e.target.files[0]) {
                     setFormData({ ...formData, resumeFileName: e.target.files[0].name });
+                    setFile(e.target.files[0]);
                   }
                 }}
                 className="hidden"
@@ -154,12 +171,15 @@ export function JobApplicationForm({ job }: JobApplicationFormProps) {
             />
           </div>
 
+          <input type="text" name="website" tabIndex={-1} autoComplete="off" aria-hidden="true" value={hp} onChange={(e) => setHp(e.target.value)} className="hidden" />
+          {error && <p role="alert" className="text-sm text-red-600 font-medium">{error}</p>}
           <button
             type="submit"
-            className="w-full py-3.5 bg-[#1D3A74] hover:bg-[#162E60] text-white font-bold rounded-xl shadow-md transition-colors flex items-center justify-center gap-2 text-sm"
+            disabled={sending}
+            className="w-full py-3.5 bg-[#1D3A74] hover:bg-[#162E60] disabled:opacity-60 text-white font-bold rounded-xl shadow-md transition-colors flex items-center justify-center gap-2 text-sm"
           >
             <Send className="w-4 h-4" />
-            <span>Submit Application</span>
+            <span>{sending ? "Sending..." : "Submit Application"}</span>
           </button>
         </form>
       ) : (

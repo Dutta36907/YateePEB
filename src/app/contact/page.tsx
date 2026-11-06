@@ -6,9 +6,13 @@ import { companyDetails } from "@/data/company";
 import { Phone, Mail, MapPin, Clock, MessageSquare, Send, CheckCircle2, ShieldCheck, Building2, Factory } from "lucide-react";
 import { Button } from "@/components/ui/Button";
 import { generateBreadcrumbSchema } from "@/lib/seo";
+import { submitForm } from "@/lib/submitForm";
 
 export default function ContactPage() {
   const [submitted, setSubmitted] = useState(false);
+  const [sending, setSending] = useState(false);
+  const [error, setError] = useState("");
+  const [hp, setHp] = useState("");
   const [formData, setFormData] = useState({
     name: "",
     company: "",
@@ -21,9 +25,18 @@ export default function ContactPage() {
     consent: true,
   });
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setSubmitted(true);
+    setSending(true);
+    setError("");
+    try {
+      await submitForm("contact", formData, null, hp);
+      setSubmitted(true);
+    } catch (err) {
+      setError(err instanceof Error ? err.message : "Something went wrong. Please try again.");
+    } finally {
+      setSending(false);
+    }
   };
 
   const breadcrumbSchema = generateBreadcrumbSchema([
@@ -201,12 +214,15 @@ export default function ContactPage() {
                     </label>
                   </div>
 
+                  <input type="text" name="website" tabIndex={-1} autoComplete="off" aria-hidden="true" value={hp} onChange={(e) => setHp(e.target.value)} className="hidden" />
+                  {error && <p role="alert" className="text-sm text-red-600 font-medium">{error}</p>}
                   <button
                     type="submit"
-                    className="w-full py-4 bg-[#1D3A74] hover:bg-[#162E60] text-white font-bold rounded-xl shadow-lg transition-all flex items-center justify-center gap-2 text-base"
+                    disabled={sending}
+                    className="w-full py-4 bg-[#1D3A74] hover:bg-[#162E60] disabled:opacity-60 text-white font-bold rounded-xl shadow-lg transition-all flex items-center justify-center gap-2 text-base"
                   >
                     <Send className="w-5 h-5" />
-                    <span>SUBMIT DIRECT ENQUIRY</span>
+                    <span>{sending ? "SENDING..." : "SUBMIT DIRECT ENQUIRY"}</span>
                   </button>
                 </form>
               ) : (
