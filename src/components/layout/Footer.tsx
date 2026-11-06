@@ -51,9 +51,9 @@ export const Footer: React.FC = () => {
               <Image
                 src="/images/yatee-logo-white.webp"
                 alt="Yatee Steel Structures Pvt Ltd"
-                width={200}
-                height={54}
-                className="h-11 sm:h-12 w-auto object-contain transition-transform group-hover:scale-[1.02]"
+                width={300}
+                height={81}
+                className="h-16 sm:h-20 w-auto object-contain transition-transform group-hover:scale-[1.02]"
               />
             </Link>
 

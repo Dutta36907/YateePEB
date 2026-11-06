@@ -92,10 +92,10 @@ export const Header: React.FC = () => {
             <Image
               src="/images/yatee-logo.webp"
               alt="Yatee Steel Structures Pvt Ltd"
-              width={190}
-              height={52}
+              width={240}
+              height={65}
               priority
-              className="h-10 sm:h-12 w-auto object-contain transition-transform duration-200 group-hover:scale-[1.02]"
+              className="h-12 sm:h-16 w-auto object-contain transition-transform duration-200 group-hover:scale-[1.02]"
             />
           </Link>
 
