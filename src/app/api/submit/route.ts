@@ -55,7 +55,7 @@ export async function POST(req: Request) {
     headers: { Authorization: `Bearer ${key}`, "Content-Type": "application/json" },
     body: JSON.stringify({
       from: FROM,
-      to: [TO],
+      to: TO.split(",").map((a) => a.trim()).filter(Boolean),
       reply_to: email,
       subject,
       text: rows.map(([k, v]) => `${label(k)}: ${v}`).join("\n"),
