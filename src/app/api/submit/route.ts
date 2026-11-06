@@ -1,13 +1,12 @@
 import { NextResponse } from "next/server";
 import { MAX_FILE_BYTES } from "@/lib/submitForm";
+import { label, renderEmail } from "@/lib/emailTemplate";
 
 const TO = process.env.FORM_TO_EMAIL ?? "info@yateesteel.com";
 const FROM = process.env.FORM_FROM_EMAIL ?? "Yatee Website <onboarding@resend.dev>";
 const FILE_EXT = /\.(pdf|dwg|dxf|zip|rar|doc|docx)$/i;
 const SUBJECT = { contact: "New enquiry", quote: "New quote request", career: "New job application" } as const;
 
-const esc = (s: string) => s.replace(/[&<>"']/g, (c) => `&#${c.charCodeAt(0)};`);
-const label = (k: string) => k.replace(/([A-Z])/g, " $1").replace(/^./, (c) => c.toUpperCase());
 const bad = (error: string, status = 400) => NextResponse.json({ error }, { status });
 
 export async function POST(req: Request) {
@@ -60,9 +59,7 @@ export async function POST(req: Request) {
       reply_to: email,
       subject,
       text: rows.map(([k, v]) => `${label(k)}: ${v}`).join("\n"),
-      html: `<table cellpadding="6" style="font-family:sans-serif;font-size:14px">${rows
-        .map(([k, v]) => `<tr><td><b>${esc(label(k))}</b></td><td>${esc(v).replace(/\n/g, "<br>")}</td></tr>`)
-        .join("")}</table>`,
+      html: renderEmail(type, entries, ref),
       attachments,
     }),
   });
