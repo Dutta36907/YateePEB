@@ -7,7 +7,7 @@ import { Button } from "@/components/ui/Button";
 import { generateBreadcrumbSchema } from "@/lib/seo";
 
 export const metadata: Metadata = {
-  title: "Vision, Mission & Core Values | Yatee Steel Structures",
+  title: "Vision, Mission & Core Values",
   description:
     "Discover the engineering vision, corporate mission, safety ethics, and sustainability principles guiding Yatee Steel Structures Pvt Ltd.",
   keywords: [
@@ -21,7 +21,7 @@ export const metadata: Metadata = {
     title: "Vision, Mission & Values | Yatee Steel Structures",
     description:
       "Engineering precision, zero-harm safety culture, and sustainable steel building innovation across India.",
-    url: "https://yateesteel.com/about/vision-mission-values",
+    url: "https://www.yateesteel.com/about/vision-mission-values",
     images: ["/images/yatee-hero-building.jpg"],
   },
 };

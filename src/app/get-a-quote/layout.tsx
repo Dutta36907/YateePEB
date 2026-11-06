@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Get a PEB Cost Estimate & Technical Quotation | Yatee Steel",
+  title: "Get a PEB Cost Estimate & Quotation",
   description:
-    "Request an instant techno-commercial cost estimate for Pre-Engineered Buildings, industrial sheds, and heavy structural steel. Input your building width, length, and crane requirements.",
+    "Request a quick cost estimate for pre-engineered buildings, industrial sheds and heavy steel. Share your width, length and crane needs.",
   keywords: [
     "PEB Cost Estimator",
     "Pre-Engineered Building Price per Sq Ft",
@@ -15,7 +15,7 @@ export const metadata: Metadata = {
     title: "Get a PEB Cost Estimate & Technical Quotation | Yatee Steel",
     description:
       "Calculate your steel building dimensions, crane requirements, and budget with our interactive engineering estimator.",
-    url: "https://yateesteel.com/get-a-quote",
+    url: "https://www.yateesteel.com/get-a-quote",
     images: ["/images/yatee-hero-building.jpg"],
   },
 };

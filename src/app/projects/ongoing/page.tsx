@@ -7,7 +7,7 @@ import { ArrowRight, MapPin, Clock } from "lucide-react";
 import { generateBreadcrumbSchema } from "@/lib/seo";
 
 export const metadata: Metadata = {
-  title: "Ongoing Fast-Track PEB Projects | Yatee Steel Structures",
+  title: "Ongoing Fast-Track PEB Projects",
   description:
     "Review our active ongoing structural steel installations and mega PEB construction sites nationwide, executed under strict ISO 45001 safety governance.",
   keywords: [
@@ -18,13 +18,13 @@ export const metadata: Metadata = {
     "Yatee Steel Live Projects",
   ],
   alternates: {
-    canonical: "https://yateesteel.com/projects/ongoing",
+    canonical: "https://www.yateesteel.com/projects/ongoing",
   },
   openGraph: {
     title: "Ongoing Fast-Track PEB Projects | Yatee Steel Structures",
     description:
       "Review active structural steel erection and industrial warehouse construction sites across India.",
-    url: "https://yateesteel.com/projects/ongoing",
+    url: "https://www.yateesteel.com/projects/ongoing",
     images: ["/images/yatee-hero-building.jpg"],
   },
 };

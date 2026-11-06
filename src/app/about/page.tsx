@@ -10,9 +10,9 @@ import { Button } from "@/components/ui/Button";
 import { generateBreadcrumbSchema } from "@/lib/seo";
 
 export const metadata: Metadata = {
-  title: "About Us | Leading PEB & Structural Steel Manufacturer in India",
+  title: "About Us | PEB & Structural Steel Manufacturer",
   description:
-    "Learn about Yatee Steel Structures Pvt Ltd. 20+ years of engineering leadership, 22,000 MT annual fabrication capacity, 6-acre Gujarat plant, and 100+ delivered industrial projects.",
+    "Learn about Yatee Steel Structures Pvt Ltd. 20+ years of engineering, 22,000 MT annual capacity, a 6-acre Gujarat plant and 100+ projects.",
   keywords: [
     "About Yatee Steel Structures",
     "PEB Manufacturer India",
@@ -24,7 +24,7 @@ export const metadata: Metadata = {
     title: "About Yatee Steel Structures | PEB & Structural Steel Manufacturer",
     description:
       "Pioneering Pre-Engineered Buildings, heavy steel fabrication, and turnkey industrial construction across India with 22,000 MT annual capacity.",
-    url: "https://yateesteel.com/about",
+    url: "https://www.yateesteel.com/about",
     images: ["/images/yatee-hero-building.jpg"],
   },
 };

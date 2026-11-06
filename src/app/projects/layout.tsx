@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Executed PEB & Structural Steel Projects Portfolio | Yatee Steel",
+  title: "PEB & Structural Steel Projects Portfolio",
   description:
-    "Explore Yatee's nationwide portfolio of 100+ landmark Pre-Engineered Buildings, heavy industrial manufacturing plants, automated logistics parks, and cold storage facilities.",
+    "Yatee's portfolio of 100+ PEB projects: manufacturing plants, logistics parks, cold storage and commercial complexes across India.",
   keywords: [
     "PEB Projects Portfolio India",
     "Completed Industrial Sheds",
@@ -15,7 +15,7 @@ export const metadata: Metadata = {
     title: "Executed PEB & Structural Steel Projects | Yatee Steel Structures",
     description:
       "100+ delivered industrial projects spanning heavy manufacturing, logistics parks, and commercial complexes.",
-    url: "https://yateesteel.com/projects",
+    url: "https://www.yateesteel.com/projects",
     images: ["/images/yatee-hero-building.jpg"],
   },
 };

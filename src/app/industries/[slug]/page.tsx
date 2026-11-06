@@ -8,7 +8,7 @@ import { industriesData } from "@/data/industries";
 import { projectsData } from "@/data/projects";
 import { CheckCircle2, ArrowRight, AlertTriangle, ShieldCheck, Layers, Cpu } from "lucide-react";
 import { Button } from "@/components/ui/Button";
-import { generateBreadcrumbSchema, SITE_URL } from "@/lib/seo";
+import { generateBreadcrumbSchema, SITE_URL, fitTitle, fitDescription } from "@/lib/seo";
 
 interface IndustryDetailPageProps {
   params: Promise<{
@@ -30,11 +30,11 @@ export async function generateMetadata({ params }: IndustryDetailPageProps): Pro
     return { title: "Industry Not Found" };
   }
 
-  const title = `${industry.title} Steel Buildings & PEB Construction | Yatee Steel`;
-  const description = `${industry.shortDescription} High clear spans, heavy crane integration, and IS 800:2007 compliant structural design by Yatee Steel Structures.`;
+  const title = fitTitle(`${industry.title} PEB`);
+  const description = fitDescription(industry.shortDescription);
 
   return {
-    title,
+    title: { absolute: title },
     description,
     keywords: [
       `${industry.title} Steel Buildings`,

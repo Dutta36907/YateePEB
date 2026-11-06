@@ -8,9 +8,9 @@ import { Button } from "@/components/ui/Button";
 import { generateBreadcrumbSchema } from "@/lib/seo";
 
 export const metadata: Metadata = {
-  title: "Company Overview & 20-Year Milestones | Yatee Steel Structures",
+  title: "Company Overview & 20-Year Milestones",
   description:
-    "Explore the 20+ year history, historical milestones, executive leadership, and corporate governance of Yatee Steel Structures Pvt Ltd.",
+    "Explore the 20+ year history, milestones, leadership and corporate governance of Yatee Steel Structures Pvt Ltd.",
   keywords: [
     "Yatee Steel Structures History",
     "PEB Company Milestones India",
@@ -22,7 +22,7 @@ export const metadata: Metadata = {
     title: "Company Overview & Engineering Milestones | Yatee Steel",
     description:
       "Two decades of structural steel fabrication, 100+ delivered projects, and 22,000 MT annual manufacturing capacity.",
-    url: "https://yateesteel.com/about/company-overview",
+    url: "https://www.yateesteel.com/about/company-overview",
     images: ["/images/yatee-hero-building.jpg"],
   },
 };

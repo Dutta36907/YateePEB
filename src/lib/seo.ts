@@ -1,6 +1,6 @@
 import { companyDetails } from "@/data/company";
 
-export const SITE_URL = "https://yateesteel.com";
+export const SITE_URL = "https://www.yateesteel.com";
 
 /**
  * Generate BreadcrumbList Schema JSON-LD
@@ -235,3 +235,25 @@ export function generateJobPostingSchema(job: {
   };
 }
 
+
+const DANGLING = /(\s+(&|and|of|for|in|to|with|the|a|is|are|by|up))+$|[\s,;:|&–-]+$/i;
+
+/** "<name> | <suffix>", with name cut at a word boundary so the whole title fits `max` chars. */
+export function fitTitle(name: string, suffix = "Yatee Steel", max = 60) {
+  const room = max - suffix.length - 3;
+  if (name.length <= room) return `${name} | ${suffix}`;
+  const head = name.slice(0, room); // one char spare for the ellipsis
+  const cut = head.slice(0, head.lastIndexOf(" ")).replace(DANGLING, "");
+  return `${cut}… | ${suffix}`;
+}
+
+/** Meta description of at most `max` chars, ending on a sentence if one fits, else a word boundary. */
+export function fitDescription(text: string, max = 155) {
+  const t = text.replace(/\s+/g, " ").trim();
+  if (t.length <= max) return t;
+  const head = t.slice(0, max);
+  const ends = [...head.matchAll(/(?<!\b(?:sq|ft|no))\.(?=\s+[A-Z])/gi)];
+  const last = ends.at(-1)?.index;
+  if (last !== undefined && last >= 70) return head.slice(0, last + 1);
+  return `${head.slice(0, head.lastIndexOf(" ")).replace(DANGLING, "")}…`;
+}

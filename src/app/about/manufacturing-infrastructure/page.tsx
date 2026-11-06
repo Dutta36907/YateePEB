@@ -9,9 +9,9 @@ import { Button } from "@/components/ui/Button";
 import { generateBreadcrumbSchema } from "@/lib/seo";
 
 export const metadata: Metadata = {
-  title: "6-Acre PEB Manufacturing Plant Gujarat | Yatee Steel Structures",
+  title: "6-Acre PEB Manufacturing Plant, Gujarat",
   description:
-    "Tour Yatee's 6-acre heavy structural steel fabrication facility in Nandasan, Gujarat. Automatic H-beam line (PTW), CNC plasma cutting machines, and 22,000 MT annual capacity.",
+    "Tour Yatee's 6-acre fabrication plant in Nandasan, Gujarat: automatic H-beam line, CNC plasma cutting and 22,000 MT annual capacity.",
   keywords: [
     "PEB Manufacturing Plant Gujarat",
     "Heavy Structural Steel Fabrication Nandasan",
@@ -23,7 +23,7 @@ export const metadata: Metadata = {
     title: "6-Acre PEB Manufacturing Facility in Nandasan, Gujarat | Yatee Steel",
     description:
       "Automated heavy fabrication bays, CNC plasma cutting, automatic SAW lines, and 22,000 MT annual capacity.",
-    url: "https://yateesteel.com/about/manufacturing-infrastructure",
+    url: "https://www.yateesteel.com/about/manufacturing-infrastructure",
     images: ["/images/factory-plant.jpg"],
   },
 };

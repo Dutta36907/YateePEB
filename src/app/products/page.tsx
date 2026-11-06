@@ -10,9 +10,9 @@ import { Button } from "@/components/ui/Button";
 import { generateBreadcrumbSchema } from "@/lib/seo";
 
 export const metadata: Metadata = {
-  title: "Steel Building Products & PEB Systems | Yatee Steel Structures",
+  title: "Steel Building Products & PEB Systems",
   description:
-    "Explore Yatee's complete structural steel product range: Pre-Engineered Buildings (PEB), Industrial Factory Sheds, Cold-Formed C & Z Purlins, Roofing Sheets, LGS Framing, and Ventilation Systems.",
+    "Yatee's structural steel product range: PEB, industrial sheds, C & Z purlins, roofing sheets, LGS framing and ventilation systems.",
   keywords: [
     "Pre-Engineered Buildings India",
     "PEB Products Manufacturer",
@@ -26,7 +26,7 @@ export const metadata: Metadata = {
     title: "Structural Steel Building Products & PEB Systems | Yatee Steel",
     description:
       "High-tensile E350 steel frames, galvanized purlins, standing-seam roofing, and light gauge steel structures manufactured in Gujarat.",
-    url: "https://yateesteel.com/products",
+    url: "https://www.yateesteel.com/products",
     images: ["/images/products/peb-buildings.jpg"],
   },
 };

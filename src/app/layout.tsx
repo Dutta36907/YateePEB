@@ -21,7 +21,8 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://yateesteel.com"),
+  metadataBase: new URL("https://www.yateesteel.com"),
+  alternates: { canonical: "./" },
   icons: {
     icon: "/favicon.ico",
     shortcut: "/favicon.ico",
@@ -29,10 +30,10 @@ export const metadata: Metadata = {
   },
   title: {
     default: "Yatee Steel Structures | Leading PEB Manufacturer in India",
-    template: "%s | Yatee Steel Structures",
+    template: "%s | Yatee Steel",
   },
   description:
-    "Yatee Steel Structures Pvt Ltd is a premier Pre-Engineered Building (PEB) & heavy structural steel manufacturer in India. 22,000 MT annual capacity, 6-acre Gujarat plant. Turnkey industrial sheds, warehouses, and steel structures.",
+    "Yatee Steel Structures is a leading PEB and heavy structural steel manufacturer in India. 22,000 MT capacity and a 6-acre Gujarat plant.",
   keywords: [
     "Pre-Engineered Buildings",
     "PEB Manufacturer India",
@@ -59,7 +60,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "en_IN",
-    url: "https://yateesteel.com",
+    url: "https://www.yateesteel.com",
     siteName: "Yatee Steel Structures Pvt Ltd",
     title: "Yatee Steel Structures | Leading PEB Manufacturer in India",
     description:
@@ -104,8 +105,8 @@ export default function RootLayout({
       "@type": "Corporation",
       name: companyDetails.name,
       alternateName: companyDetails.brandName,
-      url: "https://yateesteel.com",
-      logo: "https://yateesteel.com/images/yatee-hero-building.jpg",
+      url: "https://www.yateesteel.com",
+      logo: "https://www.yateesteel.com/images/yatee-hero-building.jpg",
       description:
         "Turnkey Pre-Engineered Steel Building (PEB) manufacturer, structural steel fabrication, industrial sheds, and roofing solutions in India.",
       foundingDate: "2004",
@@ -157,10 +158,10 @@ export default function RootLayout({
       "@context": "https://schema.org",
       "@type": "LocalBusiness",
       name: "Yatee Steel Structures - Corporate Headquarters",
-      image: "https://yateesteel.com/images/yatee-hero-building.jpg",
+      image: "https://www.yateesteel.com/images/yatee-hero-building.jpg",
       telephone: companyDetails.contact.phone,
       email: companyDetails.contact.email,
-      url: "https://yateesteel.com",
+      url: "https://www.yateesteel.com",
       priceRange: "₹₹₹",
       address: {
         "@type": "PostalAddress",
@@ -188,10 +189,10 @@ export default function RootLayout({
       "@context": "https://schema.org",
       "@type": "LocalBusiness",
       name: "Yatee Steel Structures - Gujarat Manufacturing Plant",
-      image: "https://yateesteel.com/images/yatee-hero-building.jpg",
+      image: "https://www.yateesteel.com/images/yatee-hero-building.jpg",
       telephone: companyDetails.contact.phone,
       email: companyDetails.contact.email,
-      url: "https://yateesteel.com/about/manufacturing-infrastructure",
+      url: "https://www.yateesteel.com/about/manufacturing-infrastructure",
       priceRange: "₹₹₹",
       address: {
         "@type": "PostalAddress",
@@ -206,12 +207,7 @@ export default function RootLayout({
       "@context": "https://schema.org",
       "@type": "WebSite",
       name: "Yatee Steel Structures",
-      url: "https://yateesteel.com",
-      potentialAction: {
-        "@type": "SearchAction",
-        target: "https://yateesteel.com/search?q={search_term_string}",
-        "query-input": "required name=search_term_string",
-      },
+      url: "https://www.yateesteel.com",
     },
   ];
 

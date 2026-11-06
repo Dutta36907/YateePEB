@@ -10,9 +10,9 @@ import Image from "next/image";
 import { generateBreadcrumbSchema } from "@/lib/seo";
 
 export const metadata: Metadata = {
-  title: "Turnkey PEB & Structural Steel Engineering Services | Yatee Steel",
+  title: "Turnkey PEB & Structural Steel Services",
   description:
-    "Comprehensive turnkey structural steel engineering services in India: 3D BIM modeling (Tekla/STAAD), CNC automated fabrication, heavy crane erection, and EPC project management.",
+    "Turnkey structural steel services in India: 3D BIM design (Tekla/STAAD), CNC fabrication, heavy crane erection and EPC project management.",
   keywords: [
     "Turnkey PEB Services India",
     "PEB Structural Design Tekla STAAD",
@@ -25,7 +25,7 @@ export const metadata: Metadata = {
     title: "Turnkey PEB & Structural Steel Engineering Services | Yatee Steel",
     description:
       "From 3D BIM design and automated fabrication to precision heavy crane erection. Single-point accountability across India.",
-    url: "https://yateesteel.com/services",
+    url: "https://www.yateesteel.com/services",
     images: ["/images/services/custom-steel.jpg"],
   },
 };

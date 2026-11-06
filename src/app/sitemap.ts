@@ -7,7 +7,7 @@ import { newsArticles } from "@/data/news";
 import { jobOpeningsData } from "@/data/careers";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = "https://yateesteel.com";
+  const baseUrl = "https://www.yateesteel.com";
 
   // Static routes
   const staticRoutes = [

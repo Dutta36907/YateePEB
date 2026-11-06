@@ -8,9 +8,9 @@ import { Button } from "@/components/ui/Button";
 import { generateBreadcrumbSchema } from "@/lib/seo";
 
 export const metadata: Metadata = {
-  title: "ISO 9001:2015 Quality & Certifications | Yatee Steel Structures",
+  title: "ISO 9001:2015 Quality & Certifications",
   description:
-    "Review Yatee's ISO 9001:2015, ISO 14001:2015, ISO 45001:2018, and CE EN 1090-2 structural steel quality standards, NDT testing workflows, and safety governance.",
+    "Yatee's ISO 9001:2015, ISO 14001:2015, ISO 45001:2018 and CE EN 1090-2 certifications, NDT testing workflows and safety governance.",
   keywords: [
     "ISO 9001:2015 PEB Manufacturer",
     "Structural Steel Quality Testing India",
@@ -22,7 +22,7 @@ export const metadata: Metadata = {
     title: "Quality Management & ISO 9001:2015 Certifications | Yatee Steel",
     description:
       "Certified ISO 9001:2015 quality control, non-destructive weld testing, and IS 800:2007 code compliance across all structural fabrication.",
-    url: "https://yateesteel.com/about/quality-certifications",
+    url: "https://www.yateesteel.com/about/quality-certifications",
     images: ["/images/yatee-hero-building.jpg"],
   },
 };

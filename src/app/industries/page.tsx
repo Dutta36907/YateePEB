@@ -9,9 +9,9 @@ import { Button } from "@/components/ui/Button";
 import { generateBreadcrumbSchema } from "@/lib/seo";
 
 export const metadata: Metadata = {
-  title: "Industries & Industrial Sectors Served | Yatee Steel Structures",
+  title: "Industries & Sectors Served",
   description:
-    "Tailored Pre-Engineered Building (PEB) and heavy structural steel solutions for Logistics & Warehousing, Heavy Manufacturing, Cold Storage, Aviation Hangars, and Infrastructure.",
+    "PEB and heavy structural steel solutions for logistics, manufacturing, cold storage, aviation hangars and infrastructure.",
   keywords: [
     "PEB Warehousing Solutions India",
     "Industrial Factory Shed Construction",
@@ -24,7 +24,7 @@ export const metadata: Metadata = {
     title: "Industries & Sectors Served | Yatee Steel Structures",
     description:
       "Sector-specific structural steel engineering for heavy manufacturing, automated warehouses, cleanrooms, and clear-span hangars.",
-    url: "https://yateesteel.com/industries",
+    url: "https://www.yateesteel.com/industries",
     images: ["/images/yatee-hero-building.jpg"],
   },
 };

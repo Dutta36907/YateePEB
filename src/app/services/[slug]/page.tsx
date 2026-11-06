@@ -9,7 +9,7 @@ import { Accordion } from "@/components/ui/Accordion";
 import { CheckCircle2, ArrowRight, ShieldCheck, Cpu, Layers, Wrench, FileText } from "lucide-react";
 import { Button } from "@/components/ui/Button";
 import Image from "next/image";
-import { generateBreadcrumbSchema, generateServiceSchema, generateFaqSchema, SITE_URL } from "@/lib/seo";
+import { generateBreadcrumbSchema, generateServiceSchema, generateFaqSchema, SITE_URL, fitTitle, fitDescription } from "@/lib/seo";
 
 interface ServiceDetailPageProps {
   params: Promise<{
@@ -31,11 +31,11 @@ export async function generateMetadata({ params }: ServiceDetailPageProps): Prom
     return { title: "Service Not Found" };
   }
 
-  const title = `${service.title} Services | Yatee Steel Structures`;
-  const description = `${service.shortDescription} Turnkey PEB execution, 3D BIM design, certified welding, and single-source project accountability across India.`;
+  const title = fitTitle(`${service.title} Services`);
+  const description = fitDescription(service.shortDescription);
 
   return {
-    title,
+    title: { absolute: title },
     description,
     keywords: [
       `${service.title} India`,

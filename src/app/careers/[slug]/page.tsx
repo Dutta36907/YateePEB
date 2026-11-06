@@ -6,7 +6,7 @@ import { PageHero } from "@/components/shared/PageHero";
 import { jobOpeningsData } from "@/data/careers";
 import { CheckCircle2, ArrowLeft } from "lucide-react";
 import { JobApplicationForm } from "@/components/careers/JobApplicationForm";
-import { generateBreadcrumbSchema, generateJobPostingSchema } from "@/lib/seo";
+import { generateBreadcrumbSchema, generateJobPostingSchema, fitTitle, fitDescription } from "@/lib/seo";
 
 interface PageProps {
   params: Promise<{ slug: string }>;
@@ -24,15 +24,15 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 
   if (!job) {
     return {
-      title: "Job Not Found | Yatee Steel Structures",
+      title: "Job Not Found",
     };
   }
 
-  const title = `${job.title} | Careers at Yatee Steel Structures`;
-  const description = `${job.summary.slice(0, 155)}...`;
+  const title = fitTitle(job.title, "Yatee Careers");
+  const description = fitDescription(job.summary);
 
   return {
-    title,
+    title: { absolute: title },
     description,
     keywords: [
       job.title,
@@ -42,12 +42,12 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
       ...job.skills,
     ],
     alternates: {
-      canonical: `https://yateesteel.com/careers/${job.slug}`,
+      canonical: `https://www.yateesteel.com/careers/${job.slug}`,
     },
     openGraph: {
       title,
       description,
-      url: `https://yateesteel.com/careers/${job.slug}`,
+      url: `https://www.yateesteel.com/careers/${job.slug}`,
       type: "article",
       images: ["/images/yatee-hero-building.jpg"],
     },

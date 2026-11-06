@@ -8,7 +8,7 @@ import { ArrowRight, Clock, Calendar, BookOpen, Tag } from "lucide-react";
 import { generateBreadcrumbSchema } from "@/lib/seo";
 
 export const metadata: Metadata = {
-  title: "PEB Technical Insights & News | Yatee Steel Structures",
+  title: "PEB Technical Insights & News",
   description:
     "Explore engineering whitepapers, PEB structural optimization guides, factory milestones, and steel construction insights from Yatee Steel Structures.",
   keywords: [
@@ -22,7 +22,7 @@ export const metadata: Metadata = {
     title: "Technical Insights & News | Yatee Steel Structures",
     description:
       "Engineering insights, 3D BIM structural optimization whitepapers, and PEB industry analyses.",
-    url: "https://yateesteel.com/news",
+    url: "https://www.yateesteel.com/news",
     images: ["/images/yatee-hero-building.jpg"],
   },
 };

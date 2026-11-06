@@ -6,7 +6,7 @@ import { PageHero } from "@/components/shared/PageHero";
 import { newsArticles } from "@/data/news";
 import { Calendar, Clock, User, ArrowRight, Share2, ArrowLeft } from "lucide-react";
 import { Button } from "@/components/ui/Button";
-import { generateBreadcrumbSchema, generateArticleSchema, SITE_URL } from "@/lib/seo";
+import { generateBreadcrumbSchema, generateArticleSchema, SITE_URL, fitTitle, fitDescription } from "@/lib/seo";
 
 interface NewsDetailPageProps {
   params: Promise<{
@@ -28,11 +28,11 @@ export async function generateMetadata({ params }: NewsDetailPageProps): Promise
     return { title: "Article Not Found" };
   }
 
-  const title = `${article.title} | Yatee Steel Insights`;
-  const description = article.summary;
+  const title = fitTitle(article.title);
+  const description = fitDescription(article.summary);
 
   return {
-    title,
+    title: { absolute: title },
     description,
     keywords: [
       ...article.tags,

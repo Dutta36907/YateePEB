@@ -6,7 +6,7 @@ import { PageHero } from "@/components/shared/PageHero";
 import { projectsData } from "@/data/projects";
 import { MapPin, Calendar, Building, Layers, CheckCircle2, AlertTriangle, ArrowRight, Quote, ShieldCheck } from "lucide-react";
 import { Button } from "@/components/ui/Button";
-import { generateBreadcrumbSchema, SITE_URL } from "@/lib/seo";
+import { generateBreadcrumbSchema, SITE_URL, fitTitle, fitDescription } from "@/lib/seo";
 
 interface ProjectDetailPageProps {
   params: Promise<{
@@ -28,11 +28,11 @@ export async function generateMetadata({ params }: ProjectDetailPageProps): Prom
     return { title: "Project Not Found" };
   }
 
-  const title = `${project.title} | PEB Case Study | Yatee Steel Structures`;
-  const description = `${project.overview} Location: ${project.location}. Steel tonnage: ${project.steelTonnageMT} MT. Built-up area: ${new Intl.NumberFormat("en-IN").format(project.builtUpAreaSqFt)} Sq. Ft.`;
+  const title = fitTitle(project.title);
+  const description = fitDescription(project.overview);
 
   return {
-    title,
+    title: { absolute: title },
     description,
     keywords: [
       `${project.title} Case Study`,

@@ -1,0 +1,20 @@
+# ai.txt: AI usage policy for www.yateesteel.com
+# Yatee Steel Structures Pvt Ltd (a P.R. Group company)
+
+User-Agent: *
+Allow: /
+Disallow: /api/
+
+# Permitted: indexing, search, answer generation and citation, and
+# summarisation of public pages, with a link back to the source URL.
+# Please quote specifications, capacities and certifications exactly as published.
+# Not permitted without written permission: training or fine-tuning foundation
+# models on images, logos or photographs, and reproducing pages in full.
+
+# Machine-readable content
+LLMs: https://www.yateesteel.com/llms.txt
+LLMs-Full: https://www.yateesteel.com/llms-full.txt
+Sitemap: https://www.yateesteel.com/sitemap.xml
+
+# Contact for licensing and corrections
+Contact: info@yateesteel.com

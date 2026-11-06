@@ -9,7 +9,7 @@ import { SpecTable } from "@/components/ui/SpecTable";
 import { Accordion } from "@/components/ui/Accordion";
 import { CheckCircle2, ArrowRight, ShieldCheck, Download, Layers, Sparkles, HelpCircle } from "lucide-react";
 import { Button } from "@/components/ui/Button";
-import { generateBreadcrumbSchema, generateProductSchema, generateFaqSchema, SITE_URL } from "@/lib/seo";
+import { generateBreadcrumbSchema, generateProductSchema, generateFaqSchema, SITE_URL, fitTitle, fitDescription } from "@/lib/seo";
 
 interface ProductDetailPageProps {
   params: Promise<{
@@ -31,11 +31,11 @@ export async function generateMetadata({ params }: ProductDetailPageProps): Prom
     return { title: "Product Not Found" };
   }
 
-  const title = `${product.title} Manufacturer | Yatee Steel Structures`;
-  const description = `${product.shortDescription} High-yield steel fabrication, ISO 9001:2015 certified, IS 800:2007 compliant. Request quotation now.`;
+  const title = fitTitle(`${product.title} Manufacturer`);
+  const description = fitDescription(`${product.shortDescription} ISO 9001:2015 certified, IS 800:2007 compliant. Request a quotation.`);
 
   return {
-    title,
+    title: { absolute: title },
     description,
     keywords: [
       `${product.title} Manufacturer`,

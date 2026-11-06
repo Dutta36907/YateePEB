@@ -8,9 +8,9 @@ import { Button } from "@/components/ui/Button";
 import { generateBreadcrumbSchema } from "@/lib/seo";
 
 export const metadata: Metadata = {
-  title: "Why Choose Yatee | Engineered Advantages in PEB Construction",
+  title: "Why Choose Yatee | Engineered PEB Advantages",
   description:
-    "Discover why leading industrial corporations choose Yatee: In-house Tekla 3D engineering, 22,000 MT fabrication throughput, 40% faster schedules, and up to 30% capital savings.",
+    "Why industrial clients choose Yatee: in-house Tekla 3D engineering, 22,000 MT capacity, 40% faster schedules and up to 30% savings.",
   keywords: [
     "Why Choose Yatee PEB",
     "PEB Advantages India",
@@ -22,7 +22,7 @@ export const metadata: Metadata = {
     title: "Why Choose Yatee Steel Structures | Engineered Advantages",
     description:
       "40-50% faster construction, 30% steel weight savings, column-free clear spans up to 90m, and ISO 9001:2015 certified fabrication.",
-    url: "https://yateesteel.com/about/why-choose-us",
+    url: "https://www.yateesteel.com/about/why-choose-us",
     images: ["/images/yatee-hero-building.jpg"],
   },
 };

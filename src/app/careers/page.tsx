@@ -9,9 +9,9 @@ import { Button } from "@/components/ui/Button";
 import { generateBreadcrumbSchema } from "@/lib/seo";
 
 export const metadata: Metadata = {
-  title: "Careers | Structural Engineering & Project Management Jobs | Yatee Steel",
+  title: "Careers | Engineering & Project Jobs",
   description:
-    "Explore engineering and management careers at Yatee Steel Structures. Openings in STAAD.Pro design, Tekla BIM detailing, plant QA/QC, and nationwide site erection.",
+    "Engineering and management careers at Yatee Steel Structures: STAAD.Pro design, Tekla detailing, plant QA/QC and site erection.",
   keywords: [
     "PEB Structural Engineer Jobs",
     "Tekla Detailer Careers India",
@@ -23,7 +23,7 @@ export const metadata: Metadata = {
     title: "Careers at Yatee Steel Structures | Build Your Future",
     description:
       "Join India's premier structural steel and PEB manufacturing enterprise. Explore active engineering, fabrication, and project management roles.",
-    url: "https://yateesteel.com/careers",
+    url: "https://www.yateesteel.com/careers",
     images: ["/images/yatee-hero-building.jpg"],
   },
 };
