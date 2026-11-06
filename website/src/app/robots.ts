@@ -5,7 +5,7 @@ export default function robots(): MetadataRoute.Robots {
     rules: {
       userAgent: "*",
       allow: "/",
-      disallow: ["/api/"],
+      disallow: ["/api/", "/superadmin_2026/"],
     },
     sitemap: "https://yateesteel.com/sitemap.xml",
   };
